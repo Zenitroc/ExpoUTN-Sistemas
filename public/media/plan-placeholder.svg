@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop stop-color="#17181e"/>
+      <stop offset="1" stop-color="#0d0e12"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".035"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <rect width="1200" height="340" fill="url(#grid)"/>
+  <path d="M90 170H1110" stroke="#ef3340" stroke-opacity=".35" stroke-dasharray="5 7"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(160 170)">
+      <circle r="58" fill="#202128" stroke="#ef3340"/>
+      <text y="-5" fill="#ef3340" font-size="12">ETAPA 01</text>
+      <text y="18" fill="#fff" font-size="16" font-weight="bold">BASES</text>
+    </g>
+    <g transform="translate(450 170)">
+      <circle r="72" fill="#202128" stroke="#ef3340"/>
+      <text y="-5" fill="#ef3340" font-size="12">ETAPA 02</text>
+      <text y="18" fill="#fff" font-size="16" font-weight="bold">DESARROLLO</text>
+    </g>
+    <g transform="translate(760 170)">
+      <circle r="64" fill="#202128" stroke="#ef3340"/>
+      <text y="-5" fill="#ef3340" font-size="12">ETAPA 03</text>
+      <text y="18" fill="#fff" font-size="16" font-weight="bold">INTEGRACIÓN</text>
+    </g>
+    <g transform="translate(1040 170)">
+      <circle r="54" fill="#ef3340"/>
+      <text y="-5" fill="#fff" font-size="12">ETAPA 04</text>
+      <text y="18" fill="#fff" font-size="16" font-weight="bold">PROYECTO</text>
+    </g>
+  </g>
+</svg>

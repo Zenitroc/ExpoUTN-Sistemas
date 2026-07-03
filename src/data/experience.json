@@ -1,0 +1,6 @@
+{
+  "idleTimeoutSeconds": 10,
+  "carouselIntervalSeconds": 9,
+  "dwellDurationSeconds": 2,
+  "screensaverEnabled": true
+}

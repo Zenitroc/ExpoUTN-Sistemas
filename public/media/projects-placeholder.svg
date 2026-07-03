@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2a171c"/>
+      <stop offset=".55" stop-color="#111218"/>
+      <stop offset="1" stop-color="#0a0b0e"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <rect width="1200" height="340" fill="url(#bg)"/>
+  <g fill="none" stroke="#ef3340">
+    <circle cx="600" cy="170" r="82"/>
+    <circle cx="600" cy="170" r="125" stroke-opacity=".35" stroke-dasharray="3 8"/>
+    <path d="M80 260L320 90 600 170 880 70 1120 220" stroke-opacity=".28"/>
+    <path d="M80 80L320 250 600 170 880 270 1120 100" stroke-opacity=".16"/>
+  </g>
+  <g fill="#ef3340">
+    <circle cx="80" cy="260" r="7"/>
+    <circle cx="320" cy="90" r="7"/>
+    <circle cx="600" cy="170" r="18" filter="url(#glow)"/>
+    <circle cx="600" cy="170" r="8"/>
+    <circle cx="880" cy="70" r="7"/>
+    <circle cx="1120" cy="220" r="7"/>
+  </g>
+  <text x="600" y="176" fill="white" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle">IDEA → PROTOTIPO → IMPACTO</text>
+</svg>

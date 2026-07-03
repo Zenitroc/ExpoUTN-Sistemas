@@ -1,0 +1,242 @@
+[
+  {
+    "id": "plan",
+    "index": "01",
+    "title": "Plan de estudios",
+    "shortDescription": "El recorrido completo de la carrera",
+    "description": "Una vista editable del trayecto formativo, sus etapas y la integración progresiva de conocimientos.",
+    "position": { "x": 18, "y": 24 },
+    "accent": "#ef3340",
+    "tabs": [
+      {
+        "id": "recorrido",
+        "label": "Recorrido",
+        "content": [
+          { "type": "text", "heading": "Una carrera, múltiples capas", "body": "Este contenido es demostrativo. Podés reemplazarlo por la estructura oficial del plan vigente, correlatividades y carga horaria." },
+          { "type": "highlights", "items": ["Ciencias básicas", "Tecnologías aplicadas", "Gestión y organizaciones", "Proyecto integrador"] }
+        ]
+      },
+      {
+        "id": "visual",
+        "label": "Vista visual",
+        "content": [
+          { "type": "image", "src": "/media/plan-placeholder.svg", "alt": "Diagrama conceptual editable del plan de estudios", "caption": "Placeholder: reemplazar por el diagrama institucional definitivo." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "materias",
+    "index": "02",
+    "title": "Materias",
+    "shortDescription": "Ideas que se convierten en soluciones",
+    "description": "Una selección orientativa de áreas y asignaturas para descubrir qué se aprende en Sistemas.",
+    "position": { "x": 49, "y": 18 },
+    "accent": "#ff5a64",
+    "tabs": [
+      {
+        "id": "areas",
+        "label": "Áreas",
+        "content": [
+          { "type": "text", "heading": "Conocimiento conectado", "body": "Programación, datos, ingeniería de software, infraestructura y gestión se combinan a lo largo de la carrera." },
+          { "type": "highlights", "items": ["Algoritmos y programación", "Bases de datos", "Sistemas operativos y redes", "Análisis y diseño", "Inteligencia artificial"] }
+        ]
+      },
+      {
+        "id": "explorar",
+        "label": "Para explorar",
+        "content": [
+          { "type": "links", "items": [
+            { "label": "Programa de ejemplo", "url": "#", "description": "Enlace editable a programas y contenidos." },
+            { "label": "Correlatividades", "url": "#", "description": "Enlace editable al esquema vigente." }
+          ] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "salida",
+    "index": "03",
+    "title": "Salida laboral",
+    "shortDescription": "Mucho más que programar",
+    "description": "Roles, industrias y desafíos donde una persona graduada puede generar impacto.",
+    "position": { "x": 79, "y": 24 },
+    "accent": "#ef3340",
+    "tabs": [
+      {
+        "id": "roles",
+        "label": "Roles",
+        "content": [
+          { "type": "text", "heading": "Un campo profesional amplio", "body": "La formación permite participar en todo el ciclo de vida de los sistemas y asumir responsabilidades técnicas o de gestión." },
+          { "type": "highlights", "items": ["Desarrollo de software", "Análisis funcional", "Datos e IA", "Ciberseguridad", "Consultoría", "Liderazgo de productos"] }
+        ]
+      },
+      {
+        "id": "escenarios",
+        "label": "Escenarios",
+        "content": [
+          { "type": "text", "body": "Tecnología, industria, salud, finanzas, educación, gobierno y emprendimientos son algunos de los ámbitos posibles. Reemplazá estos ejemplos con información validada." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "incumbencias",
+    "index": "04",
+    "title": "Incumbencias",
+    "shortDescription": "Qué problemas podés abordar",
+    "description": "Una síntesis accesible del alcance profesional, presentada aquí como contenido de muestra.",
+    "position": { "x": 87, "y": 54 },
+    "accent": "#d92531",
+    "tabs": [
+      {
+        "id": "alcance",
+        "label": "Alcance",
+        "content": [
+          { "type": "text", "heading": "Diseñar, integrar y conducir", "body": "Analizar necesidades, diseñar sistemas, evaluar tecnologías y conducir proyectos interdisciplinarios." },
+          { "type": "highlights", "items": ["Sistemas de información", "Arquitecturas tecnológicas", "Auditoría y evaluación", "Dirección de proyectos"] }
+        ]
+      },
+      {
+        "id": "nota",
+        "label": "Importante",
+        "content": [
+          { "type": "text", "body": "Texto placeholder. Para la versión pública, sustituir por la formulación institucional vigente y su fuente oficial." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "proyectos",
+    "index": "05",
+    "title": "Proyectos",
+    "shortDescription": "Construir para aprender",
+    "description": "Experiencias de creación colectiva que conectan conocimientos, usuarios y problemas reales.",
+    "position": { "x": 47, "y": 54 },
+    "accent": "#ff4451",
+    "tabs": [
+      {
+        "id": "muestras",
+        "label": "Muestras",
+        "content": [
+          { "type": "text", "heading": "Del prototipo al impacto", "body": "Espacio para destacar proyectos integradores, aplicaciones, investigaciones o soluciones construidas por estudiantes." },
+          { "type": "image", "src": "/media/projects-placeholder.svg", "alt": "Composición abstracta sobre proyectos tecnológicos", "caption": "Imagen de muestra editable." }
+        ]
+      },
+      {
+        "id": "video",
+        "label": "En acción",
+        "content": [
+          { "type": "video", "url": "https://www.youtube.com/embed/ysz5S6PUM-U", "title": "Video demostrativo — reemplazar por contenido institucional" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vida",
+    "index": "06",
+    "title": "Vida universitaria",
+    "shortDescription": "La facultad también se vive",
+    "description": "Comunidad, espacios compartidos y experiencias que suceden dentro y fuera del aula.",
+    "position": { "x": 72, "y": 79 },
+    "accent": "#ef3340",
+    "tabs": [
+      {
+        "id": "comunidad",
+        "label": "Comunidad",
+        "content": [
+          { "type": "text", "heading": "Encontrar tu lugar", "body": "Tutorías, grupos estudiantiles, deportes, cultura y encuentros forman parte de una experiencia universitaria más amplia." },
+          { "type": "highlights", "items": ["Actividades estudiantiles", "Bienestar universitario", "Deportes y cultura", "Espacios de encuentro"] }
+        ]
+      },
+      {
+        "id": "agenda",
+        "label": "Agenda",
+        "content": [
+          { "type": "links", "items": [{ "label": "Ver actividades", "url": "#", "description": "Placeholder para la agenda institucional." }] }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "investigacion",
+    "index": "07",
+    "title": "Investigación y extensión",
+    "shortDescription": "Conocimiento que transforma",
+    "description": "Iniciativas que conectan la universidad con nuevos conocimientos y necesidades de la comunidad.",
+    "position": { "x": 41, "y": 84 },
+    "accent": "#d92531",
+    "tabs": [
+      {
+        "id": "lineas",
+        "label": "Líneas",
+        "content": [
+          { "type": "text", "heading": "Preguntar, experimentar, compartir", "body": "Espacio editable para grupos, laboratorios, becas, proyectos de extensión y convocatorias." },
+          { "type": "highlights", "items": ["Investigación aplicada", "Vinculación tecnológica", "Extensión universitaria", "Becas y formación"] }
+        ]
+      },
+      {
+        "id": "sumarse",
+        "label": "Cómo sumarse",
+        "content": [
+          { "type": "text", "body": "Incorporá aquí canales de contacto, convocatorias vigentes y experiencias de estudiantes." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "testimonios",
+    "index": "08",
+    "title": "Testimonios",
+    "shortDescription": "Voces que hacen la carrera",
+    "description": "Historias breves de quienes estudian, enseñan y se graduaron en la universidad.",
+    "position": { "x": 15, "y": 75 },
+    "accent": "#ef3340",
+    "tabs": [
+      {
+        "id": "historias",
+        "label": "Historias",
+        "content": [
+          { "type": "text", "heading": "“Acá va una historia real”", "body": "Testimonio placeholder. Reemplazar por una cita autorizada, nombre, rol y fotografía de la persona." },
+          { "type": "text", "heading": "“Y acá, otra mirada”", "body": "Este formato admite múltiples relatos cortos y es fácil de ampliar desde el archivo JSON." }
+        ]
+      },
+      {
+        "id": "multimedia",
+        "label": "Multimedia",
+        "content": [
+          { "type": "video", "url": "https://www.youtube.com/embed/ysz5S6PUM-U", "title": "Testimonio de muestra" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "links",
+    "index": "09",
+    "title": "Links útiles",
+    "shortDescription": "Seguí explorando",
+    "description": "Accesos rápidos editables para continuar el recorrido en canales institucionales.",
+    "position": { "x": 10, "y": 49 },
+    "accent": "#ff5a64",
+    "tabs": [
+      {
+        "id": "accesos",
+        "label": "Accesos",
+        "content": [
+          { "type": "links", "items": [
+            { "label": "Sitio de la facultad", "url": "#", "description": "Reemplazar por la URL oficial." },
+            { "label": "Información de ingreso", "url": "#", "description": "Reemplazar por la URL oficial." },
+            { "label": "Calendario académico", "url": "#", "description": "Reemplazar por la URL oficial." }
+          ] }
+        ]
+      },
+      {
+        "id": "contacto",
+        "label": "Contacto",
+        "content": [
+          { "type": "text", "heading": "¿Querés saber más?", "body": "Agregá aquí canales institucionales verificados, horarios y un código QR si la instalación lo requiere." }
+        ]
+      }
+    ]
+  }
+]

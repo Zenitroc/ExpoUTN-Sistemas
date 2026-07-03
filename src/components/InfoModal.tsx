@@ -1,0 +1,125 @@
+import { useEffect, useState, type CSSProperties } from 'react'
+import type { ContentBlock, Section } from '../types'
+import { Tabs } from './Tabs'
+import { DwellButton } from './DwellButton'
+import { useDwell } from '../hooks/useDwell'
+
+type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
+
+function LinkCard({ item }: { item: LinkItem }) {
+  const openLink = () => {
+    if (item.url !== '#') window.open(item.url, '_blank', 'noopener,noreferrer')
+  }
+  const { ref, hovered, progress } = useDwell<HTMLAnchorElement>(openLink)
+
+  return (
+    <a
+      ref={ref}
+      href={item.url}
+      className={`dwell-control ${hovered ? 'dwell-control--active' : ''}`}
+      style={{ '--control-dwell': progress } as CSSProperties}
+      target={item.url === '#' ? undefined : '_blank'}
+      rel="noreferrer"
+    >
+      <span>{item.label}</span>
+      {item.description && <small>{item.description}</small>}
+      <b aria-hidden="true">↗</b>
+      <i className="dwell-control__meter" aria-hidden="true" />
+    </a>
+  )
+}
+
+function Content({ block }: { block: ContentBlock }) {
+  if (block.type === 'text') {
+    return (
+      <div className="content-text">
+        {block.heading && <h3>{block.heading}</h3>}
+        <p>{block.body}</p>
+      </div>
+    )
+  }
+  if (block.type === 'highlights') {
+    return (
+      <ul className="highlight-grid">
+        {block.items.map((item) => <li key={item}>{item}</li>)}
+      </ul>
+    )
+  }
+  if (block.type === 'image') {
+    return (
+      <figure className="content-image">
+        <img src={block.src} alt={block.alt} />
+        {block.caption && <figcaption>{block.caption}</figcaption>}
+      </figure>
+    )
+  }
+  if (block.type === 'video') {
+    return (
+      <div className="content-video">
+        <iframe
+          src={block.url}
+          title={block.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )
+  }
+  return (
+    <div className="link-grid">
+      {block.items.map((item) => (
+        <LinkCard item={item} key={item.label} />
+      ))}
+    </div>
+  )
+}
+
+export function InfoModal({ section, onClose }: { section: Section; onClose: () => void }) {
+  const [activeTab, setActiveTab] = useState(section.tabs[0].id)
+  const tab = section.tabs.find((item) => item.id === activeTab) ?? section.tabs[0]
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [onClose])
+
+  return (
+    <div className="modal-backdrop" role="presentation">
+      <section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div className="modal__rail" style={{ '--accent': section.accent } as CSSProperties}>
+          <span>{section.index}</span>
+          <i />
+          <span>ISI</span>
+        </div>
+        <div className="modal__main">
+          <header className="modal__header">
+            <div>
+              <span className="eyebrow">Explorá la carrera</span>
+              <h2 id="modal-title">{section.title}</h2>
+              <p>{section.description}</p>
+            </div>
+            <DwellButton className="modal__close-icon" onActivate={onClose} ariaLabel="Cerrar">×</DwellButton>
+          </header>
+          <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />
+          <div
+            className="modal__content"
+            id={`panel-${tab.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${tab.id}`}
+          >
+            {tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
+          </div>
+          <footer className="modal__footer">
+            <DwellButton className="back-button" onActivate={onClose}>
+              <span aria-hidden="true">←</span> Volver al mapa
+            </DwellButton>
+            <span>ExpoUTN · contenido demostrativo</span>
+          </footer>
+        </div>
+      </section>
+    </div>
+  )
+}
