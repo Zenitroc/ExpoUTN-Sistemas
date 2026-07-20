@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import type { CursorInput } from '../input/types'
 import type { Section } from '../types'
 import experienceConfig from '../data/experience.json'
+import { SectionIcon } from './SectionIcon'
 
 const DWELL_TIME = experienceConfig.dwellDurationSeconds * 1000
 
@@ -9,9 +10,10 @@ interface MapNodeProps {
   section: Section
   cursor: CursorInput
   onOpen: (section: Section) => void
+  disabled?: boolean
 }
 
-export function MapNode({ section, cursor, onOpen }: MapNodeProps) {
+export function MapNode({ section, cursor, onOpen, disabled = false }: MapNodeProps) {
   const nodeRef = useRef<HTMLButtonElement>(null)
   const [hovered, setHovered] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -19,14 +21,14 @@ export function MapNode({ section, cursor, onOpen }: MapNodeProps) {
 
   useEffect(() => {
     const rect = nodeRef.current?.getBoundingClientRect()
-    if (!rect || !cursor.active) {
+    if (disabled || !rect || !cursor.active) {
       setHovered(false)
       return
     }
     const x = cursor.x * window.innerWidth
     const y = cursor.y * window.innerHeight
     setHovered(x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom)
-  }, [cursor])
+  }, [cursor, disabled])
 
   useEffect(() => {
     if (!hovered) {
@@ -63,17 +65,19 @@ export function MapNode({ section, cursor, onOpen }: MapNodeProps) {
       className={`map-node ${hovered ? 'map-node--active' : ''} ${section.id === 'proyectos' ? 'map-node--core' : ''}`}
       style={style}
       onClick={() => onOpen(section)}
+      disabled={disabled}
       aria-label={`Abrir ${section.title}`}
     >
-      <svg className="map-node__progress" viewBox="0 0 100 100" aria-hidden="true">
-        <circle cx="50" cy="50" r="47" pathLength="1" />
+      <svg className="map-node__progress" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="1" y="1" width="98" height="98" rx="5" pathLength="1" />
       </svg>
-      <span className="map-node__index">{section.index}</span>
+      <span className="map-node__icon"><SectionIcon id={section.id} /></span>
       <span className="map-node__copy">
         <strong>{section.title}</strong>
         <small>{section.shortDescription}</small>
       </span>
       <span className="map-node__arrow" aria-hidden="true">↗</span>
+      <span className="map-node__index">{section.index}</span>
     </button>
   )
 }

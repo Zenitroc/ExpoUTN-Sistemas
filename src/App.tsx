@@ -40,7 +40,7 @@ function Experience() {
         <DemoOverlay />
       </header>
 
-      <InteractiveMap sections={sections} onOpen={openModal} />
+      <InteractiveMap sections={sections} onOpen={openModal} disabled={selected !== null} />
 
       <footer className="map-footer">
         <span><i className="pulse-dot" /> Mapa activo</span>

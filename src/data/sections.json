@@ -116,6 +116,38 @@
     "accent": "#ff4451",
     "tabs": [
       {
+        "id": "finales",
+        "label": "Proyectos finales",
+        "content": [
+          {
+            "type": "project-carousel",
+            "items": [
+              {
+                "title": "Sistema inteligente de movilidad urbana",
+                "description": "Una plataforma para analizar recorridos, anticipar la demanda y mejorar la experiencia de quienes utilizan el transporte público.",
+                "authors": ["Ana Pérez", "Tomás García", "Lucía Fernández"],
+                "media": { "type": "image", "src": "/media/projects-placeholder.svg", "alt": "Vista del sistema de movilidad urbana" },
+                "projectUrl": "#"
+              },
+              {
+                "title": "Aula accesible",
+                "description": "Herramientas colaborativas que adaptan contenidos académicos y facilitan el aprendizaje para estudiantes con distintas necesidades.",
+                "authors": ["Martín López", "Sofía Romero"],
+                "media": { "type": "video", "src": "https://www.youtube.com/embed/ysz5S6PUM-U", "alt": "Presentación de Aula accesible" },
+                "projectUrl": "#"
+              },
+              {
+                "title": "Monitoreo ambiental abierto",
+                "description": "Sensores y visualizaciones abiertas para conocer en tiempo real indicadores ambientales relevantes para la comunidad.",
+                "authors": ["Carla Díaz", "Julián Suárez", "Mateo Silva"],
+                "media": { "type": "image", "src": "/media/projects-placeholder.svg", "alt": "Panel de monitoreo ambiental" },
+                "projectUrl": "#"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "muestras",
         "label": "Muestras",
         "content": [

@@ -3,6 +3,7 @@ import type { ContentBlock, Section } from '../types'
 import { Tabs } from './Tabs'
 import { DwellButton } from './DwellButton'
 import { useDwell } from '../hooks/useDwell'
+import { ProjectCarousel } from './ProjectCarousel'
 
 type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
 
@@ -30,6 +31,9 @@ function LinkCard({ item }: { item: LinkItem }) {
 }
 
 function Content({ block }: { block: ContentBlock }) {
+  if (block.type === 'project-carousel') {
+    return <ProjectCarousel items={block.items} />
+  }
   if (block.type === 'text') {
     return (
       <div className="content-text">
