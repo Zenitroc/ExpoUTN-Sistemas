@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import experienceConfig from '../data/experience.json'
 import type { Section } from '../types'
+import { UtnLogo } from './UtnLogo'
 
 export function ScreenSaver({ sections }: { sections: Section[] }) {
   const [index, setIndex] = useState(0)
@@ -23,10 +24,7 @@ export function ScreenSaver({ sections }: { sections: Section[] }) {
     <div className="screensaver" aria-live="polite">
       <div className="screensaver__noise" aria-hidden="true" />
       <header className="screensaver__header">
-        <div className="brand">
-          <div className="brand__mark" aria-hidden="true"><span /><span /><span /></div>
-          <div><strong>UTN.BA</strong><small>Ingeniería en Sistemas de Información</small></div>
-        </div>
+        <UtnLogo />
         <span>ExpoUTN · recorré la carrera</span>
       </header>
 

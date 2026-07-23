@@ -4,7 +4,7 @@
     "index": "01",
     "title": "Plan de estudios",
     "shortDescription": "El recorrido completo de la carrera",
-    "description": "Una vista editable del trayecto formativo, sus etapas y la integración progresiva de conocimientos.",
+    "description": "El mapa del plan K23, sus correlatividades y una lectura simple de cómo evoluciona la formación año a año.",
     "position": { "x": 18, "y": 24 },
     "accent": "#ef3340",
     "tabs": [
@@ -12,15 +12,15 @@
         "id": "recorrido",
         "label": "Recorrido",
         "content": [
-          { "type": "text", "heading": "Una carrera, múltiples capas", "body": "Este contenido es demostrativo. Podés reemplazarlo por la estructura oficial del plan vigente, correlatividades y carga horaria." },
-          { "type": "highlights", "items": ["Ciencias básicas", "Tecnologías aplicadas", "Gestión y organizaciones", "Proyecto integrador"] }
+          { "type": "text", "heading": "Comprender el recorrido, no solo la grilla", "body": "El plan K23 organiza una formación progresiva: comienza con fundamentos, incorpora análisis y construcción de sistemas, suma gestión y estrategia, y culmina integrando todo en proyectos. Las correlatividades muestran qué aprendizajes preparan el camino para los siguientes." },
+          { "type": "highlights", "items": ["Fundamentos y ciencias básicas", "Programación y datos", "Análisis y diseño", "Gestión y proyecto integrador"] }
         ]
       },
       {
         "id": "visual",
-        "label": "Vista visual",
+        "label": "Mapa K23",
         "content": [
-          { "type": "image", "src": "/media/plan-placeholder.svg", "alt": "Diagrama conceptual editable del plan de estudios", "caption": "Placeholder: reemplazar por el diagrama institucional definitivo." }
+          { "type": "image", "src": "/media/plan-placeholder.svg", "alt": "Mapa visual del plan K23 y sus correlatividades", "caption": "Espacio preparado para el mapa institucional del plan K23." }
         ]
       }
     ]
@@ -29,8 +29,8 @@
     "id": "materias",
     "index": "02",
     "title": "Materias",
-    "shortDescription": "Ideas que se convierten en soluciones",
-    "description": "Una selección orientativa de áreas y asignaturas para descubrir qué se aprende en Sistemas.",
+    "shortDescription": "Las troncales que integran la carrera",
+    "description": "Un recorrido por las materias integradoras de cada nivel y por la propuesta de asignaturas electivas.",
     "position": { "x": 49, "y": 18 },
     "accent": "#ff5a64",
     "tabs": [
@@ -38,18 +38,48 @@
         "id": "areas",
         "label": "Áreas",
         "content": [
-          { "type": "text", "heading": "Conocimiento conectado", "body": "Programación, datos, ingeniería de software, infraestructura y gestión se combinan a lo largo de la carrera." },
-          { "type": "highlights", "items": ["Algoritmos y programación", "Bases de datos", "Sistemas operativos y redes", "Análisis y diseño", "Inteligencia artificial"] }
+          { "type": "text", "heading": "Una troncal integradora en cada nivel", "body": "La carrera articula sus conocimientos alrededor de materias troncales. En cada nivel, una asignatura integradora conecta los contenidos de programación, datos, arquitectura, gestión y organizaciones para abordar sistemas de información con una mirada cada vez más completa." },
+          { "type": "video-placeholder", "title": "Presentación de las materias troncales", "description": "Espacio reservado para explicar cómo las integradoras articulan cada nivel de la carrera." }
         ]
       },
       {
-        "id": "explorar",
-        "label": "Para explorar",
+        "id": "sistemas-procesos",
+        "label": "Sistemas y Procesos de Negocio",
         "content": [
-          { "type": "links", "items": [
-            { "label": "Programa de ejemplo", "url": "#", "description": "Enlace editable a programas y contenidos." },
-            { "label": "Correlatividades", "url": "#", "description": "Enlace editable al esquema vigente." }
-          ] }
+          { "type": "text", "heading": "Sistemas y Procesos de Negocio", "body": "Es la materia integradora del primer nivel. Introduce el pensamiento sistémico y permite comprender cómo funcionan las organizaciones, sus procesos de negocio y el papel que cumplen los sistemas de información para coordinarlos y mejorarlos." },
+          { "type": "video-placeholder", "title": "Video de Sistemas y Procesos de Negocio", "description": "Espacio reservado para incorporar el video de la materia." }
+        ]
+      },
+      {
+        "id": "analisis",
+        "label": "Análisis de S.I.",
+        "content": [
+          { "type": "text", "heading": "Análisis de Sistemas de Información", "body": "Es la materia integradora del segundo nivel. Se centra en descubrir necesidades, estudiar problemas organizacionales y modelar requisitos y procesos para definir qué debe resolver un sistema de información." },
+          { "type": "video-placeholder", "title": "Video de Análisis de Sistemas de Información", "description": "Espacio reservado para incorporar el video de la materia." }
+        ]
+      },
+      {
+        "id": "diseno",
+        "label": "Diseño de S.I.",
+        "content": [
+          { "type": "text", "heading": "Diseño de Sistemas de Información", "body": "Es la materia integradora del tercer nivel. Transforma los requisitos obtenidos durante el análisis en una solución coherente, definiendo componentes, datos, interfaces y decisiones de arquitectura que permitan construir el sistema." },
+          { "type": "video-placeholder", "title": "Video de Diseño de Sistemas de Información", "description": "Espacio reservado para incorporar el video de la materia." }
+        ]
+      },
+      {
+        "id": "administracion",
+        "label": "Administración de S.I.",
+        "content": [
+          { "type": "text", "heading": "Administración de Sistemas de Información", "body": "Es la materia integradora del cuarto nivel. Aborda la planificación, dirección y gobierno de los sistemas de información, vinculando las decisiones tecnológicas con la estrategia, los recursos y los objetivos de una organización." },
+          { "type": "video-placeholder", "title": "Video de Administración de Sistemas de Información", "description": "Espacio reservado para incorporar el video de la materia." }
+        ]
+      },
+      {
+        "id": "proyecto-final",
+        "label": "Proyecto Final",
+        "content": [
+          { "type": "text", "heading": "Proyecto Final", "body": "Es la instancia integradora del quinto nivel y el cierre del recorrido. Los equipos aplican conocimientos adquiridos durante toda la carrera para analizar, diseñar, desarrollar y gestionar una solución frente a una necesidad concreta." },
+          { "type": "video-placeholder", "title": "Video de Proyecto Final", "description": "Espacio reservado para incorporar el video de la materia." }
         ]
       }
     ]
@@ -59,7 +89,7 @@
     "index": "03",
     "title": "Salida laboral",
     "shortDescription": "Mucho más que programar",
-    "description": "Roles, industrias y desafíos donde una persona graduada puede generar impacto.",
+    "description": "Perfiles profesionales, oportunidades, convenios y experiencias que responden qué se puede hacer al graduarse.",
     "position": { "x": 79, "y": 24 },
     "accent": "#ef3340",
     "tabs": [
@@ -73,9 +103,10 @@
       },
       {
         "id": "escenarios",
-        "label": "Escenarios",
+        "label": "Oportunidades",
         "content": [
-          { "type": "text", "body": "Tecnología, industria, salud, finanzas, educación, gobierno y emprendimientos son algunos de los ámbitos posibles. Reemplazá estos ejemplos con información validada." }
+          { "type": "text", "heading": "Experiencia y vinculación", "body": "Tecnología, industria, salud, finanzas, educación, gobierno y emprendimientos son algunos de los ámbitos posibles. Este espacio reunirá oportunidades, convenios institucionales y testimonios de estudiantes y graduados/as." },
+          { "type": "video-placeholder", "title": "Perfiles profesionales", "description": "Video general sobre la salida laboral de Ingeniería en Sistemas de Información." }
         ]
       }
     ]
@@ -83,9 +114,9 @@
   {
     "id": "incumbencias",
     "index": "04",
-    "title": "Incumbencias",
-    "shortDescription": "Qué problemas podés abordar",
-    "description": "Una síntesis accesible del alcance profesional, presentada aquí como contenido de muestra.",
+    "title": "Incumbencias y áreas",
+    "shortDescription": "Problemas y campos donde desarrollarte",
+    "description": "Una mirada accesible sobre los problemas que puede abordar un/a profesional y sus principales áreas de desarrollo.",
     "position": { "x": 87, "y": 54 },
     "accent": "#d92531",
     "tabs": [
@@ -94,14 +125,14 @@
         "label": "Alcance",
         "content": [
           { "type": "text", "heading": "Diseñar, integrar y conducir", "body": "Analizar necesidades, diseñar sistemas, evaluar tecnologías y conducir proyectos interdisciplinarios." },
-          { "type": "highlights", "items": ["Sistemas de información", "Arquitecturas tecnológicas", "Auditoría y evaluación", "Dirección de proyectos"] }
+          { "type": "highlights", "items": ["Ciberseguridad", "Desarrollo de software", "Inteligencia artificial", "Datos y analítica", "Blockchain", "Gestión y procesos", "Arquitectura", "Consultoría"] }
         ]
       },
       {
-        "id": "nota",
-        "label": "Importante",
+        "id": "campos",
+        "label": "Campos de acción",
         "content": [
-          { "type": "text", "body": "Texto placeholder. Para la versión pública, sustituir por la formulación institucional vigente y su fuente oficial." }
+          { "type": "text", "heading": "Tecnología con contexto", "body": "El campo profesional no se limita a programar: también incluye comprender organizaciones, diseñar estrategias, conducir equipos, evaluar riesgos y transformar procesos mediante sistemas de información." }
         ]
       }
     ]
@@ -167,9 +198,9 @@
   {
     "id": "vida",
     "index": "06",
-    "title": "Vida universitaria",
-    "shortDescription": "La facultad también se vive",
-    "description": "Comunidad, espacios compartidos y experiencias que suceden dentro y fuera del aula.",
+    "title": "Vida y testimonios",
+    "shortDescription": "Experiencias reales dentro de la carrera",
+    "description": "Cursada, participación estudiantil, ayudantías, actividades, eventos y recorridos diversos contados por su comunidad.",
     "position": { "x": 72, "y": 79 },
     "accent": "#ef3340",
     "tabs": [
@@ -183,9 +214,17 @@
       },
       {
         "id": "agenda",
-        "label": "Agenda",
+        "label": "Experiencias",
         "content": [
-          { "type": "links", "items": [{ "label": "Ver actividades", "url": "#", "description": "Placeholder para la agenda institucional." }] }
+          { "type": "text", "heading": "También se aprende participando", "body": "Ayudantías, actividades del Departamento, eventos, grupos estudiantiles y proyectos colectivos amplían la experiencia de cursada y permiten construir vínculos dentro de la facultad." }
+        ]
+      },
+      {
+        "id": "historias",
+        "label": "Testimonios",
+        "content": [
+          { "type": "text", "heading": "Voces que hacen la carrera", "body": "Espacio para historias reales y autorizadas de estudiantes, docentes y graduados/as, con recorridos distintos y miradas concretas sobre la experiencia universitaria." },
+          { "type": "video-placeholder", "title": "Testimonios de la comunidad", "description": "Espacio reservado para entrevistas y experiencias breves." }
         ]
       }
     ]
@@ -203,7 +242,7 @@
         "id": "lineas",
         "label": "Líneas",
         "content": [
-          { "type": "text", "heading": "Preguntar, experimentar, compartir", "body": "Espacio editable para grupos, laboratorios, becas, proyectos de extensión y convocatorias." },
+          { "type": "text", "heading": "Preguntar, experimentar, compartir", "body": "Grupos y laboratorios desarrollan líneas de investigación aplicada, mientras los proyectos de extensión conectan conocimientos de la universidad con necesidades de la comunidad." },
           { "type": "highlights", "items": ["Investigación aplicada", "Vinculación tecnológica", "Extensión universitaria", "Becas y formación"] }
         ]
       },
@@ -211,33 +250,42 @@
         "id": "sumarse",
         "label": "Cómo sumarse",
         "content": [
-          { "type": "text", "body": "Incorporá aquí canales de contacto, convocatorias vigentes y experiencias de estudiantes." }
+          { "type": "text", "heading": "Participar durante la carrera", "body": "Becas para estudiantes, convocatorias, equipos de investigación y proyectos de extensión ofrecen distintas puertas de entrada para aprender haciendo y trabajar con docentes y pares." },
+          { "type": "links", "items": [{ "label": "Convocatorias y becas", "url": "#", "description": "Acceso a oportunidades vigentes y canales de participación." }] }
         ]
       }
     ]
   },
   {
-    "id": "testimonios",
+    "id": "electivas",
     "index": "08",
-    "title": "Testimonios",
-    "shortDescription": "Voces que hacen la carrera",
-    "description": "Historias breves de quienes estudian, enseñan y se graduaron en la universidad.",
+    "title": "Electivas",
+    "shortDescription": "Construí un recorrido propio",
+    "description": "Qué son, cómo se eligen y qué áreas de especialización permiten explorar dentro de la carrera.",
     "position": { "x": 15, "y": 75 },
     "accent": "#ef3340",
     "tabs": [
       {
-        "id": "historias",
-        "label": "Historias",
+        "id": "como-funcionan",
+        "label": "Cómo funcionan",
         "content": [
-          { "type": "text", "heading": "“Acá va una historia real”", "body": "Testimonio placeholder. Reemplazar por una cita autorizada, nombre, rol y fotografía de la persona." },
-          { "type": "text", "heading": "“Y acá, otra mirada”", "body": "Este formato admite múltiples relatos cortos y es fácil de ampliar desde el archivo JSON." }
+          { "type": "text", "heading": "Elegir también forma parte de la carrera", "body": "Las materias electivas complementan la formación obligatoria. Se eligen dentro de la oferta disponible y permiten profundizar intereses, conocer tecnologías específicas y orientar gradualmente el perfil profesional." },
+          { "type": "video-placeholder", "title": "Cómo elegir electivas", "description": "Espacio para explicar requisitos, oferta y criterios de elección." }
         ]
       },
       {
-        "id": "multimedia",
-        "label": "Multimedia",
+        "id": "recorridos",
+        "label": "Áreas y recorridos",
         "content": [
-          { "type": "video", "url": "https://www.youtube.com/embed/ysz5S6PUM-U", "title": "Testimonio de muestra" }
+          { "type": "text", "heading": "Ejemplos de especialización", "body": "La oferta puede permitir construir recorridos vinculados con inteligencia artificial, ciencia de datos, ciberseguridad, desarrollo, infraestructura, gestión, innovación y otras áreas que evolucionan con la disciplina." },
+          { "type": "highlights", "items": ["Inteligencia artificial y datos", "Ciberseguridad", "Desarrollo y arquitectura", "Gestión e innovación"] }
+        ]
+      },
+      {
+        "id": "oferta",
+        "label": "Oferta disponible",
+        "content": [
+          { "type": "links", "items": [{ "label": "Consultar electivas", "url": "#", "description": "Espacio para publicar la oferta validada y vigente." }] }
         ]
       }
     ]
@@ -247,7 +295,7 @@
     "index": "09",
     "title": "Links útiles",
     "shortDescription": "Seguí explorando",
-    "description": "Accesos rápidos editables para continuar el recorrido en canales institucionales.",
+    "description": "Accesos oficiales o validados para continuar el recorrido y ampliar la información.",
     "position": { "x": 10, "y": 49 },
     "accent": "#ff5a64",
     "tabs": [
@@ -258,7 +306,10 @@
           { "type": "links", "items": [
             { "label": "Sitio de la facultad", "url": "#", "description": "Reemplazar por la URL oficial." },
             { "label": "Información de ingreso", "url": "#", "description": "Reemplazar por la URL oficial." },
-            { "label": "Calendario académico", "url": "#", "description": "Reemplazar por la URL oficial." }
+            { "label": "Calendario académico", "url": "#", "description": "Reemplazar por la URL oficial." },
+            { "label": "Departamento de Sistemas", "url": "#", "description": "Información y novedades del Departamento." },
+            { "label": "Becas e investigación", "url": "#", "description": "Oportunidades para estudiantes." },
+            { "label": "Plan K23", "url": "#", "description": "Plan vigente y material ampliatorio." }
           ] }
         ]
       },

@@ -8,6 +8,7 @@ import { InputProvider } from './input/InputProvider'
 import { useInput } from './input/InputProvider'
 import { ScreenSaver } from './components/ScreenSaver'
 import type { Section } from './types'
+import { UtnLogo } from './components/UtnLogo'
 
 const sections = sectionsData as Section[]
 
@@ -25,13 +26,7 @@ function Experience() {
     <div className="app-shell">
       <div className="ambient-grid" aria-hidden="true" />
       <header className="topbar">
-        <div className="brand">
-          <div className="brand__mark" aria-hidden="true"><span /><span /><span /></div>
-          <div>
-            <strong>UTN.BA</strong>
-            <small>Ingeniería en Sistemas de Información</small>
-          </div>
-        </div>
+        <UtnLogo />
         <div className="topbar__intro">
           <span className="eyebrow">ExpoUTN · experiencia interactiva</span>
           <h1>Explorá <em>Sistemas</em></h1>
@@ -43,9 +38,9 @@ function Experience() {
       <InteractiveMap sections={sections} onOpen={openModal} disabled={selected !== null} />
 
       <footer className="map-footer">
-        <span><i className="pulse-dot" /> Mapa activo</span>
-        <span className="map-footer__hint"><b>2s</b> mantené para abrir</span>
         <span>{String(sections.length).padStart(2, '0')} puntos para explorar</span>
+        <span className="map-footer__hint"><b>2s</b> mantené para abrir</span>
+        <span className="map-footer__department">Departamento de Ingeniería en Sistemas de Información</span>
       </footer>
 
       {selected && <InfoModal section={selected} onClose={closeModal} />}

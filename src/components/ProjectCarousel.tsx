@@ -13,7 +13,7 @@ export function ProjectCarousel({ items }: { items: ProjectCarouselBlock['items'
 
   return (
     <section className="project-carousel" aria-label="Carrusel de proyectos finales">
-      <div className="project-carousel__viewport">
+      <div className="project-carousel__viewport" key={active} aria-live="polite">
         <div className="project-carousel__media">
           {project.media.type === 'video' ? (
             <iframe
@@ -29,7 +29,7 @@ export function ProjectCarousel({ items }: { items: ProjectCarouselBlock['items'
         </div>
 
         <div className="project-carousel__info">
-          <span className="eyebrow">Proyecto final · {String(active + 1).padStart(2, '0')}</span>
+          <span className="eyebrow">Proyecto final · {String(active + 1).padStart(2, '0')} de {String(items.length).padStart(2, '0')}</span>
           <h3>{project.title}</h3>
           <p>{project.description}</p>
           <footer>

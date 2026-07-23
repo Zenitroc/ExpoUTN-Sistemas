@@ -69,6 +69,15 @@ function Content({ block }: { block: ContentBlock }) {
       </div>
     )
   }
+  if (block.type === 'video-placeholder') {
+    return (
+      <div className="content-video-placeholder" role="img" aria-label={`Espacio reservado para: ${block.title}`}>
+        <span aria-hidden="true">▶</span>
+        <strong>{block.title}</strong>
+        {block.description && <small>{block.description}</small>}
+      </div>
+    )
+  }
   return (
     <div className="link-grid">
       {block.items.map((item) => (

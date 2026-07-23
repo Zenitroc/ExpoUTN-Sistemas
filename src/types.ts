@@ -2,6 +2,7 @@ export type ContentBlock =
   | { type: 'text'; heading?: string; body: string }
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'video'; url: string; title: string }
+  | { type: 'video-placeholder'; title: string; description?: string }
   | { type: 'links'; items: Array<{ label: string; url: string; description?: string }> }
   | { type: 'highlights'; items: string[] }
   | {
