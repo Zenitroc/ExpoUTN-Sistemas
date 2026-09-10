@@ -3,8 +3,8 @@
     "id": "plan",
     "index": "01",
     "title": "Plan de estudios",
-    "shortDescription": "El recorrido completo de la carrera",
-    "description": "El mapa del plan K23, sus correlatividades y una lectura simple de cómo evoluciona la formación año a año.",
+    "shortDescription": "Cinco años, 36 materias y una lógica de recorrido",
+    "description": "El plan K23 reúne 36 materias obligatorias. Las correlatividades muestran qué hay que tener cursado o aprobado antes de seguir avanzando.",
     "position": { "x": 18, "y": 24 },
     "accent": "#ef3340",
     "tabs": [
@@ -12,15 +12,16 @@
         "id": "recorrido",
         "label": "Recorrido",
         "content": [
-          { "type": "text", "heading": "Comprender el recorrido, no solo la grilla", "body": "El plan K23 organiza una formación progresiva: comienza con fundamentos, incorpora análisis y construcción de sistemas, suma gestión y estrategia, y culmina integrando todo en proyectos. Las correlatividades muestran qué aprendizajes preparan el camino para los siguientes." },
-          { "type": "highlights", "items": ["Fundamentos y ciencias básicas", "Programación y datos", "Análisis y diseño", "Gestión y proyecto integrador"] }
+          { "type": "text", "heading": "Un recorrido con lógica", "body": "El plan no es una lista suelta: cada asignatura habilita otras. La formación empieza con ciencias básicas, lógica, programación y procesos de negocio; luego suma análisis, diseño, desarrollo, datos, infraestructura y gestión hasta llegar al Proyecto Final." },
+          { "type": "highlights", "items": ["1.º año · 8 materias de base", "2.º año · 8 materias y Análisis de S.I.", "3.º año · 7 materias y Diseño de S.I.", "4.º y 5.º año · gestión, especialización y Proyecto Final"] }
         ]
       },
       {
         "id": "visual",
-        "label": "Mapa K23",
+        "label": "Cómo leerlo",
         "content": [
-          { "type": "image", "src": "/media/plan-placeholder.svg", "alt": "Mapa visual del plan K23 y sus correlatividades", "caption": "Espacio preparado para el mapa institucional del plan K23." }
+          { "type": "text", "heading": "Cursada, aprobada y habilitada", "body": "Para cada materia, el mapa distingue las correlativas que deben estar cursadas de las que deben estar aprobadas. Al seleccionar una asignatura se pueden ver sus requisitos y las materias que habilita: una forma directa de planificar el recorrido." },
+          { "type": "highlights", "items": ["Cursada · materia regularizada", "Aprobada · final rendido", "Habilita · materias que se abren después", "Electivas · especialización en los últimos niveles"] }
         ]
       }
     ]
@@ -29,8 +30,8 @@
     "id": "materias",
     "index": "02",
     "title": "Materias",
-    "shortDescription": "Las troncales que integran la carrera",
-    "description": "Un recorrido por las materias integradoras de cada nivel y por la propuesta de asignaturas electivas.",
+    "shortDescription": "Las 36 materias, una por una",
+    "description": "Qué se trabaja en cada materia y cómo se conectan a lo largo de los cinco años del plan K23.",
     "position": { "x": 49, "y": 18 },
     "accent": "#ff5a64",
     "tabs": [
@@ -38,48 +39,97 @@
         "id": "areas",
         "label": "Áreas",
         "content": [
-          { "type": "text", "heading": "Una troncal integradora en cada nivel", "body": "La carrera articula sus conocimientos alrededor de materias troncales. En cada nivel, una asignatura integradora conecta los contenidos de programación, datos, arquitectura, gestión y organizaciones para abordar sistemas de información con una mirada cada vez más completa." },
-          { "type": "video-placeholder", "title": "Presentación de las materias troncales", "description": "Espacio reservado para explicar cómo las integradoras articulan cada nivel de la carrera." }
+          { "type": "text", "heading": "Cuatro integradoras, desde segundo", "body": "Las materias integradoras son la columna vertebral del recorrido. Reúnen los saberes de otras asignaturas para abordar sistemas completos: Análisis de Sistemas de Información, Diseño de Sistemas de Información, Administración de Sistemas de Información y Proyecto Final." },
+          { "type": "highlights", "items": ["Análisis de S.I. · 2.º año", "Diseño de S.I. · 3.º año", "Administración de S.I. · 4.º año", "Proyecto Final · 5.º año"] }
         ]
       },
       {
         "id": "sistemas-procesos",
         "label": "Sistemas y Procesos de Negocio",
+        "subjectDetail": {
+          "id": "SyPdN",
+          "nombre": "Sistemas y Procesos de Negocio",
+          "anio": "1.º año",
+          "subtitulo": "El punto de partida: entender la organización",
+          "descripcion": "Antes de diseñar o desarrollar un sistema hay que entender el lugar donde va a funcionar. Sistemas y Procesos de Negocio introduce el análisis de organizaciones y sus procesos: cómo trabajan, qué información utilizan, qué problemas aparecen y dónde la tecnología puede aportar valor.\n\nEs el primer acercamiento al enfoque propio de Ingeniería en Sistemas: no mirar solamente el software, sino comprender el sistema completo en el que ese software va a intervenir.",
+          "video": {
+            "src": "/media/recursos/videos-materias/SyPdN-Florencia-ExpoISI.mp4",
+            "titulo": "Sistemas y Procesos de Negocio",
+            "pie": "Presentación de la materia"
+          }
+        },
         "content": [
-          { "type": "text", "heading": "Sistemas y Procesos de Negocio", "body": "Es la materia integradora del primer nivel. Introduce el pensamiento sistémico y permite comprender cómo funcionan las organizaciones, sus procesos de negocio y el papel que cumplen los sistemas de información para coordinarlos y mejorarlos." },
-          { "type": "video-placeholder", "title": "Video de Sistemas y Procesos de Negocio", "description": "Espacio reservado para incorporar el video de la materia." }
+          { "type": "text", "heading": "Sistemas y Procesos de Negocio", "body": "Es una puerta de entrada al lado organizacional de la carrera. Propone comprender cómo funcionan las organizaciones, modelar sus procesos de negocio y reconocer el papel que cumplen los sistemas de información para coordinarlos y mejorarlos." }
         ]
       },
       {
         "id": "analisis",
         "label": "Análisis de S.I.",
+        "subjectDetail": {
+          "id": "ADS",
+          "nombre": "Análisis de Sistemas de Información",
+          "anio": "2.º año",
+          "integradora": "Primera integradora",
+          "subtitulo": "De una necesidad a un sistema",
+          "descripcion": "Es la primera materia integradora de la carrera. Trabaja sobre el análisis de problemas reales, el modelado de sistemas y procesos de negocio, los ciclos de vida y la ingeniería de requerimientos.\n\nEl objetivo es aprender a pasar de una necesidad o problemática de una organización a una definición clara de qué debe hacer un sistema para resolverla.",
+          "video": {
+            "src": "/media/recursos/videos-materias/AdS-AdrianaMartinez.mp4",
+            "titulo": "Análisis de Sistemas contado por la cátedra",
+            "pie": "Adriana Martínez"
+          }
+        },
         "content": [
-          { "type": "text", "heading": "Análisis de Sistemas de Información", "body": "Es la materia integradora del segundo nivel. Se centra en descubrir necesidades, estudiar problemas organizacionales y modelar requisitos y procesos para definir qué debe resolver un sistema de información." },
-          { "type": "video-placeholder", "title": "Video de Análisis de Sistemas de Información", "description": "Espacio reservado para incorporar el video de la materia." }
+          { "type": "text", "heading": "Análisis de Sistemas de Información", "body": "Primera integradora. Trabaja modelado conceptual de sistemas y de negocio, ciclos de vida, ingeniería de requerimientos y análisis orientado a objetos: el paso de una necesidad al problema que un sistema debe resolver." }
         ]
       },
       {
         "id": "diseno",
         "label": "Diseño de S.I.",
+        "subjectDetail": {
+          "id": "DDSI",
+          "nombre": "Diseño de Sistemas de Información",
+          "anio": "3.º año",
+          "integradora": "Segunda integradora",
+          "subtitulo": "Del análisis a la solución",
+          "descripcion": "Una vez entendido qué necesita el sistema, Diseño de Sistemas de Información aborda cómo construir esa solución. Se trabajan arquitecturas, patrones de diseño, persistencia, experiencia de usuario e integración entre distintos componentes y sistemas.\n\nLa materia conecta las decisiones de análisis con decisiones concretas de diseño tecnológico.",
+          "video": {
+            "src": "/media/recursos/videos-materias/DDSI-Ezequiel-ExpoISI.mp4",
+            "titulo": "Diseño de Sistemas de Información",
+            "pie": "Presentación de la materia"
+          }
+        },
         "content": [
-          { "type": "text", "heading": "Diseño de Sistemas de Información", "body": "Es la materia integradora del tercer nivel. Transforma los requisitos obtenidos durante el análisis en una solución coherente, definiendo componentes, datos, interfaces y decisiones de arquitectura que permitan construir el sistema." },
-          { "type": "video-placeholder", "title": "Video de Diseño de Sistemas de Información", "description": "Espacio reservado para incorporar el video de la materia." }
+          { "type": "text", "heading": "Diseño de Sistemas de Información", "body": "Segunda integradora. Aborda arquitectura, patrones de diseño, persistencia, experiencia de usuario, integración de sistemas y validación: decisiones que transforman el análisis en una solución construible." }
         ]
       },
       {
         "id": "administracion",
         "label": "Administración de S.I.",
+        "subjectDetail": {
+          "id": "ASI",
+          "nombre": "Administración de Sistemas de Información",
+          "anio": "4.º año",
+          "integradora": "Tercera integradora",
+          "subtitulo": "Gestionar tecnología dentro de una organización",
+          "descripcion": "La tercera integradora amplía la mirada hacia la gestión. Se trabajan proyectos de sistemas, planificación estratégica, presupuestos, administración de recursos y gobierno de tecnologías de la información.\n\nEl sistema deja de verse únicamente como un producto tecnológico y pasa a analizarse como parte de las decisiones estratégicas de una organización."
+        },
         "content": [
-          { "type": "text", "heading": "Administración de Sistemas de Información", "body": "Es la materia integradora del cuarto nivel. Aborda la planificación, dirección y gobierno de los sistemas de información, vinculando las decisiones tecnológicas con la estrategia, los recursos y los objetivos de una organización." },
-          { "type": "video-placeholder", "title": "Video de Administración de Sistemas de Información", "description": "Espacio reservado para incorporar el video de la materia." }
+          { "type": "text", "heading": "Administración de Sistemas de Información", "body": "Tercera integradora. Se enfoca en gestión de proyectos, planificación estratégica de sistemas, presupuesto y gobierno de TI, para vincular las decisiones tecnológicas con la estrategia de una organización." }
         ]
       },
       {
         "id": "proyecto-final",
         "label": "Proyecto Final",
+        "subjectDetail": {
+          "id": "PF",
+          "nombre": "Proyecto Final",
+          "anio": "5.º año",
+          "integradora": "Cuarta integradora",
+          "subtitulo": "Integrar todo lo aprendido",
+          "descripcion": "Proyecto Final representa el cierre del recorrido. Los estudiantes trabajan en equipo sobre un sistema completo, integrando análisis, diseño, desarrollo, gestión y conocimientos adquiridos durante toda la carrera.\n\nLa propuesta se desarrolla de punta a punta y busca acercar el trabajo académico a una experiencia profesional con una problemática y un cliente reales."
+        },
         "content": [
-          { "type": "text", "heading": "Proyecto Final", "body": "Es la instancia integradora del quinto nivel y el cierre del recorrido. Los equipos aplican conocimientos adquiridos durante toda la carrera para analizar, diseñar, desarrollar y gestionar una solución frente a una necesidad concreta." },
-          { "type": "video-placeholder", "title": "Video de Proyecto Final", "description": "Espacio reservado para incorporar el video de la materia." }
+          { "type": "text", "heading": "Proyecto Final", "body": "Cuarta integradora y cierre de la carrera. Los equipos desarrollan un sistema completo, de punta a punta, para una necesidad concreta y con un cliente real, aplicando los conocimientos del recorrido." }
         ]
       }
     ]
@@ -105,8 +155,7 @@
         "id": "escenarios",
         "label": "Oportunidades",
         "content": [
-          { "type": "text", "heading": "Experiencia y vinculación", "body": "Tecnología, industria, salud, finanzas, educación, gobierno y emprendimientos son algunos de los ámbitos posibles. Este espacio reunirá oportunidades, convenios institucionales y testimonios de estudiantes y graduados/as." },
-          { "type": "video-placeholder", "title": "Perfiles profesionales", "description": "Video general sobre la salida laboral de Ingeniería en Sistemas de Información." }
+          { "type": "text", "heading": "Experiencia y vinculación", "body": "Tecnología, industria, salud, finanzas, educación, gobierno y emprendimientos son algunos de los ámbitos posibles. La formación permite integrarse a equipos multidisciplinarios y transformar necesidades reales en soluciones." }
         ]
       }
     ]
@@ -150,47 +199,15 @@
         "id": "finales",
         "label": "Proyectos finales",
         "content": [
-          {
-            "type": "project-carousel",
-            "items": [
-              {
-                "title": "Sistema inteligente de movilidad urbana",
-                "description": "Una plataforma para analizar recorridos, anticipar la demanda y mejorar la experiencia de quienes utilizan el transporte público.",
-                "authors": ["Ana Pérez", "Tomás García", "Lucía Fernández"],
-                "media": { "type": "image", "src": "/media/projects-placeholder.svg", "alt": "Vista del sistema de movilidad urbana" },
-                "projectUrl": "#"
-              },
-              {
-                "title": "Aula accesible",
-                "description": "Herramientas colaborativas que adaptan contenidos académicos y facilitan el aprendizaje para estudiantes con distintas necesidades.",
-                "authors": ["Martín López", "Sofía Romero"],
-                "media": { "type": "video", "src": "https://www.youtube.com/embed/ysz5S6PUM-U", "alt": "Presentación de Aula accesible" },
-                "projectUrl": "#"
-              },
-              {
-                "title": "Monitoreo ambiental abierto",
-                "description": "Sensores y visualizaciones abiertas para conocer en tiempo real indicadores ambientales relevantes para la comunidad.",
-                "authors": ["Carla Díaz", "Julián Suárez", "Mateo Silva"],
-                "media": { "type": "image", "src": "/media/projects-placeholder.svg", "alt": "Panel de monitoreo ambiental" },
-                "projectUrl": "#"
-              }
-            ]
-          }
+          { "type": "text", "heading": "Aprender construyendo", "body": "Los proyectos integradores y el Proyecto Final reúnen las herramientas del recorrido para analizar necesidades, diseñar soluciones, desarrollarlas y validarlas con una mirada técnica y organizacional." },
+          { "type": "highlights", "items": ["Problemas reales", "Trabajo en equipo", "Diseño y desarrollo", "Presentación de resultados"] }
         ]
       },
       {
         "id": "muestras",
         "label": "Muestras",
         "content": [
-          { "type": "text", "heading": "Del prototipo al impacto", "body": "Espacio para destacar proyectos integradores, aplicaciones, investigaciones o soluciones construidas por estudiantes." },
-          { "type": "image", "src": "/media/projects-placeholder.svg", "alt": "Composición abstracta sobre proyectos tecnológicos", "caption": "Imagen de muestra editable." }
-        ]
-      },
-      {
-        "id": "video",
-        "label": "En acción",
-        "content": [
-          { "type": "video", "url": "https://www.youtube.com/embed/ysz5S6PUM-U", "title": "Video demostrativo — reemplazar por contenido institucional" }
+          { "type": "text", "heading": "Del prototipo al impacto", "body": "Las experiencias de cursada permiten transformar ideas en soluciones: aplicaciones, investigaciones, prototipos y sistemas construidos en equipo." }
         ]
       }
     ]
@@ -223,8 +240,7 @@
         "id": "historias",
         "label": "Testimonios",
         "content": [
-          { "type": "text", "heading": "Voces que hacen la carrera", "body": "Espacio para historias reales y autorizadas de estudiantes, docentes y graduados/as, con recorridos distintos y miradas concretas sobre la experiencia universitaria." },
-          { "type": "video-placeholder", "title": "Testimonios de la comunidad", "description": "Espacio reservado para entrevistas y experiencias breves." }
+          { "type": "text", "heading": "Voces que hacen la carrera", "body": "Estudiantes, docentes y graduados construyen recorridos distintos y aportan miradas concretas sobre la cursada, la participación y el desarrollo profesional." }
         ]
       }
     ]
@@ -233,25 +249,33 @@
     "id": "investigacion",
     "index": "07",
     "title": "Investigación y extensión",
-    "shortDescription": "Conocimiento que transforma",
-    "description": "Iniciativas que conectan la universidad con nuevos conocimientos y necesidades de la comunidad.",
+    "shortDescription": "La carrera también produce conocimiento",
+    "description": "Estudiantes y docentes participan en congresos, publicaciones académicas, extensión y cooperación internacional.",
     "position": { "x": 41, "y": 84 },
     "accent": "#d92531",
     "tabs": [
       {
         "id": "lineas",
-        "label": "Líneas",
+        "label": "Congresos",
         "content": [
-          { "type": "text", "heading": "Preguntar, experimentar, compartir", "body": "Grupos y laboratorios desarrollan líneas de investigación aplicada, mientras los proyectos de extensión conectan conocimientos de la universidad con necesidades de la comunidad." },
-          { "type": "highlights", "items": ["Investigación aplicada", "Vinculación tecnológica", "Extensión universitaria", "Becas y formación"] }
+          { "type": "text", "heading": "Dónde se presenta lo que hacemos", "body": "La comunidad de Sistemas participa en espacios con públicos distintos: el CICE, dedicado a innovación educativa en ingeniería; el CoNaIISI, referente científico de ingeniería informática y sistemas; y el CNEISI, un encuentro nacional creado por y para estudiantes." },
+          { "type": "highlights", "items": ["CICE · innovación y creatividad educativa", "CoNaIISI · ingeniería informática y sistemas", "CNEISI · encuentro nacional estudiantil", "Actas académicas con ISSN y DOI"] }
         ]
       },
       {
         "id": "sumarse",
-        "label": "Cómo sumarse",
+        "label": "Producción",
         "content": [
-          { "type": "text", "heading": "Participar durante la carrera", "body": "Becas para estudiantes, convocatorias, equipos de investigación y proyectos de extensión ofrecen distintas puertas de entrada para aprender haciendo y trabajar con docentes y pares." },
-          { "type": "links", "items": [{ "label": "Convocatorias y becas", "url": "#", "description": "Acceso a oportunidades vigentes y canales de participación." }] }
+          { "type": "text", "heading": "Del aula a una publicación", "body": "Las experiencias de cátedra pueden convertirse en ponencias y artículos. Entre los trabajos presentados se encuentran estudios sobre pobreza del tiempo en estudiantes de ingeniería y neurodiversidad y accesibilidad en educación híbrida. Las actas preservan esas producciones en el repositorio AJEA de UTN." },
+          { "type": "links", "items": [{ "label": "Actas académicas AJEA", "url": "https://rtyc.utn.edu.ar/index.php/ajea/issue/view/126", "description": "Repositorio de Actas de Jornadas y Eventos Académicos de la UTN." }] }
+        ]
+      },
+      {
+        "id": "comunidad",
+        "label": "Comunidad",
+        "content": [
+          { "type": "text", "heading": "Extensión y cooperación", "body": "La vinculación con graduados permite recuperar información sobre trayectorias y mejorar la carrera. La cooperación internacional se acerca mediante clases espejo, proyectos colaborativos en línea, idiomas, redes de innovación y competencias con equipos de otros países." },
+          { "type": "highlights", "items": ["Vinculación con graduados", "Internacionalización del currículum", "Clases espejo y proyectos COIL", "Rally Latinoamericano de Innovación"] }
         ]
       }
     ]
@@ -269,8 +293,7 @@
         "id": "como-funcionan",
         "label": "Cómo funcionan",
         "content": [
-          { "type": "text", "heading": "Elegir también forma parte de la carrera", "body": "Las materias electivas complementan la formación obligatoria. Se eligen dentro de la oferta disponible y permiten profundizar intereses, conocer tecnologías específicas y orientar gradualmente el perfil profesional." },
-          { "type": "video-placeholder", "title": "Cómo elegir electivas", "description": "Espacio para explicar requisitos, oferta y criterios de elección." }
+          { "type": "text", "heading": "Elegir también forma parte de la carrera", "body": "Las materias electivas complementan la formación obligatoria. Se eligen dentro de la oferta disponible y permiten profundizar intereses, conocer tecnologías específicas y orientar gradualmente el perfil profesional." }
         ]
       },
       {
@@ -285,7 +308,7 @@
         "id": "oferta",
         "label": "Oferta disponible",
         "content": [
-          { "type": "links", "items": [{ "label": "Consultar electivas", "url": "#", "description": "Espacio para publicar la oferta validada y vigente." }] }
+          { "type": "text", "heading": "Oferta de electivas", "body": "La oferta se organiza según la planificación académica de cada período y permite profundizar áreas de interés dentro del tramo final de la carrera." }
         ]
       }
     ]
@@ -304,12 +327,10 @@
         "label": "Accesos",
         "content": [
           { "type": "links", "items": [
-            { "label": "Sitio de la facultad", "url": "#", "description": "Reemplazar por la URL oficial." },
-            { "label": "Información de ingreso", "url": "#", "description": "Reemplazar por la URL oficial." },
-            { "label": "Calendario académico", "url": "#", "description": "Reemplazar por la URL oficial." },
-            { "label": "Departamento de Sistemas", "url": "#", "description": "Información y novedades del Departamento." },
-            { "label": "Becas e investigación", "url": "#", "description": "Oportunidades para estudiantes." },
-            { "label": "Plan K23", "url": "#", "description": "Plan vigente y material ampliatorio." }
+            { "label": "UTN Facultad Regional Buenos Aires", "url": "https://www.frba.utn.edu.ar/", "description": "Información institucional de la Facultad." },
+            { "label": "Tutorías", "url": "https://frba.utn.edu.ar/tag/tutorias/", "description": "Acompañamiento para trayectorias estudiantiles." },
+            { "label": "Desarrollo profesional", "url": "https://frba.utn.edu.ar/estudiantes/adp/", "description": "Vinculación laboral para estudiantes y graduados." },
+            { "label": "Actas académicas UTN", "url": "https://rtyc.utn.edu.ar/index.php/ajea/issue/view/126", "description": "Repositorio AJEA de publicaciones académicas." }
           ] }
         ]
       },
@@ -317,7 +338,7 @@
         "id": "contacto",
         "label": "Contacto",
         "content": [
-          { "type": "text", "heading": "¿Querés saber más?", "body": "Agregá aquí canales institucionales verificados, horarios y un código QR si la instalación lo requiere." }
+          { "type": "text", "heading": "Seguimos conectados", "body": "Encontrá información institucional, acompañamiento académico, oportunidades de desarrollo profesional y publicaciones de la comunidad UTN en los accesos de esta sección." }
         ]
       }
     ]

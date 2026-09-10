@@ -2,7 +2,6 @@ export type ContentBlock =
   | { type: 'text'; heading?: string; body: string }
   | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'video'; url: string; title: string }
-  | { type: 'video-placeholder'; title: string; description?: string }
   | { type: 'links'; items: Array<{ label: string; url: string; description?: string }> }
   | { type: 'highlights'; items: string[] }
   | {
@@ -21,6 +20,24 @@ export interface SectionTab {
   id: string
   label: string
   content: ContentBlock[]
+  subjectDetail?: SubjectDetail
+}
+
+export interface SubjectVideo {
+  src: string
+  poster?: string
+  titulo: string
+  pie?: string
+}
+
+export interface SubjectDetail {
+  id: string
+  nombre: string
+  anio: string
+  integradora?: string
+  subtitulo: string
+  descripcion: string
+  video?: SubjectVideo
 }
 
 export interface MapPosition {

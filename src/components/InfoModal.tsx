@@ -1,9 +1,11 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react'
 import type { ContentBlock, Section } from '../types'
 import { Tabs } from './Tabs'
 import { DwellButton } from './DwellButton'
 import { useDwell } from '../hooks/useDwell'
 import { ProjectCarousel } from './ProjectCarousel'
+import { PlanStudyMap } from './PlanStudyMap'
+import { SubjectDetail } from './SubjectDetail'
 
 type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
 
@@ -69,15 +71,6 @@ function Content({ block }: { block: ContentBlock }) {
       </div>
     )
   }
-  if (block.type === 'video-placeholder') {
-    return (
-      <div className="content-video-placeholder" role="img" aria-label={`Espacio reservado para: ${block.title}`}>
-        <span aria-hidden="true">▶</span>
-        <strong>{block.title}</strong>
-        {block.description && <small>{block.description}</small>}
-      </div>
-    )
-  }
   return (
     <div className="link-grid">
       {block.items.map((item) => (
@@ -89,19 +82,33 @@ function Content({ block }: { block: ContentBlock }) {
 
 export function InfoModal({ section, onClose }: { section: Section; onClose: () => void }) {
   const [activeTab, setActiveTab] = useState(section.tabs[0].id)
+  const [isClosing, setIsClosing] = useState(false)
+  const closeTimer = useRef<number | undefined>(undefined)
+  const closingRef = useRef(false)
   const tab = section.tabs.find((item) => item.id === activeTab) ?? section.tabs[0]
+  const isPlan = section.id === 'plan'
+
+  const requestClose = useCallback(() => {
+    if (closingRef.current) return
+    closingRef.current = true
+    setIsClosing(true)
+    closeTimer.current = window.setTimeout(onClose, 320)
+  }, [onClose])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose()
+      if (event.key === 'Escape') requestClose()
     }
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
-  }, [onClose])
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      window.clearTimeout(closeTimer.current)
+    }
+  }, [requestClose])
 
   return (
-    <div className="modal-backdrop" role="presentation">
-      <section className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div className={`modal-backdrop ${isClosing ? 'modal-backdrop--closing' : ''}`} role="presentation">
+      <section className={`modal ${isClosing ? 'modal--closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div className="modal__rail" style={{ '--accent': section.accent } as CSSProperties}>
           <span>{section.index}</span>
           <i />
@@ -114,22 +121,26 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
               <h2 id="modal-title">{section.title}</h2>
               <p>{section.description}</p>
             </div>
-            <DwellButton className="modal__close-icon" onActivate={onClose} ariaLabel="Cerrar">×</DwellButton>
+            <DwellButton className="modal__close-icon" onActivate={requestClose} ariaLabel="Cerrar">×</DwellButton>
           </header>
-          <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />
+          {!isPlan && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
-            className="modal__content"
-            id={`panel-${tab.id}`}
+            className={`modal__content ${isPlan ? 'modal__content--plan' : ''}`}
+            id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
             role="tabpanel"
-            aria-labelledby={`tab-${tab.id}`}
+            aria-labelledby={isPlan ? undefined : `tab-${tab.id}`}
           >
-            {tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
+            {isPlan
+              ? <PlanStudyMap />
+              : tab.subjectDetail
+                ? <SubjectDetail subject={tab.subjectDetail} />
+                : tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
           </div>
           <footer className="modal__footer">
-            <DwellButton className="back-button" onActivate={onClose}>
+            <DwellButton className="back-button" onActivate={requestClose}>
               <span aria-hidden="true">←</span> Volver al mapa
             </DwellButton>
-            <span>ExpoUTN · contenido demostrativo</span>
+            <span>ExpoUTN · Ingeniería en Sistemas de Información</span>
           </footer>
         </div>
       </section>

@@ -8,6 +8,11 @@ export function ProjectCarousel({ items }: { items: ProjectCarouselBlock['items'
   const [active, setActive] = useState(0)
   const project = items[active]
   const goTo = (index: number) => setActive((index + items.length) % items.length)
+  const openProject = () => {
+    if (project?.projectUrl && project.projectUrl !== '#') {
+      window.open(project.projectUrl, '_blank', 'noopener,noreferrer')
+    }
+  }
 
   if (!project) return null
 
@@ -37,10 +42,10 @@ export function ProjectCarousel({ items }: { items: ProjectCarouselBlock['items'
               <small>Autores</small>
               <strong>{project.authors.join(' · ')}</strong>
             </div>
-            <a href={project.projectUrl} target="_blank" rel="noreferrer" className="project-carousel__qr">
+            <DwellButton className="project-carousel__qr" onActivate={openProject} ariaLabel={`Ver ${project.title}`}>
               {project.qrSrc ? <img src={project.qrSrc} alt={`QR de ${project.title}`} /> : <span aria-hidden="true">QR</span>}
               <small>Ver proyecto ↗</small>
-            </a>
+            </DwellButton>
           </footer>
         </div>
       </div>
@@ -49,13 +54,15 @@ export function ProjectCarousel({ items }: { items: ProjectCarouselBlock['items'
         <DwellButton onActivate={() => goTo(active - 1)} ariaLabel="Proyecto anterior">←</DwellButton>
         <div className="project-carousel__dots">
           {items.map((item, index) => (
-            <button
+            <DwellButton
               key={item.title}
               className={index === active ? 'is-active' : ''}
-              onClick={() => goTo(index)}
+              onActivate={() => goTo(index)}
               aria-label={`Ver ${item.title}`}
-              aria-current={index === active ? 'true' : undefined}
-            />
+              disabled={index === active}
+            >
+              <span className="sr-only">{item.title}</span>
+            </DwellButton>
           ))}
         </div>
         <span>{active + 1} / {items.length}</span>
