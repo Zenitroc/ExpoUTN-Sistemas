@@ -9,6 +9,7 @@ import { SubjectDetail } from './SubjectDetail'
 import { ProjectGallery } from './ProjectGallery'
 import { ElectiveExplorer } from './ElectiveExplorer'
 import { ResearchExplorer } from './ResearchExplorer'
+import { IncumbencyMap } from './IncumbencyMap'
 
 type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
 
@@ -92,6 +93,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
   const isPlan = section.id === 'plan'
   const isElectives = section.id === 'electivas'
   const isResearch = section.id === 'investigacion'
+  const isIncumbencies = section.id === 'incumbencias'
 
   const requestClose = useCallback(() => {
     if (closingRef.current) return
@@ -129,7 +131,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
             </div>
             <DwellButton className="modal__close-icon dwell-control--ring" onActivate={requestClose} ariaLabel="Cerrar">×</DwellButton>
           </header>
-          {!isPlan && !isElectives && !isResearch && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
+          {!isPlan && !isElectives && !isResearch && !isIncumbencies && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
             className={`modal__content ${isPlan ? 'modal__content--plan' : ''}`}
             id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
@@ -146,7 +148,9 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
                     ? <ElectiveExplorer />
                     : tab.researchExplorer
                       ? <ResearchExplorer />
-                    : tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
+                      : tab.incumbencyMap
+                        ? <IncumbencyMap />
+                      : tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
           </div>
           <footer className="modal__footer">
             <DwellButton className="back-button" onActivate={requestClose}>

@@ -24,6 +24,7 @@ export interface SectionTab {
   projectGallery?: boolean
   electiveExplorer?: boolean
   researchExplorer?: boolean
+  incumbencyMap?: boolean
 }
 
 export interface SubjectVideo {

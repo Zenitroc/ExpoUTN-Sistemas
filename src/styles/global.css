@@ -1252,6 +1252,219 @@ button {
   }
 }
 
+/* Mapa de incumbencias y áreas */
+.incumbency-map {
+  grid-column: 1 / -1;
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(12px, 1.7vh, 20px);
+}
+
+.incumbency-map__intro { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.incumbency-map__intro h3 { margin: 5px 0 0; color: var(--ink); font-size: clamp(24px, 2.2vw, 37px); line-height: .98; letter-spacing: -.055em; }
+.incumbency-map__intro > span { color: var(--red); font: 800 10px/1 "IBM Plex Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
+
+.incumbency-map__layout { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(270px, .58fr); gap: clamp(18px, 2vw, 30px); }
+
+.incumbency-map__canvas {
+  position: relative;
+  min-height: 0;
+  padding: clamp(16px, 2vw, 28px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(10px, 1.4vh, 16px);
+  overflow: hidden;
+  border: 1px solid rgba(23, 23, 25, .15);
+  border-radius: 9px;
+  background: linear-gradient(145deg, #fbfbfa, #f1f1ef);
+}
+
+.incumbency-map__canvas::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 18%;
+  width: 76%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167, 25, 34, .4), transparent);
+  transform: translateX(-50%);
+}
+
+.incumbency-map__root {
+  z-index: 1;
+  width: max-content;
+  max-width: 80%;
+  justify-self: center;
+  padding: 10px 18px;
+  border: 2px solid var(--red);
+  border-radius: 99px;
+  background: #fff;
+  color: var(--ink);
+  text-align: center;
+  font-size: clamp(11px, .95vw, 15px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  box-shadow: 0 8px 20px rgba(167, 25, 34, .13);
+}
+
+.incumbency-map__areas { z-index: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 8px; }
+
+.incumbency-area {
+  min-width: 0;
+  padding: clamp(8px, 1vw, 14px);
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(23, 23, 25, .16);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .86);
+  color: #5e5e63;
+  text-align: left;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.incumbency-area span { color: var(--red); font: 800 8px/1 "IBM Plex Mono", monospace; }
+.incumbency-area strong { font-size: clamp(10px, .86vw, 14px); line-height: 1.05; letter-spacing: -.025em; }
+.incumbency-area:hover, .incumbency-area.dwell-control--active, .incumbency-area--selected { border-color: var(--red); background: #fff; color: var(--ink); transform: scale(1.025); box-shadow: 0 7px 16px rgba(167, 25, 34, .12); }
+
+.incumbency-map__jobs { z-index: 1; min-height: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; animation: incumbency-jobs-in 260ms ease both; }
+@keyframes incumbency-jobs-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.incumbency-job {
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid rgba(167, 25, 34, .25);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--ink);
+  font-size: clamp(9px, .72vw, 12px);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+.incumbency-job:hover, .incumbency-job.dwell-control--active, .incumbency-job--selected { background: var(--red); color: #fff; transform: translateY(-2px); box-shadow: 0 8px 18px rgba(167, 25, 34, .22); }
+
+.incumbency-detail {
+  min-height: 0;
+  padding: clamp(19px, 2.2vw, 32px);
+  display: grid;
+  align-content: center;
+  border-radius: 9px;
+  background: #171719;
+  color: #fff;
+  overflow: hidden;
+  animation: incumbency-detail-in 240ms ease both;
+}
+@keyframes incumbency-detail-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+.incumbency-detail h4 { margin: 10px 0 13px; font-size: clamp(22px, 1.9vw, 32px); line-height: 1.04; letter-spacing: -.05em; }
+.incumbency-detail p { margin: 0; color: #d0d0d3; font-size: clamp(12px, .92vw, 15px); line-height: 1.45; }
+.incumbency-detail small { margin-top: clamp(17px, 2.6vh, 30px); color: #ff9ca1; font: 800 9px/1 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.incumbency-detail blockquote { margin: 9px 0 0; padding-left: 12px; border-left: 2px solid #ff8087; color: #e4e4e5; font-size: clamp(12px, .9vw, 14px); line-height: 1.42; }
+.incumbency-detail > strong { margin-top: clamp(16px, 2.4vh, 28px); color: #fff; font-size: 15px; }
+.incumbency-detail em { margin-top: 6px; color: #a7a7ab; font-size: 11px; font-style: normal; }
+.incumbency-detail__chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.incumbency-detail__chips span { padding: 7px 8px; border: 1px solid rgba(255, 255, 255, .18); border-radius: 3px; color: #eeeef0; background: rgba(255, 255, 255, .07); font-size: 10px; line-height: 1.15; }
+.incumbency-map__note { margin: 0; color: #77777c; font-size: 10px; line-height: 1.25; }
+
+@media (max-width: 900px), (max-height: 760px) {
+  .incumbency-map__layout { grid-template-columns: minmax(0, 1.25fr) minmax(220px, .58fr); }
+  .incumbency-map__canvas { padding: 13px; }
+  .incumbency-area { padding: 7px; }
+  .incumbency-area strong { font-size: 10px; }
+  .incumbency-job { padding: 6px; font-size: 9px; }
+}
+
+@media (max-width: 700px) {
+  .incumbency-map__intro > span { display: none; }
+  .incumbency-map__layout { grid-template-columns: 1fr; }
+  .incumbency-map__canvas { min-height: 310px; }
+  .incumbency-map__areas { gap: 5px; }
+  .incumbency-area { grid-template-columns: 1fr; padding: 5px; text-align: center; }
+  .incumbency-area span { display: none; }
+  .incumbency-area strong { font-size: 9px; }
+  .incumbency-map__jobs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .incumbency-detail { min-height: 210px; }
+}
+
+/* Paleta de orientación: cada sección conserva el rojo institucional como base,
+   mientras las áreas internas usan acentos propios para leerse de un vistazo. */
+.elective-category { --category-accent: #d97838; }
+.elective-category:nth-child(2) { --category-accent: #477fc2; }
+.elective-category:nth-child(3) { --category-accent: #8b65bf; }
+.elective-category:nth-child(4) { --category-accent: #d45f8d; }
+.elective-category:nth-child(5) { --category-accent: #258d7b; }
+.elective-category:nth-child(6) { --category-accent: #5572b8; }
+.elective-category:nth-child(7) { --category-accent: #9c8a38; }
+.elective-category__index { color: var(--category-accent); }
+.elective-category:hover,
+.elective-category.dwell-control--active,
+.elective-category--selected {
+  border-color: var(--category-accent);
+  background: color-mix(in srgb, var(--category-accent) 9%, #fff);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--category-accent) 19%, transparent);
+}
+
+.research-category { --research-accent: #367fbd; }
+.research-category:nth-child(2) { --research-accent: #ca7440; }
+.research-category:nth-child(3) { --research-accent: #8c69c9; }
+.research-category:nth-child(4) { --research-accent: #279580; }
+.research-category:nth-child(5) { --research-accent: #d1608b; }
+.research-category span { color: var(--research-accent); }
+.research-category:hover,
+.research-category.dwell-control--active,
+.research-category--selected {
+  border-color: var(--research-accent);
+  background: color-mix(in srgb, var(--research-accent) 9%, #fff);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--research-accent) 18%, transparent);
+}
+.research-panel--investigacion { --panel-accent: #55a7e9; }
+.research-panel--congresos { --panel-accent: #f19a57; }
+.research-panel--publicaciones { --panel-accent: #b594e8; }
+.research-panel--extension { --panel-accent: #52bca9; }
+.research-panel--global { --panel-accent: #ef8fb4; }
+.research-panel h4 { color: var(--panel-accent, #fff); }
+.research-entry > span, .research-panel__path span + span::before { color: var(--panel-accent, #ff8087); }
+.research-panel__network b { border-color: var(--panel-accent, #ff8087); box-shadow: 0 0 0 7px color-mix(in srgb, var(--panel-accent, #ff8087) 8%, transparent); }
+.research-panel__network::before { background: linear-gradient(90deg, transparent, var(--panel-accent, #ff8087), transparent); }
+
+.incumbency-area { --area-accent: #457fc1; }
+.incumbency-area:nth-child(2) { --area-accent: #be8240; }
+.incumbency-area:nth-child(3) { --area-accent: #8a69c9; }
+.incumbency-area:nth-child(4) { --area-accent: #d15f8e; }
+.incumbency-area:nth-child(5) { --area-accent: #279783; }
+.incumbency-area:nth-child(6) { --area-accent: #5c76bb; }
+.incumbency-area:nth-child(7) { --area-accent: #c86643; }
+.incumbency-area:nth-child(8) { --area-accent: #a76fb9; }
+.incumbency-area:nth-child(9) { --area-accent: #479b78; }
+.incumbency-area span { color: var(--area-accent); }
+.incumbency-area:hover,
+.incumbency-area.dwell-control--active,
+.incumbency-area--selected {
+  border-color: var(--area-accent);
+  box-shadow: 0 7px 16px color-mix(in srgb, var(--area-accent) 20%, transparent);
+}
+.incumbency-map__canvas--desarrollo { --active-area: #457fc1; }
+.incumbency-map__canvas--datos { --active-area: #be8240; }
+.incumbency-map__canvas--ciberseguridad { --active-area: #8a69c9; }
+.incumbency-map__canvas--gestion { --active-area: #d15f8e; }
+.incumbency-map__canvas--analisis { --active-area: #279783; }
+.incumbency-map__canvas--calidad { --active-area: #5c76bb; }
+.incumbency-map__canvas--infraestructura { --active-area: #c86643; }
+.incumbency-map__canvas--diseno { --active-area: #a76fb9; }
+.incumbency-map__canvas--academia { --active-area: #479b78; }
+.incumbency-map__root { border-color: var(--active-area); box-shadow: 0 8px 20px color-mix(in srgb, var(--active-area) 20%, transparent); }
+.incumbency-map__canvas::before { background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--active-area) 55%, transparent), transparent); }
+.incumbency-job { border-color: color-mix(in srgb, var(--active-area) 35%, transparent); }
+.incumbency-job:hover,
+.incumbency-job.dwell-control--active,
+.incumbency-job--selected { background: var(--active-area); box-shadow: 0 8px 18px color-mix(in srgb, var(--active-area) 25%, transparent); }
+
 /* Explorador de investigación y extensión */
 .research-explorer {
   grid-column: 1 / -1;
@@ -3112,3 +3325,35 @@ button {
   .elective-explorer--selected .elective-explorer__categories { display: none; }
   .elective-explorer--selected .elective-explorer__detail { display: grid; }
 }
+
+/* Aplicación final de la paleta luego de las reglas de cada explorador. */
+.elective-category { --category-accent: #d97838; }
+.elective-category:nth-child(2) { --category-accent: #477fc2; }
+.elective-category:nth-child(3) { --category-accent: #8b65bf; }
+.elective-category:nth-child(4) { --category-accent: #d45f8d; }
+.elective-category:nth-child(5) { --category-accent: #258d7b; }
+.elective-category:nth-child(6) { --category-accent: #5572b8; }
+.elective-category:nth-child(7) { --category-accent: #9c8a38; }
+.elective-category__index { color: var(--category-accent); }
+.elective-category:hover,
+.elective-category.dwell-control--active,
+.elective-category--selected { border-color: var(--category-accent); background: color-mix(in srgb, var(--category-accent) 9%, #fff); box-shadow: 0 14px 28px color-mix(in srgb, var(--category-accent) 19%, transparent); }
+
+.research-category { --research-accent: #367fbd; }
+.research-category:nth-child(2) { --research-accent: #ca7440; }
+.research-category:nth-child(3) { --research-accent: #8c69c9; }
+.research-category:nth-child(4) { --research-accent: #279580; }
+.research-category:nth-child(5) { --research-accent: #d1608b; }
+.research-category span { color: var(--research-accent); }
+.research-category:hover,
+.research-category.dwell-control--active,
+.research-category--selected { border-color: var(--research-accent); background: color-mix(in srgb, var(--research-accent) 9%, #fff); box-shadow: 0 8px 18px color-mix(in srgb, var(--research-accent) 18%, transparent); }
+.research-panel--investigacion { --panel-accent: #55a7e9; }
+.research-panel--congresos { --panel-accent: #f19a57; }
+.research-panel--publicaciones { --panel-accent: #b594e8; }
+.research-panel--extension { --panel-accent: #52bca9; }
+.research-panel--global { --panel-accent: #ef8fb4; }
+.research-panel h4 { color: var(--panel-accent, #fff); }
+.research-entry > span, .research-panel__path span + span::before { color: var(--panel-accent, #ff8087); }
+.research-panel__network b { border-color: var(--panel-accent, #ff8087); box-shadow: 0 0 0 7px color-mix(in srgb, var(--panel-accent, #ff8087) 8%, transparent); }
+.research-panel__network::before { background: linear-gradient(90deg, transparent, var(--panel-accent, #ff8087), transparent); }

@@ -165,24 +165,17 @@
     "id": "incumbencias",
     "index": "04",
     "title": "Incumbencias y áreas",
-    "shortDescription": "Problemas y campos donde desarrollarte",
-    "description": "Una mirada accesible sobre los problemas que puede abordar un/a profesional y sus principales áreas de desarrollo.",
+    "shortDescription": "Un título, muchos caminos",
+    "description": "Explorá las áreas profesionales y puestos que podés recorrer con Ingeniería en Sistemas.",
     "position": { "x": 87, "y": 54 },
     "accent": "#d92531",
     "tabs": [
       {
-        "id": "alcance",
-        "label": "Alcance",
+        "id": "mapa",
+        "label": "Mapa profesional",
+        "incumbencyMap": true,
         "content": [
-          { "type": "text", "heading": "Diseñar, integrar y conducir", "body": "Analizar necesidades, diseñar sistemas, evaluar tecnologías y conducir proyectos interdisciplinarios." },
-          { "type": "highlights", "items": ["Ciberseguridad", "Desarrollo de software", "Inteligencia artificial", "Datos y analítica", "Blockchain", "Gestión y procesos", "Arquitectura", "Consultoría"] }
-        ]
-      },
-      {
-        "id": "campos",
-        "label": "Campos de acción",
-        "content": [
-          { "type": "text", "heading": "Tecnología con contexto", "body": "El campo profesional no se limita a programar: también incluye comprender organizaciones, diseñar estrategias, conducir equipos, evaluar riesgos y transformar procesos mediante sistemas de información." }
+          { "type": "text", "heading": "Ingeniería en Sistemas de Información", "body": "Un título, muchos caminos." }
         ]
       }
     ]
