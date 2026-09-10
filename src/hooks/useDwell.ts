@@ -11,6 +11,7 @@ interface DwellState<T extends HTMLElement> {
 export function useDwell<T extends HTMLElement>(
   onActivate: () => void,
   disabled = false,
+  allowDuringOverlay = false,
 ): DwellState<T> {
   const { cursor } = useInput()
   const ref = useRef<T>(null)
@@ -24,15 +25,21 @@ export function useDwell<T extends HTMLElement>(
   }, [onActivate])
 
   useEffect(() => {
-    const rect = ref.current?.getBoundingClientRect()
-    if (!rect || !cursor.active || disabled) {
-      setHovered(false)
-      return
+    const updateHovered = () => {
+      const overlayIsOpen = document.querySelector('[data-dwell-overlay="true"]') !== null
+      const rect = ref.current?.getBoundingClientRect()
+      if (!rect || !cursor.active || disabled || (overlayIsOpen && !allowDuringOverlay)) {
+        setHovered(false)
+        return
+      }
+      const x = cursor.x * window.innerWidth
+      const y = cursor.y * window.innerHeight
+      setHovered(x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom)
     }
-    const x = cursor.x * window.innerWidth
-    const y = cursor.y * window.innerHeight
-    setHovered(x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom)
-  }, [cursor, disabled])
+    updateHovered()
+    window.addEventListener('dwell-overlay-change', updateHovered)
+    return () => window.removeEventListener('dwell-overlay-change', updateHovered)
+  }, [allowDuringOverlay, cursor, disabled])
 
   useEffect(() => {
     if (!hovered) {

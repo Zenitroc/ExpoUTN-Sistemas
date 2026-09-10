@@ -1,0 +1,80 @@
+export interface FinalProject {
+  id: string
+  titulo: string
+  anio?: number
+  comision?: string
+  descripcion: string
+  poster: string
+}
+
+const postersPath = '/media/recursos/proyectos/Posters/'
+const descripcionBase = 'Proyecto Final de Ingeniería en Sistemas de Información presentado como una solución tecnológica para una problemática concreta.'
+
+export const finalProjects: FinalProject[] = [
+  ['carteleria-digital', 'Cartelería Digital', 2010, '', 'PF2010 - Vie - Poster- Carteleria Digital.jpg'],
+  ['tagzan', 'Tagzan', 2012, '', 'PF2012 - Vie - Poster - Tagzan.jpg'],
+  ['prodigy', 'Prodigy', 2015, '', 'PF2015 - Jue- Poster - Prodigy.png'],
+  ['boni-ta', 'Boni-TA', 2015, '', 'PF2015 -Jue - Poster - Boni-TA.jpg'],
+  ['domofi', 'Domofi', 2015, '', 'PF2015 -Jue- Poster - Domofi.jpg'],
+  ['geesi', 'GEESI', 2015, '', 'PF2015 -Juev- Poster - GEESI.jpg'],
+  ['halibot-univ', 'HaliBot Univ', 2016, '', 'PF2016 - Vie - Poster - Hali Bot Univ.jpg'],
+  ['proyectate', 'Proyectate', 2020, '', 'PF2020 - Jue5052 - Poster - Proyectate.jpg'],
+  ['quevino', 'QueVino', 2020, '', 'PF2020 - Jue5052 - Poster - QueVino.jpg'],
+  ['sekhmet', 'Sekhmet', 2020, '', 'PF2020 - Jue5052 - Poster- Sekhmet.jpg'],
+  ['simulador', 'Simulador', 2021, 'K5054', 'PF2021 - Jue5054 -  Poster - SImulador.png'],
+  ['reparture', 'Reparture', 2021, '', 'PF2021 - Jue5054 - Poster - Reparture.png'],
+  ['serum-analyzer', 'SérumAnalyzer', 2021, 'K5054', 'PF2021 - Jue5054 - Poster - SérmAnalyzer.png'],
+  ['steve', 'Steve', 2021, '', 'PF2021 - Jue5404 - Poster - Steve.jpg'],
+  ['bbot', 'BBOT', 2022, '', 'PF2022 - Jue5053 - Poster - BBOT.jpg'],
+  ['bondipago', 'BondiPago', 2022, '', 'PF2022 - Jue5053 - Poster - BondiPago.png'],
+  ['foreston', 'ForestOn', 2022, '', 'PF2022 - Jue5053 - Poster - ForestOn.png'],
+  ['luxury-nft', 'Luxury NFT', 2022, '', 'PF2022 - Jue5053 - Poster - Luxury NFT.png'],
+  ['tusinversiones', 'TusInversiones', 2022, '', 'PF2022 - Jue5053 - Poster - TusInversiones.jpg'],
+  ['smarted', 'SmartEd', 2023, '', 'PF2023 - Jue5053  - Poster - SmartEd.jpg'],
+  ['agroia-v2', 'AgroIA (v2)', 2023, 'K5053', 'PF2023 - Jue5053 - Poster - AgroIA Mod_1.jpg'],
+  ['agroia', 'AgroIA', 2023, '', 'PF2023 - Jue5053 - Poster - AgroIA.png'],
+  ['agroagil', 'AgroÁgil', 2023, '', 'PF2023 - Jue5053 - Poster - AgroÁgil.jpg'],
+  ['ainterview', 'AInterview', 2023, '', 'PF2023 - jue5053 - Poster - AInterview.jpg'],
+  ['autosavings', 'Autosavings', 2023, '', 'PF2023 - Jue5053 - Poster - Autosavings.jpg'],
+  ['labtrack', 'Labtrack', 2023, '', 'PF2023 - Jue5053 - Poster - Labtrack.jpg'],
+  ['beesafe', 'BeeSafe', 2023, 'K5303', 'PF2023 - Jue5303 - Poster - BeeSafepng.png'],
+  ['agrolink', 'AgroLink', undefined, '', 'Poster Comercial AgroLink - Integrantes.png'],
+  ['k5309', 'Proyecto de comisión K5309', undefined, 'K5309', 'Poster-5309-sin-profesores.png'],
+  ['room-connector', 'Room Connector', 2025, 'K5302', 'Proyecto Final 2025 - G5302 - Room Connector.png'],
+  ['astra', 'ASTRA', 2025, '', 'Proyecto Final 2025 ASTRA.jpg'],
+  ['cattle-tracker', 'Cattle Tracker', 2025, '', 'Proyecto Final 2025 Cattle Tracker.png'],
+  ['detecnoma', 'Detecnoma', 2025, '', 'Proyecto Final 2025 Detecnoma - Poster.png'],
+  ['hip-pal', 'Hip-Pal', 2025, '', 'Proyecto Final 2025 Poster - Hip-Pal.jpg'],
+  ['onboardme', 'OnboardMe', 2025, 'K5053', 'Proyecto Final 2025 Poster - OnbardMe - K5053.jpg'],
+  ['literacy-manual', 'Literacy Manual', 2025, '', 'Proyecto Final 2025 Poster A3 - Literacy Manual.jpg'],
+  ['no-te-duermas', 'No te duermas', 2025, '', 'Proyecto Final 2025 Poster No te duermas.PNG'],
+  ['realimentar', 'Realimentar', 2025, '', 'Proyecto Final 2025 Poster Realimentar.png'],
+  ['stratify', 'Stratify', 2025, '', 'Proyecto Final 2025 Poster Stratify - Sin profesores.jpg'],
+  ['we-move-fashion', 'We move fashion', 2025, '', 'Proyecto Final 2025 Poster We move fashion.jpg'],
+  ['zonar', 'Zonar', 2025, '', 'Proyecto Final 2025 Poster Zonar.png'],
+  ['stockifai', 'StockifAI', 2025, '', 'Proyecto Final 2025 Poster-StockifAI.png'],
+  ['dislu', 'Dislu', 2025, 'K5310', 'Proyecto Final 2025 Poster_Dislu_Miercoles_5310_27_08_2025.png'],
+  ['priceflow', 'PriceFlow', 2025, '', 'Proyecto Final 2025 PriceFlow_Poster.png'],
+  ['sirca', 'SIRCA', 2025, '', 'Proyecto Final 2025 SIRCA.png'],
+  ['grupo-456', 'Proyecto de grupo 456', 2026, 'K5153', 'Proyecto Final 2026 - Jueves K5153 - Grupo 456 - Póster con docentes.png'],
+  ['k5051', 'Proyecto de comisión K5051', 2026, 'K5051', 'Proyecto Final 2026 - Martes K5051 Poster 25-08-2026.png'],
+  ['ad-sight', 'Ad Sight', 2026, '', 'Proyecto Final 2026 Ad Sight.png'],
+  ['mace', 'MACE', 2026, '', 'Proyecto Final 2026 MACE - Poster.png'],
+  ['optimizador-rutas', 'Optimizador de Rutas de Trabajo', 2026, '', 'Proyecto Final 2026 Optimizador de Rutas de trabajo.png'],
+  ['enerscope', 'Enerscope', 2026, '', 'Proyecto Final 2026 Poster Enerscope.png'],
+  ['guiarte', 'Guiarte', 2026, '', 'Proyecto Final 2026 Poster Guiarte.png'],
+  ['infrabot', 'INFRABOT', 2026, '', 'Proyecto Final 2026 Poster INFRABOT.jpg'],
+  ['switch-forge', 'Switch Forge', 2026, '', 'Proyecto Final 2026 Poster Switch Forge.png'],
+  ['attentix', 'Attentix', 2026, '', 'Proyecto Final 2026 Poster_Attentix_Grupo_454_2026_version_B.png'],
+  ['prisma', 'PRISMA', 2026, '', 'Proyecto Final 2026 PRISMA POSTER V2.png'],
+  ['syntaxlearn', 'SyntaxLearn', 2026, '', 'Proyecto Final 2026 SyntaxLearn.png'],
+  ['victoriax', 'VictoriaX', 2026, '', 'Proyecto Final 2026 VictoriaX - Poster - v1.0.png'],
+  ['safeplace', 'SafePlace', undefined, 'K5311', 'Póster SafePlace - 5311 - Miércoles - Alumnos.png'],
+].map(([id, titulo, anio, comision, filename]) => ({
+  id: id as string,
+  titulo: titulo as string,
+  anio: anio as number | undefined,
+  comision: comision as string | undefined,
+  descripcion: descripcionBase,
+  poster: `${postersPath}${filename as string}`,
+}))

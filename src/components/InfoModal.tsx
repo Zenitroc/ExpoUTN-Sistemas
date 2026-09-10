@@ -6,6 +6,9 @@ import { useDwell } from '../hooks/useDwell'
 import { ProjectCarousel } from './ProjectCarousel'
 import { PlanStudyMap } from './PlanStudyMap'
 import { SubjectDetail } from './SubjectDetail'
+import { ProjectGallery } from './ProjectGallery'
+import { ElectiveExplorer } from './ElectiveExplorer'
+import { ResearchExplorer } from './ResearchExplorer'
 
 type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
 
@@ -87,6 +90,8 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
   const closingRef = useRef(false)
   const tab = section.tabs.find((item) => item.id === activeTab) ?? section.tabs[0]
   const isPlan = section.id === 'plan'
+  const isElectives = section.id === 'electivas'
+  const isResearch = section.id === 'investigacion'
 
   const requestClose = useCallback(() => {
     if (closingRef.current) return
@@ -97,6 +102,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
+      if (event.defaultPrevented) return
       if (event.key === 'Escape') requestClose()
     }
     window.addEventListener('keydown', onKeyDown)
@@ -121,9 +127,9 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
               <h2 id="modal-title">{section.title}</h2>
               <p>{section.description}</p>
             </div>
-            <DwellButton className="modal__close-icon" onActivate={requestClose} ariaLabel="Cerrar">×</DwellButton>
+            <DwellButton className="modal__close-icon dwell-control--ring" onActivate={requestClose} ariaLabel="Cerrar">×</DwellButton>
           </header>
-          {!isPlan && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
+          {!isPlan && !isElectives && !isResearch && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
             className={`modal__content ${isPlan ? 'modal__content--plan' : ''}`}
             id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
@@ -134,7 +140,13 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
               ? <PlanStudyMap />
               : tab.subjectDetail
                 ? <SubjectDetail subject={tab.subjectDetail} />
-                : tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
+                : tab.projectGallery
+                  ? <ProjectGallery />
+                  : tab.electiveExplorer
+                    ? <ElectiveExplorer />
+                    : tab.researchExplorer
+                      ? <ResearchExplorer />
+                    : tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
           </div>
           <footer className="modal__footer">
             <DwellButton className="back-button" onActivate={requestClose}>

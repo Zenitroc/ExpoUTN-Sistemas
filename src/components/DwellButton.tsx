@@ -11,6 +11,7 @@ interface DwellButtonProps {
   ariaSelected?: boolean
   ariaControls?: string
   id?: string
+  allowDuringOverlay?: boolean
 }
 
 export function DwellButton({
@@ -23,8 +24,9 @@ export function DwellButton({
   ariaSelected,
   ariaControls,
   id,
+  allowDuringOverlay,
 }: DwellButtonProps) {
-  const { ref, hovered, progress } = useDwell<HTMLButtonElement>(onActivate, disabled)
+  const { ref, hovered, progress } = useDwell<HTMLButtonElement>(onActivate, disabled, allowDuringOverlay)
   const style = { '--control-dwell': progress } as CSSProperties
 
   return (

@@ -30,8 +30,8 @@
     "id": "materias",
     "index": "02",
     "title": "Materias",
-    "shortDescription": "Las 36 materias, una por una",
-    "description": "Qué se trabaja en cada materia y cómo se conectan a lo largo de los cinco años del plan K23.",
+    "shortDescription": "Materias troncales e integradoras",
+    "description": "Las materias que articulan el recorrido de Ingeniería en Sistemas a lo largo del plan K23.",
     "position": { "x": 49, "y": 18 },
     "accent": "#ff5a64",
     "tabs": [
@@ -39,8 +39,9 @@
         "id": "areas",
         "label": "Áreas",
         "content": [
-          { "type": "text", "heading": "Cuatro integradoras, desde segundo", "body": "Las materias integradoras son la columna vertebral del recorrido. Reúnen los saberes de otras asignaturas para abordar sistemas completos: Análisis de Sistemas de Información, Diseño de Sistemas de Información, Administración de Sistemas de Información y Proyecto Final." },
-          { "type": "highlights", "items": ["Análisis de S.I. · 2.º año", "Diseño de S.I. · 3.º año", "Administración de S.I. · 4.º año", "Proyecto Final · 5.º año"] }
+          { "type": "text", "heading": "Una carrera para entender y transformar", "body": "Ingeniería en Sistemas combina la mirada tecnológica con la comprensión de las organizaciones. El recorrido no se limita a programar: parte de analizar personas, procesos y necesidades, y avanza hacia el diseño, la construcción, la gestión y la evolución de sistemas de información." },
+          { "type": "text", "heading": "Cuatro integradoras, un mismo recorrido", "body": "Desde segundo año, las materias integradoras conectan los conocimientos que se trabajan en paralelo. Cada una propone una mirada más amplia: primero entender el problema, después diseñar la solución, gestionarla dentro de una organización y finalmente integrarlo todo en un proyecto real." },
+          { "type": "highlights", "items": ["Análisis de S.I. · de una necesidad a requisitos", "Diseño de S.I. · de requisitos a arquitectura", "Administración de S.I. · tecnología y estrategia", "Proyecto Final · una solución completa en equipo"] }
         ]
       },
       {
@@ -198,6 +199,7 @@
       {
         "id": "finales",
         "label": "Proyectos finales",
+        "projectGallery": true,
         "content": [
           { "type": "text", "heading": "Aprender construyendo", "body": "Los proyectos integradores y el Proyecto Final reúnen las herramientas del recorrido para analizar necesidades, diseñar soluciones, desarrollarlas y validarlas con una mirada técnica y organizacional." },
           { "type": "highlights", "items": ["Problemas reales", "Trabajo en equipo", "Diseño y desarrollo", "Presentación de resultados"] }
@@ -250,32 +252,16 @@
     "index": "07",
     "title": "Investigación y extensión",
     "shortDescription": "La carrera también produce conocimiento",
-    "description": "Estudiantes y docentes participan en congresos, publicaciones académicas, extensión y cooperación internacional.",
+    "description": "Investigación, congresos, publicaciones y experiencias que llevan Sistemas más allá del aula.",
     "position": { "x": 41, "y": 84 },
     "accent": "#d92531",
     "tabs": [
       {
-        "id": "lineas",
-        "label": "Congresos",
+        "id": "explorar",
+        "label": "Explorar",
+        "researchExplorer": true,
         "content": [
-          { "type": "text", "heading": "Dónde se presenta lo que hacemos", "body": "La comunidad de Sistemas participa en espacios con públicos distintos: el CICE, dedicado a innovación educativa en ingeniería; el CoNaIISI, referente científico de ingeniería informática y sistemas; y el CNEISI, un encuentro nacional creado por y para estudiantes." },
-          { "type": "highlights", "items": ["CICE · innovación y creatividad educativa", "CoNaIISI · ingeniería informática y sistemas", "CNEISI · encuentro nacional estudiantil", "Actas académicas con ISSN y DOI"] }
-        ]
-      },
-      {
-        "id": "sumarse",
-        "label": "Producción",
-        "content": [
-          { "type": "text", "heading": "Del aula a una publicación", "body": "Las experiencias de cátedra pueden convertirse en ponencias y artículos. Entre los trabajos presentados se encuentran estudios sobre pobreza del tiempo en estudiantes de ingeniería y neurodiversidad y accesibilidad en educación híbrida. Las actas preservan esas producciones en el repositorio AJEA de UTN." },
-          { "type": "links", "items": [{ "label": "Actas académicas AJEA", "url": "https://rtyc.utn.edu.ar/index.php/ajea/issue/view/126", "description": "Repositorio de Actas de Jornadas y Eventos Académicos de la UTN." }] }
-        ]
-      },
-      {
-        "id": "comunidad",
-        "label": "Comunidad",
-        "content": [
-          { "type": "text", "heading": "Extensión y cooperación", "body": "La vinculación con graduados permite recuperar información sobre trayectorias y mejorar la carrera. La cooperación internacional se acerca mediante clases espejo, proyectos colaborativos en línea, idiomas, redes de innovación y competencias con equipos de otros países." },
-          { "type": "highlights", "items": ["Vinculación con graduados", "Internacionalización del currículum", "Clases espejo y proyectos COIL", "Rally Latinoamericano de Innovación"] }
+          { "type": "text", "heading": "La carrera también produce conocimiento", "body": "Investigación, congresos, publicaciones y experiencias más allá del aula." }
         ]
       }
     ]
@@ -284,31 +270,17 @@
     "id": "electivas",
     "index": "08",
     "title": "Electivas",
-    "shortDescription": "Construí un recorrido propio",
-    "description": "Qué son, cómo se eligen y qué áreas de especialización permiten explorar dentro de la carrera.",
+    "shortDescription": "Un mismo título, distintos perfiles",
+    "description": "Las electivas te permiten profundizar las áreas de Sistemas que más te interesan.",
     "position": { "x": 15, "y": 75 },
     "accent": "#ef3340",
     "tabs": [
       {
-        "id": "como-funcionan",
-        "label": "Cómo funcionan",
+        "id": "recorrido",
+        "label": "Tu recorrido",
+        "electiveExplorer": true,
         "content": [
-          { "type": "text", "heading": "Elegir también forma parte de la carrera", "body": "Las materias electivas complementan la formación obligatoria. Se eligen dentro de la oferta disponible y permiten profundizar intereses, conocer tecnologías específicas y orientar gradualmente el perfil profesional." }
-        ]
-      },
-      {
-        "id": "recorridos",
-        "label": "Áreas y recorridos",
-        "content": [
-          { "type": "text", "heading": "Ejemplos de especialización", "body": "La oferta puede permitir construir recorridos vinculados con inteligencia artificial, ciencia de datos, ciberseguridad, desarrollo, infraestructura, gestión, innovación y otras áreas que evolucionan con la disciplina." },
-          { "type": "highlights", "items": ["Inteligencia artificial y datos", "Ciberseguridad", "Desarrollo y arquitectura", "Gestión e innovación"] }
-        ]
-      },
-      {
-        "id": "oferta",
-        "label": "Oferta disponible",
-        "content": [
-          { "type": "text", "heading": "Oferta de electivas", "body": "La oferta se organiza según la planificación académica de cada período y permite profundizar áreas de interés dentro del tramo final de la carrera." }
+          { "type": "text", "heading": "Armá tu propio recorrido", "body": "Elegí qué áreas de Sistemas querés profundizar." }
         ]
       }
     ]

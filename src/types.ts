@@ -21,6 +21,9 @@ export interface SectionTab {
   label: string
   content: ContentBlock[]
   subjectDetail?: SubjectDetail
+  projectGallery?: boolean
+  electiveExplorer?: boolean
+  researchExplorer?: boolean
 }
 
 export interface SubjectVideo {
