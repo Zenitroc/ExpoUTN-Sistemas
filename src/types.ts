@@ -32,6 +32,11 @@ export interface SubjectVideo {
   poster?: string
   titulo: string
   pie?: string
+  subtitulos?: {
+    src: string
+    idioma: string
+    etiqueta: string
+  }
 }
 
 export interface SubjectDetail {
