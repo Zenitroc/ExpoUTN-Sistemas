@@ -25,6 +25,8 @@ export interface SectionTab {
   electiveExplorer?: boolean
   researchExplorer?: boolean
   incumbencyMap?: boolean
+  careerExplorer?: boolean
+  usefulLinks?: boolean
 }
 
 export interface SubjectVideo {

@@ -149,23 +149,16 @@
     "index": "03",
     "title": "Salida laboral",
     "shortDescription": "Mucho más que programar",
-    "description": "Perfiles profesionales, oportunidades, convenios y experiencias que responden qué se puede hacer al graduarse.",
+    "description": "Diez perfiles profesionales para descubrir cómo se puede trabajar con Sistemas.",
     "position": { "x": 79, "y": 24 },
     "accent": "#ef3340",
     "tabs": [
       {
-        "id": "roles",
-        "label": "Roles",
+        "id": "perfiles",
+        "label": "Perfiles",
+        "careerExplorer": true,
         "content": [
-          { "type": "text", "heading": "Un campo profesional amplio", "body": "La formación permite participar en todo el ciclo de vida de los sistemas y asumir responsabilidades técnicas o de gestión." },
-          { "type": "highlights", "items": ["Desarrollo de software", "Análisis funcional", "Datos e IA", "Ciberseguridad", "Consultoría", "Liderazgo de productos"] }
-        ]
-      },
-      {
-        "id": "escenarios",
-        "label": "Oportunidades",
-        "content": [
-          { "type": "text", "heading": "Experiencia y vinculación", "body": "Tecnología, industria, salud, finanzas, educación, gobierno y emprendimientos son algunos de los ámbitos posibles. La formación permite integrarse a equipos multidisciplinarios y transformar necesidades reales en soluciones." }
+          { "type": "text", "heading": "Perfiles profesionales", "body": "Explorá los caminos que abre la carrera." }
         ]
       }
     ]
@@ -291,28 +284,17 @@
     "id": "links",
     "index": "09",
     "title": "Links útiles",
-    "shortDescription": "Seguí explorando",
-    "description": "Accesos oficiales o validados para continuar el recorrido y ampliar la información.",
+    "shortDescription": "Todo lo importante, a un escaneo",
+    "description": "Accesos oficiales para llevarte la Expo, conocer el ingreso y seguir cursando.",
     "position": { "x": 10, "y": 49 },
     "accent": "#ff5a64",
     "tabs": [
       {
-        "id": "accesos",
-        "label": "Accesos",
+        "id": "explorar",
+        "label": "Escaneá",
+        "usefulLinks": true,
         "content": [
-          { "type": "links", "items": [
-            { "label": "UTN Facultad Regional Buenos Aires", "url": "https://www.frba.utn.edu.ar/", "description": "Información institucional de la Facultad." },
-            { "label": "Tutorías", "url": "https://frba.utn.edu.ar/tag/tutorias/", "description": "Acompañamiento para trayectorias estudiantiles." },
-            { "label": "Desarrollo profesional", "url": "https://frba.utn.edu.ar/estudiantes/adp/", "description": "Vinculación laboral para estudiantes y graduados." },
-            { "label": "Actas académicas UTN", "url": "https://rtyc.utn.edu.ar/index.php/ajea/issue/view/126", "description": "Repositorio AJEA de publicaciones académicas." }
-          ] }
-        ]
-      },
-      {
-        "id": "contacto",
-        "label": "Contacto",
-        "content": [
-          { "type": "text", "heading": "Seguimos conectados", "body": "Encontrá información institucional, acompañamiento académico, oportunidades de desarrollo profesional y publicaciones de la comunidad UTN en los accesos de esta sección." }
+          { "type": "text", "heading": "Links útiles", "body": "Accesos rápidos con QR." }
         ]
       }
     ]

@@ -1433,6 +1433,91 @@ button {
 .research-panel__network b { border-color: var(--panel-accent, #ff8087); box-shadow: 0 0 0 7px color-mix(in srgb, var(--panel-accent, #ff8087) 8%, transparent); }
 .research-panel__network::before { background: linear-gradient(90deg, transparent, var(--panel-accent, #ff8087), transparent); }
 
+/* Salida laboral */
+.modal__content--career { padding-top: clamp(16px, 2vh, 24px); padding-bottom: clamp(16px, 2vh, 24px); overflow-y: auto; }
+
+.career-explorer { grid-column: 1 / -1; min-height: 0; display: grid; gap: clamp(14px, 1.9vh, 23px); }
+.career-explorer__intro h3 { margin: 5px 0 0; color: var(--ink); font-size: clamp(24px, 2.25vw, 37px); line-height: .98; letter-spacing: -.05em; }
+
+.career-explorer__profiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.career-profile-button { width: 100%; min-height: 60px; padding: 9px 10px; display: grid; grid-template-columns: 4px 1fr; align-items: center; gap: 8px; border: 1px solid rgba(23, 23, 25, .15); border-radius: 5px; background: #fff; color: var(--ink); text-align: left; transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; cursor: default; }
+.career-profile-button i { width: 4px; height: 32px; border-radius: 5px; }
+.career-profile-button span { font-size: 11px; font-weight: 750; line-height: 1.08; letter-spacing: -.02em; }
+.career-profile-button:hover, .career-profile-button.dwell-control--active, .career-profile-button--selected { border-color: var(--career-color); background: color-mix(in srgb, var(--career-color) 8%, #fff); box-shadow: 0 8px 18px color-mix(in srgb, var(--career-color) 20%, transparent); transform: translateY(-2px); }
+
+.career-profile { min-height: 0; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); overflow: hidden; border: 1px solid color-mix(in srgb, var(--career-color) 42%, #242428); border-radius: 9px; background: #1b1b1f; color: #f5f5f6; box-shadow: 0 14px 28px rgba(23, 23, 25, .12); animation: career-profile-in 280ms ease both; }
+@keyframes career-profile-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.career-profile__heading { padding: clamp(20px, 2.5vw, 34px); border-left: 6px solid var(--career-color); }
+.career-profile .eyebrow { color: var(--career-color); }
+.career-profile h4 { max-width: 18ch; margin: 7px 0 10px; font-size: clamp(23px, 2vw, 34px); line-height: .98; letter-spacing: -.05em; }
+.career-profile__heading strong { display: block; max-width: 54ch; color: #fff; font-size: clamp(13px, 1vw, 16px); line-height: 1.3; }
+.career-profile__heading p { max-width: 66ch; margin: 15px 0 0; color: #d0d0d5; font-size: clamp(12px, .9vw, 14px); line-height: 1.48; }
+.career-profile__guide { margin-top: clamp(17px, 2vh, 25px); padding-top: 13px; border-top: 1px solid rgba(255, 255, 255, .18); display: grid; gap: 5px; }
+.career-profile__guide span { color: var(--career-color); font: 800 9px/1 "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+.career-profile__guide b { max-width: 48ch; color: #ededf0; font-size: 11px; line-height: 1.35; }
+.career-profile__facts { padding: clamp(20px, 2.5vw, 34px); display: grid; align-content: center; gap: 17px; background: linear-gradient(145deg, color-mix(in srgb, var(--career-color) 17%, #25252a), #161619 70%); }
+.career-profile__facts small { display: block; margin-bottom: 8px; color: #c9c9cf; font: 800 9px/1 "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+.career-profile__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.career-profile__chips span { padding: 6px 8px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 3px; background: rgba(255, 255, 255, .07); color: #f5f5f6; font-size: 10px; line-height: 1.15; }
+.career-profile__chips--workplaces span { border-color: color-mix(in srgb, var(--career-color) 62%, #fff); background: color-mix(in srgb, var(--career-color) 18%, transparent); }
+.career-profile__facts em { color: #b9b9c0; font-size: 10px; font-style: normal; line-height: 1.35; }
+
+
+
+@media (max-width: 780px) {
+  .career-explorer__intro > span { display: none; }
+  .career-explorer__profiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .career-profile { grid-template-columns: 1fr; }
+  .career-profile__facts { border-top: 1px solid rgba(255, 255, 255, .12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-profile { animation: none; }
+  .career-profile-button { transition: none; }
+}
+
+/* Links útiles */
+.modal__content--useful-links { padding-top: clamp(18px, 2.5vh, 30px); padding-bottom: clamp(18px, 2.5vh, 30px); }
+.useful-links { grid-column: 1 / -1; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: clamp(16px, 2vh, 26px); }
+.useful-links__intro { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.useful-links__intro h3 { margin: 5px 0 0; color: var(--ink); font-size: clamp(25px, 2.4vw, 40px); line-height: .98; letter-spacing: -.05em; }
+.useful-links__intro p { max-width: 38ch; margin: 0; color: #606067; font-size: clamp(12px, .9vw, 15px); line-height: 1.4; }
+.useful-links__grid { min-height: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); }
+.useful-link { min-width: 0; padding: clamp(15px, 1.6vw, 23px); display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; gap: 12px; border: 1px solid rgba(23, 23, 25, .15); border-radius: 8px; background: #fff; box-shadow: 0 8px 20px rgba(23, 23, 25, .05); transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.useful-link:nth-child(1) { --link-color: #d46541; }
+.useful-link:nth-child(2) { --link-color: #4b7fb8; }
+.useful-link:nth-child(3) { --link-color: #278d83; }
+.useful-link:nth-child(4) { --link-color: #9b6bb7; }
+.useful-link:hover { border-color: var(--link-color); box-shadow: 0 14px 28px color-mix(in srgb, var(--link-color) 17%, transparent); transform: translateY(-3px); }
+.useful-link h4 { margin: 0; color: var(--ink); font-size: clamp(16px, 1.25vw, 21px); line-height: 1.02; letter-spacing: -.04em; }
+.useful-link header p { margin: 7px 0 0; color: #616168; font-size: 11px; line-height: 1.32; }
+.useful-link figure { min-height: 0; margin: 0; display: grid; place-items: center; align-content: center; gap: 9px; }
+.useful-link figure img { width: min(100%, 160px); aspect-ratio: 1; padding: 10px; display: block; border: 1px solid rgba(23, 23, 25, .11); background: #fff; object-fit: contain; }
+.useful-link figcaption { color: var(--link-color); font: 800 9px/1 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.useful-link__tags { min-height: 22px; display: flex; flex-wrap: wrap; align-content: start; gap: 5px; }
+.useful-link__tags span { padding: 4px 6px; border-radius: 3px; background: color-mix(in srgb, var(--link-color) 10%, #fff); color: #515158; font-size: 9px; line-height: 1; }
+.useful-link footer { display: grid; gap: 9px; }
+.useful-link footer small { color: #717177; font-size: 9px; line-height: 1.25; }
+.useful-link footer a { justify-self: start; padding: 7px 9px; border: 1px solid color-mix(in srgb, var(--link-color) 55%, #fff); border-radius: 3px; color: var(--link-color); font: 800 9px/1 "IBM Plex Mono", monospace; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; transition: background 160ms ease, color 160ms ease; }
+.useful-link footer a:hover { background: var(--link-color); color: #fff; }
+
+@media (max-width: 920px), (max-height: 760px) {
+  .useful-links__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .useful-link { min-height: 330px; }
+  .useful-link figure img { width: min(100%, 130px); }
+}
+
+@media (max-width: 560px) {
+  .useful-links__intro { align-items: start; }
+  .useful-links__intro p { display: none; }
+  .useful-links__grid { grid-template-columns: 1fr; }
+  .useful-link { min-height: 0; grid-template-columns: 1fr minmax(120px, .65fr); grid-template-rows: auto auto; }
+  .useful-link header { grid-column: 1; }
+  .useful-link figure { grid-column: 2; grid-row: 1 / span 2; }
+  .useful-link figure img { width: min(100%, 110px); }
+  .useful-link__tags, .useful-link footer { grid-column: 1; }
+}
+
 .incumbency-area { --area-accent: #457fc1; }
 .incumbency-area:nth-child(2) { --area-accent: #be8240; }
 .incumbency-area:nth-child(3) { --area-accent: #8a69c9; }

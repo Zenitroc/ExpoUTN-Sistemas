@@ -10,6 +10,8 @@ import { ProjectGallery } from './ProjectGallery'
 import { ElectiveExplorer } from './ElectiveExplorer'
 import { ResearchExplorer } from './ResearchExplorer'
 import { IncumbencyMap } from './IncumbencyMap'
+import { CareerExplorer } from './CareerExplorer'
+import { UsefulLinks } from './UsefulLinks'
 
 type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
 
@@ -94,6 +96,8 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
   const isElectives = section.id === 'electivas'
   const isResearch = section.id === 'investigacion'
   const isIncumbencies = section.id === 'incumbencias'
+  const isCareer = section.id === 'salida'
+  const isUsefulLinks = section.id === 'links'
 
   const requestClose = useCallback(() => {
     if (closingRef.current) return
@@ -131,9 +135,9 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
             </div>
             <DwellButton className="modal__close-icon dwell-control--ring" onActivate={requestClose} ariaLabel="Cerrar">×</DwellButton>
           </header>
-          {!isPlan && !isElectives && !isResearch && !isIncumbencies && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
+          {!isPlan && !isElectives && !isResearch && !isIncumbencies && !isCareer && !isUsefulLinks && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
-            className={`modal__content ${isPlan ? 'modal__content--plan' : ''}`}
+            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''}`}
             id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
             role="tabpanel"
             aria-labelledby={isPlan ? undefined : `tab-${tab.id}`}
@@ -150,6 +154,10 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
                       ? <ResearchExplorer />
                       : tab.incumbencyMap
                         ? <IncumbencyMap />
+                        : tab.careerExplorer
+                          ? <CareerExplorer />
+                          : tab.usefulLinks
+                            ? <UsefulLinks />
                       : tab.content.map((block, index) => <Content block={block} key={`${block.type}-${index}`} />)}
           </div>
           <footer className="modal__footer">
