@@ -2517,7 +2517,12 @@ button {
   height: clamp(40px, 3.2vw, 54px);
   display: grid;
   place-items: center;
+  padding: clamp(8px, .7vw, 11px);
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, currentColor 5%, transparent);
   color: var(--ink);
+  transition: color 220ms ease, background 220ms ease, border-color 220ms ease, transform 220ms ease;
 }
 
 .map-node__icon svg {
@@ -2528,6 +2533,14 @@ button {
 
 .map-node--core .map-node__icon {
   color: var(--red);
+}
+
+.map-node:hover .map-node__icon,
+.map-node:focus-visible .map-node__icon {
+  border-color: var(--red);
+  background: rgba(239, 51, 64, .1);
+  color: var(--red);
+  transform: rotate(-4deg) scale(1.08);
 }
 
 .map-node__copy strong {

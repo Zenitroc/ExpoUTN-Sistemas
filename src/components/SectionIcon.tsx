@@ -1,22 +1,17 @@
 import type { ReactNode } from 'react'
 
-export function SectionIcon({ id }: { id: string }) {
-  const paths: Record<string, ReactNode> = {
-    plan: <><path d="M4 5.5c3.2-.9 5.8-.3 8 1.4v13c-2.2-1.7-4.8-2.3-8-1.4z" /><path d="M20 5.5c-3.2-.9-5.8-.3-8 1.4v13c2.2-1.7 4.8-2.3 8-1.4z" /></>,
-    materias: <><rect x="3" y="4" width="18" height="13" rx="1.5" /><path d="M8 21h8M10 17l-1 4M14 17l1 4M9.5 8l-2 2 2 2M14.5 8l2 2-2 2" /></>,
-    salida: <><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12h18M12 10v4" /></>,
-    incumbencias: <><circle cx="12" cy="9" r="5" /><path d="m9 13-2 8 5-3 5 3-2-8M12 6.5l.8 1.6 1.7.3-1.2 1.3.3 1.8-1.6-.8-1.6.8.3-1.8-1.2-1.3 1.7-.3z" /></>,
-    proyectos: <><path d="M8.2 14.7A6.5 6.5 0 1 1 15.8 14.7C14.7 15.5 14 16.3 14 18h-4c0-1.7-.7-2.5-1.8-3.3Z" /><path d="M10 21h4M9 3 7.5 1M15 3l1.5-2M5.5 6 3 5M18.5 6 21 5M12 7v3M10.5 11.5h3" /></>,
-    vida: <><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3 20v-2a6 6 0 0 1 12 0v2M15 14.5a5 5 0 0 1 6 4.9V20" /></>,
-    investigacion: <><path d="m10 3 4 1-1 4-4-1zM10 7l-2 8M6 15h7M5 21h12M8 18h7" /><path d="M14 10a5 5 0 0 1 3 8M13 13a2 2 0 0 1 1 4" /></>,
-    electivas: <><path d="M12 3v18M5 7h14M7 7v4M17 7v4M4 14h6v5H4zM14 14h6v5h-6z" /></>,
-    testimonios: <><path d="M4 5h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-5l-3 3-3-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /><path d="M8 9.5H6.5v3H9v-2M15 9.5h-1.5v3H16v-2" /></>,
-    links: <><path d="m10 14 4-4M7.5 16.5l-1 1a3.5 3.5 0 0 1-5-5l4-4a3.5 3.5 0 0 1 5 0M16.5 7.5l1-1a3.5 3.5 0 0 1 5 5l-4 4a3.5 3.5 0 0 1-5 0" /></>,
-  }
+const icons: Record<string, ReactNode> = {
+  plan: <><path d="M4 6.5 9 4l6 2.5L20 4v13.5L15 20l-6-2.5-5 2.5Z" /><path d="M9 4v13.5M15 6.5V20" /><circle cx="12" cy="11.5" r="1.7" fill="currentColor" stroke="none" /></>,
+  materias: <><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M8 9h8M8 13h5M8 17h7" /><path d="m16.5 13 1.1 1.1 2.1-2.3" /></>,
+  salida: <><path d="M4 19V5M4 19h16" /><path d="m7 15 4-4 3 2 5-6" /><path d="M15.5 7H19v3.5" /><circle cx="7" cy="15" r="1" fill="currentColor" stroke="none" /><circle cx="11" cy="11" r="1" fill="currentColor" stroke="none" /></>,
+  incumbencias: <><circle cx="12" cy="5.5" r="2.2" /><circle cx="5.5" cy="17.5" r="2.2" /><circle cx="18.5" cy="17.5" r="2.2" /><path d="M10.8 7.3 6.7 15.6M13.2 7.3l4.1 8.3M7.8 17.5h7.4" /></>,
+  proyectos: <><path d="m12 3 7 4v10l-7 4-7-4V7Z" /><path d="m5 7 7 4 7-4M12 11v10" /><path d="m9.5 14 1.5 1.5 3.5-3.5" /></>,
+  vida: <><path d="M12 20.5s-7-3.8-7-10.1A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.4c0 6.3-7 10.1-7 10.1Z" /><path d="M8 4.5v3M6.5 6h3M17.5 5.5v2M16.5 6.5h2" /></>,
+  investigacion: <><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none" /><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(28 12 12)" /><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(-28 12 12)" /><path d="M12 2.5v2M12 19.5v2" /></>,
+  electivas: <><path d="M5 5h14v5H5zM5 14h14v5H5z" /><circle cx="9" cy="7.5" r="1.5" fill="currentColor" stroke="none" /><circle cx="15" cy="16.5" r="1.5" fill="currentColor" stroke="none" /><path d="M12 10v4" /></>,
+  links: <><rect x="4" y="4" width="7" height="7" rx="1" /><rect x="13" y="4" width="7" height="7" rx="1" /><rect x="4" y="13" width="7" height="7" rx="1" /><path d="M15 15h2v2h-2zM18 18h2v2h-2zM15 19h1M19 14h1" /></>,
+}
 
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      {paths[id] ?? paths.links}
-    </svg>
-  )
+export function SectionIcon({ id }: { id: string }) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icons[id] ?? icons.links}</svg>
 }

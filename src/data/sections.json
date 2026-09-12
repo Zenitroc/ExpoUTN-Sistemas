@@ -199,13 +199,6 @@
           { "type": "text", "heading": "Aprender construyendo", "body": "Los proyectos integradores y el Proyecto Final reúnen las herramientas del recorrido para analizar necesidades, diseñar soluciones, desarrollarlas y validarlas con una mirada técnica y organizacional." },
           { "type": "highlights", "items": ["Problemas reales", "Trabajo en equipo", "Diseño y desarrollo", "Presentación de resultados"] }
         ]
-      },
-      {
-        "id": "muestras",
-        "label": "Muestras",
-        "content": [
-          { "type": "text", "heading": "Del prototipo al impacto", "body": "Las experiencias de cursada permiten transformar ideas en soluciones: aplicaciones, investigaciones, prototipos y sistemas construidos en equipo." }
-        ]
       }
     ]
   },
