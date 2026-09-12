@@ -1,23 +1,105 @@
 # ExpoUTN · Sistemas
 
-Experiencia interactiva para explorar la carrera de Ingeniería en Sistemas de Información.
+Experiencia interactiva para explorar Ingeniería en Sistemas de Información.
 
-## Principios de interacción (obligatorios)
+## Interacción
 
-Este sitio se diseña como una experiencia de pantalla completa, no como una página web convencional. Toda modificación debe conservar estas reglas:
+La interfaz se controla por cursor y permanencia (dwell): no requiere clicks. El mouse físico y el hand tracking usan el mismo `pointermove` del navegador, por lo que nodos, botones, modal, carruseles y protector de pantalla funcionan igual en ambos casos.
 
-- No debe requerir scroll vertical ni horizontal: la información de cada vista debe caber en pantalla y organizarse en estados, pestañas o pantallas breves.
-- La permanencia del cursor sobre un elemento interactivo debe activar la acción luego del tiempo configurado (`dwellDurationSeconds`). Debe haber progreso visual de esa permanencia.
-- El clic directo sigue habilitado en todos los controles. La activación por permanencia complementa al clic; no lo reemplaza.
-- Los controles interactivos deben funcionar tanto con el cursor físico como con la entrada de cursor externo prevista por `InputProvider`.
-- Las nuevas secciones deben ser concisas, visuales y navegables por estados; no se deben convertir en listados largos ni en documentos desplazables.
-- Si se agregan enlaces externos, deben poder abrirse tanto por clic como por permanencia del cursor.
+El cursor visual propio del sitio se mantiene y el cursor nativo queda oculto sobre la experiencia.
 
-## Validación mínima
+## Desarrollo web
 
-Antes de entregar cambios de interfaz, ejecutar:
+```powershell
+npm install
+npm run dev
+```
 
-```bash
+Comandos útiles:
+
+```powershell
 npm run build
+npm run preview
 npm run lint
 ```
+
+`npm run build` genera `dist/`, listo para desplegar como sitio estático.
+
+## Experiencia completa / Expo
+
+El tracker vive dentro de este repositorio:
+
+```text
+ExpoUTN-Sistemas/
+├── ExpoUTN-HandTracking/
+│   ├── hand_cursor.py
+│   └── .venv/
+└── scripts/
+```
+
+Instalación inicial del tracker, una sola vez (desde `ExpoUTN-HandTracking`, usando Python 3.11):
+
+```powershell
+cd .\ExpoUTN-HandTracking
+& "$env:LOCALAPPDATA\Programs\Python\Python311\python.exe" -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+cd ..
+```
+
+### Expo / kiosco
+
+```powershell
+npm run all
+```
+
+Compila el sitio, lo sirve solo en `http://127.0.0.1:4173`, espera a que responda, inicia el tracking con `--no-preview` y abre Chrome en modo kiosco.
+
+### Elegir cámara
+
+Abrí `http://127.0.0.1:4173/config`, elegí **Detectar cámaras**, autorizá el navegador y seleccioná la cámara. Al guardar, la elección se almacena localmente en `.expo-config/settings.json`; reiniciá la experiencia con `npm run all` para que el tracker use esa cámara.
+
+También se puede elegir de forma puntual desde consola:
+
+```powershell
+npm run all -- -Camera 1
+```
+
+El índice se corresponde con el listado de `/config`. Si Windows cambia el orden de sus dispositivos, verificá la selección nuevamente antes de la Expo.
+
+### Desarrollo con tracking
+
+```powershell
+npm run all:dev
+```
+
+Usa `http://127.0.0.1:5173` y abre Chrome normal.
+
+### Solo web
+
+```powershell
+npm run all:web
+```
+
+### Detener la experiencia
+
+```powershell
+npm run all:stop
+```
+
+Los procesos creados se registran en `.expo-runtime/processes.json`; el comando de detención finaliza únicamente esos PID.
+
+## Tracker
+
+Modo normal con preview y teclas de depuración:
+
+```powershell
+.\ExpoUTN-HandTracking\.venv\Scripts\python.exe .\ExpoUTN-HandTracking\hand_cursor.py
+```
+
+Modo Expo sin ventana OpenCV:
+
+```powershell
+.\ExpoUTN-HandTracking\.venv\Scripts\python.exe .\ExpoUTN-HandTracking\hand_cursor.py --no-preview
+```
+
+También admite `--expo`, `--camera 0`, `--no-mouse` y `--mirror`.

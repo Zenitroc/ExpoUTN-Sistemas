@@ -5,11 +5,20 @@ import { DwellButton } from './DwellButton'
 function SubjectVideoPlayer({ video }: { video: SubjectVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const togglePlayback = () => {
+  const togglePlayback = async () => {
     const player = videoRef.current
     if (!player) return
-    if (player.paused) void player.play()
-    else player.pause()
+    if (!player.paused) {
+      player.pause()
+      return
+    }
+    try {
+      await player.play()
+    } catch {
+      // El dwell no siempre cuenta como gesto de usuario para autoplay con audio.
+      player.muted = true
+      await player.play().catch(() => undefined)
+    }
   }
 
   return (
