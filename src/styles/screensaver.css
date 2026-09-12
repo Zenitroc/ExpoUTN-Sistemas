@@ -1,0 +1,39 @@
+/* Prioridad final del protector de pantalla sobre la paleta clara de la aplicación. */
+.screensaver {
+  grid-template-rows: clamp(104px, 14vh, 144px) 1fr clamp(68px, 10vh, 100px);
+  color: #f5f5f6;
+  background:
+    radial-gradient(ellipse at 50% 47%, rgba(239, 51, 64, .18), transparent 30%),
+    radial-gradient(ellipse at 17% 70%, rgba(255, 90, 100, .09), transparent 28%),
+    radial-gradient(ellipse at 82% 24%, rgba(217, 37, 49, .14), transparent 24%),
+    #080a10;
+}
+
+.screensaver::before { display: none; }
+.screensaver__noise { opacity: .72; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); }
+.screensaver__header, .screensaver__footer { border-color: rgba(255,255,255,.13); background: transparent; color: #9a9ca7; }
+.screensaver__header .utn-logo {
+  position: relative;
+  z-index: 5;
+  display: block;
+  width: auto;
+  height: clamp(88px, 10vw, 128px);
+  max-width: min(52vw, 500px);
+  max-height: none;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+}
+.screensaver__footer { background: rgba(5,6,10,.52); }
+.screensaver__node { color: #202126; font-weight: 800; text-shadow: 0 1px 0 rgba(255,255,255,.72), 0 0 14px rgba(255,255,255,.38); }
+.screensaver__node i { background: #fff; }
+.screensaver__links path { stroke: rgba(255,255,255,.32); }
+.screensaver__links .screensaver__link--soft { stroke: rgba(255,90,100,.24); }
+.screensaver__core { background: linear-gradient(145deg, rgba(26,18,22,.9), rgba(9,10,13,.8)); box-shadow: 0 0 0 10px rgba(255,255,255,.018), 0 25px 80px rgba(0,0,0,.34), inset 0 0 50px rgba(239,51,64,.1); }
+.screensaver__core h1, .screensaver__signal > span, .screensaver__footer > strong { color: #fff; }
+.screensaver__core h1 span { color: #ff5a64; }
+
+@media (max-width: 820px) {
+  .screensaver { grid-template-rows: clamp(92px, 13vh, 112px) 1fr 10vh; }
+  .screensaver__header .utn-logo { height: clamp(66px, 13vw, 92px); max-width: 66vw; }
+}

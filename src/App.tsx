@@ -44,7 +44,7 @@ function Experience() {
       </footer>
 
       {selected && <InfoModal section={selected} onClose={closeModal} />}
-      {demoActive && <ScreenSaver sections={sections} />}
+      {demoActive && <ScreenSaver />}
       {!demoActive && <CursorLayer />}
     </div>
   )
