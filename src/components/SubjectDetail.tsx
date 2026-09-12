@@ -14,7 +14,17 @@ function SubjectVideoPlayer({ video }: { video: SubjectVideo }) {
 
   return (
     <figure className="subject-detail__video">
-      <video ref={videoRef} src={video.src} poster={video.poster} controls preload="metadata" playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} />
+      <video ref={videoRef} src={video.src} poster={video.poster} controls preload="metadata" playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}>
+        {video.subtitulos && (
+          <track
+            kind="subtitles"
+            src={video.subtitulos.src}
+            srcLang={video.subtitulos.idioma}
+            label={video.subtitulos.etiqueta}
+            default
+          />
+        )}
+      </video>
       <DwellButton className="subject-detail__video-action dwell-control--ring" onActivate={togglePlayback} ariaLabel={isPlaying ? 'Pausar video' : 'Reproducir video'}>
         {isPlaying ? 'Ⅱ' : '▶'}
       </DwellButton>

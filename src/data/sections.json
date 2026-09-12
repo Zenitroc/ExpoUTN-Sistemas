@@ -56,7 +56,8 @@
           "video": {
             "src": "/media/recursos/videos-materias/SyPdN-Florencia-ExpoISI.mp4",
             "titulo": "Sistemas y Procesos de Negocio",
-            "pie": "Presentación de la materia"
+            "pie": "Presentación de la materia",
+            "subtitulos": { "src": "/media/recursos/videos-materias/SyPdN-Florencia-ExpoISI.es.vtt", "idioma": "es", "etiqueta": "Español" }
           }
         },
         "content": [
@@ -76,7 +77,8 @@
           "video": {
             "src": "/media/recursos/videos-materias/AdS-AdrianaMartinez.mp4",
             "titulo": "Análisis de Sistemas contado por la cátedra",
-            "pie": "Adriana Martínez"
+            "pie": "Adriana Martínez",
+            "subtitulos": { "src": "/media/recursos/videos-materias/AdS-AdrianaMartinez.es.vtt", "idioma": "es", "etiqueta": "Español" }
           }
         },
         "content": [
@@ -96,7 +98,8 @@
           "video": {
             "src": "/media/recursos/videos-materias/DDSI-Ezequiel-ExpoISI.mp4",
             "titulo": "Diseño de Sistemas de Información",
-            "pie": "Presentación de la materia"
+            "pie": "Presentación de la materia",
+            "subtitulos": { "src": "/media/recursos/videos-materias/DDSI-Ezequiel-ExpoISI.es.vtt", "idioma": "es", "etiqueta": "Español" }
           }
         },
         "content": [
@@ -127,7 +130,13 @@
           "anio": "5.º año",
           "integradora": "Cuarta integradora",
           "subtitulo": "Integrar todo lo aprendido",
-          "descripcion": "Proyecto Final representa el cierre del recorrido. Los estudiantes trabajan en equipo sobre un sistema completo, integrando análisis, diseño, desarrollo, gestión y conocimientos adquiridos durante toda la carrera.\n\nLa propuesta se desarrolla de punta a punta y busca acercar el trabajo académico a una experiencia profesional con una problemática y un cliente reales."
+          "descripcion": "Proyecto Final representa el cierre del recorrido. Los estudiantes trabajan en equipo sobre un sistema completo, integrando análisis, diseño, desarrollo, gestión y conocimientos adquiridos durante toda la carrera.\n\nLa propuesta se desarrolla de punta a punta y busca acercar el trabajo académico a una experiencia profesional con una problemática y un cliente reales.",
+          "video": {
+            "src": "/media/recursos/videos-materias/ProyectoFinal-ExpoISI.mp4",
+            "titulo": "Proyecto Final",
+            "pie": "Presentación de la materia",
+            "subtitulos": { "src": "/media/recursos/videos-materias/ProyectoFinal-ExpoISI.es.vtt", "idioma": "es", "etiqueta": "Español" }
+          }
         },
         "content": [
           { "type": "text", "heading": "Proyecto Final", "body": "Cuarta integradora y cierre de la carrera. Los equipos desarrollan un sistema completo, de punta a punta, para una necesidad concreta y con un cliente real, aplicando los conocimientos del recorrido." }
