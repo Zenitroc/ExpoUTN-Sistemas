@@ -1507,6 +1507,9 @@ button {
 .config-card button { margin-top: 8px; padding: 14px 16px; border: 1px solid var(--red); border-radius: 5px; background: var(--red); color: #fff; font: 800 11px/1 "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
 .config-card a { color: var(--ink); font: 700 12px/1 "IBM Plex Mono", monospace; text-decoration: none; }
 .config-card a:hover { color: var(--red); }
+.config-camera { padding: 14px 0; display: grid; gap: 8px; border-top: 1px solid rgba(23,23,25,.1); color: var(--ink); font-weight: 750; }
+.config-camera p { margin: 0; color: #66666b; font-size: 12px; font-weight: 500; line-height: 1.35; }
+.config-camera > div { display: flex; gap: 8px; }.config-camera select { min-width: 0; flex: 1; padding: 10px; border: 1px solid rgba(23,23,25,.22); border-radius: 4px; background: #fff; color: var(--ink); }.config-camera button { margin: 0; padding: 10px 12px; white-space: nowrap; font-size: 9px; }
 
 /* Recursos adicionales dentro de la ficha del Plan. */
 .plan-study__detail { overflow: hidden; }

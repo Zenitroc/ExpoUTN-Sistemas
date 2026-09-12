@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "all": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\start-expo.ps1",
+    "all:dev": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\start-expo.ps1 -Dev",
+    "all:web": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\start-expo.ps1 -NoTracking",
+    "all:stop": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\stop-expo.ps1"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",

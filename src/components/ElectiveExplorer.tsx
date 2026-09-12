@@ -33,18 +33,27 @@ function VideoCard({ item, onActivate }: { item: ElectiveVideo; onActivate: () =
 function ElectiveVideoPlayer({ item }: { item: ElectiveVideo }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const togglePlayback = () => {
+  const togglePlayback = async () => {
     const video = videoRef.current
     if (!video) return
-    if (video.paused) video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false))
-    else { video.pause(); setIsPlaying(false) }
+    if (!video.paused) {
+      video.pause()
+      return
+    }
+    try {
+      await video.play()
+    } catch {
+      // Fallback para navegadores que bloquean audio iniciado sólo por dwell.
+      video.muted = true
+      await video.play().catch(() => undefined)
+    }
   }
 
   if (!item.video) return <div className="elective-player__pending"><span>Electivas</span><b>{item.materia}</b><small>Video disponible próximamente</small></div>
 
   return (
     <figure className={`subject-detail__video elective-player__video ${isPlaying ? 'elective-player__video--playing' : ''}`}>
-      <video ref={videoRef} src={item.video} poster={item.poster} autoPlay controls playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} onEnded={() => setIsPlaying(false)} />
+      <video ref={videoRef} src={item.video} poster={item.poster} controls playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} onEnded={() => setIsPlaying(false)} />
       <DwellButton className="subject-detail__video-action dwell-control--ring" onActivate={togglePlayback} ariaLabel={isPlaying ? 'Pausar video' : 'Reproducir video'}>{isPlaying ? 'Ⅱ' : '▶'}</DwellButton>
     </figure>
   )
