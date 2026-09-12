@@ -6,6 +6,16 @@ export interface PlanMateria {
   correlativasCursadas: number[]
   correlativasAprobadas: number[]
   descripcion: string
+  resources?: PlanResource[]
+}
+
+export interface PlanResource {
+  type: 'youtube' | 'external' | 'videoLocal' | 'image' | 'custom'
+  title: string
+  description: string
+  url?: string
+  embedUrl?: string
+  thumbnail?: string
 }
 
 export const planK23: PlanMateria[] = [
@@ -13,7 +23,7 @@ export const planK23: PlanMateria[] = [
   { id: 2, nombre: 'Álgebra y Geometría Analítica', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Vectores, matrices, sistemas de ecuaciones y geometría en el espacio. Aparece después en gráficos, simulación y machine learning.' },
   { id: 3, nombre: 'Física I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Mecánica: cinemática, dinámica y energía. Modelar el mundo físico con matemática.' },
   { id: 4, nombre: 'Inglés I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Lectura técnica en inglés. Casi toda la documentación que vas a usar en tu vida profesional está en este idioma.' },
-  { id: 5, nombre: 'Lógica y Estructuras Discretas', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Lógica proposicional, conjuntos, relaciones, grafos y recursión. Cómo piensa una computadora.' },
+  { id: 5, nombre: 'Lógica y Estructuras Discretas', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Lógica proposicional, conjuntos, relaciones, grafos y recursión. Cómo piensa una computadora.', resources: [{ type: 'youtube', title: 'Conocé Lógica y Estructuras Discretas', description: 'Material audiovisual de la materia.', url: 'https://www.youtube.com/watch?v=BQldcvcYIfY', embedUrl: 'https://www.youtube.com/embed/BQldcvcYIfY' }] },
   { id: 6, nombre: 'Algoritmos y Estructuras de Datos', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Tu primera materia de programación: listas, árboles, ordenamiento, búsqueda y costo de los algoritmos.' },
   { id: 7, nombre: 'Arquitectura de Computadoras', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Procesador, memoria, buses y lenguaje ensamblador: qué hay dentro de la máquina.' },
   { id: 8, nombre: 'Sistemas y Procesos de Negocio', nivel: 1, integradora: true, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Cómo funciona una organización por dentro y cómo se modelan sus procesos.' },
@@ -22,8 +32,8 @@ export const planK23: PlanMateria[] = [
   { id: 11, nombre: 'Ingeniería y Sociedad', nivel: 2, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'El rol social del ingeniero, ética profesional e impacto de la tecnología.' },
   { id: 12, nombre: 'Inglés II', nivel: 2, integradora: false, correlativasCursadas: [4], correlativasAprobadas: [], descripcion: 'Inglés técnico avanzado: producción escrita y comprensión de documentación compleja.' },
   { id: 13, nombre: 'Sintaxis y Semántica de los Lenguajes', nivel: 2, integradora: false, correlativasCursadas: [5, 6], correlativasAprobadas: [], descripcion: 'Gramáticas, autómatas, parsers y compiladores.' },
-  { id: 14, nombre: 'Paradigmas de Programación', nivel: 2, integradora: false, correlativasCursadas: [5, 6], correlativasAprobadas: [], descripcion: 'Programación orientada a objetos, funcional y lógica.' },
-  { id: 15, nombre: 'Sistemas Operativos', nivel: 2, integradora: false, correlativasCursadas: [7], correlativasAprobadas: [], descripcion: 'Procesos, concurrencia, gestión de memoria, sistemas de archivos y virtualización.' },
+  { id: 14, nombre: 'Paradigmas de Programación', nivel: 2, integradora: false, correlativasCursadas: [5, 6], correlativasAprobadas: [], descripcion: 'Programación orientada a objetos, funcional y lógica.', resources: [{ type: 'external', title: 'Wollok Games', description: 'Juegos y proyectos desarrollados con Wollok en el marco del concurso de la comunidad.', url: 'https://www.wollok.org/news/concurso2025/' }] },
+  { id: 15, nombre: 'Sistemas Operativos', nivel: 2, integradora: false, correlativasCursadas: [7], correlativasAprobadas: [], descripcion: 'Procesos, concurrencia, gestión de memoria, sistemas de archivos y virtualización.', resources: [{ type: 'external', title: 'UTN Sistemas Operativos', description: 'Recursos de la materia Sistemas Operativos.', url: 'https://www.utnso.com.ar' }] },
   { id: 16, nombre: 'Análisis de Sistemas de Información', nivel: 2, integradora: true, correlativasCursadas: [6, 8], correlativasAprobadas: [], descripcion: 'Modelado conceptual de sistemas y negocio, ciclos de vida, requisitos y análisis orientado a objetos.' },
   { id: 17, nombre: 'Probabilidad y Estadística', nivel: 3, integradora: false, correlativasCursadas: [1, 2], correlativasAprobadas: [], descripcion: 'Probabilidad, distribuciones, inferencia y test de hipótesis.' },
   { id: 18, nombre: 'Economía', nivel: 3, integradora: false, correlativasCursadas: [], correlativasAprobadas: [1, 2], descripcion: 'Micro y macroeconomía aplicadas a la evaluación de proyectos tecnológicos.' },

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { planK23, type PlanMateria } from '../data/planK23'
+import { planK23, type PlanMateria, type PlanResource } from '../data/planK23'
 import { DwellButton } from './DwellButton'
 
 type Relation = 'selected' | 'cursada' | 'aprobada' | 'habilita' | 'muted' | 'normal'
@@ -27,7 +27,9 @@ export function PlanStudyMap() {
     return 'muted'
   }
 
-  const toggleMateria = (id: number) => setSelectedId((current) => current === id ? null : id)
+  const toggleMateria = (id: number) => {
+    setSelectedId((current) => current === id ? null : id)
+  }
 
   return (
     <section className="plan-study" aria-label="Mapa interactivo del plan K23">
@@ -75,6 +77,7 @@ export function PlanStudyMap() {
               <Requirement title="Aprobadas" items={names(selected.correlativasAprobadas, byId)} tone="aprobada" />
               <Requirement title="Habilita" items={names(habilitadas, byId)} tone="habilita" />
             </div>
+            {selected.resources?.length ? <div className="plan-study__qr-list">{selected.resources.map((resource) => <PlanResourceQr resource={resource} key={resource.title} />)}</div> : null}
           </>
         ) : (
           <div className="plan-study__empty">
@@ -85,6 +88,18 @@ export function PlanStudyMap() {
         )}
       </aside>
     </section>
+  )
+}
+
+function PlanResourceQr({ resource }: { resource: PlanResource }) {
+  const url = resource.url ?? resource.embedUrl
+  if (!url) return null
+
+  return (
+    <DwellButton className="plan-resource-qr dwell-control--ring" onActivate={() => window.open(url, '_blank', 'noopener,noreferrer')} ariaLabel={`Abrir ${resource.title}`}>
+      <img src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(url)}`} alt={`Código QR para ${resource.title}`} />
+      <span><b>{resource.title}</b><small>Escaneá o mantené para abrir ↗</small></span>
+    </DwellButton>
   )
 }
 

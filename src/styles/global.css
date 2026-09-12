@@ -1433,6 +1433,46 @@ button {
 .research-panel__network b { border-color: var(--panel-accent, #ff8087); box-shadow: 0 0 0 7px color-mix(in srgb, var(--panel-accent, #ff8087) 8%, transparent); }
 .research-panel__network::before { background: linear-gradient(90deg, transparent, var(--panel-accent, #ff8087), transparent); }
 
+/* Recursos adicionales dentro de la ficha del Plan. */
+.plan-study__detail { overflow: hidden; }
+.plan-study__more,
+.plan-resource-view__back,
+.plan-resource__open { position: relative; padding: 9px 11px; border: 1px solid var(--red); border-radius: 4px; background: rgba(167,25,34,.06); color: var(--red); font: 800 10px/1 "IBM Plex Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
+.plan-study__more { margin-top: 13px; }
+.plan-resource-view { height: 100%; min-height: 0; display: grid; grid-template-rows: auto auto minmax(0,1fr); gap: 11px; overflow: hidden; }
+.plan-resource-view header { display: grid; gap: 7px; }
+.plan-resource-view header > span { color: var(--red); font: 800 10px/1 "IBM Plex Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+.plan-resource-view h3 { margin: 0; color: var(--ink); font-size: clamp(18px,1.5vw,26px); line-height: 1; letter-spacing: -.04em; }
+.plan-resource-view__back { justify-self: start; }
+.plan-resource-view__select { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+.plan-resource-view__select button { min-width: 0; padding: 7px; overflow: hidden; border: 1px solid rgba(23,23,25,.16); background: #f3f3f1; color: var(--ink); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.plan-resource-view__select button.is-active { border-color: var(--red); color: var(--red); }
+.plan-resource { min-height: 0; display: grid; grid-template-rows: minmax(0,1fr) auto auto auto; gap: 8px; overflow: hidden; }
+.plan-resource iframe,
+.plan-resource__preview { width: 100%; min-height: 0; aspect-ratio: 16 / 9; border: 1px solid rgba(23,23,25,.16); border-radius: 6px; background: #171719; }
+.plan-resource iframe { height: 100%; }
+.plan-resource__preview { padding: 18px; display: grid; align-content: center; gap: 8px; background: linear-gradient(135deg,#171719,#502128); color: #fff; }
+.plan-resource__preview span { color: #ffafb4; font: 800 9px/1 "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.plan-resource__preview b { font-size: clamp(18px,1.55vw,26px); line-height: 1; letter-spacing: -.045em; }
+.plan-resource h4 { margin: 0; color: var(--ink); font-size: clamp(13px,1vw,17px); line-height: 1.1; }
+.plan-resource p { margin: 0; color: #5d5d62; font-size: clamp(10px,.75vw,12px); line-height: 1.3; }
+.plan-resource__open { justify-self: start; }
+.plan-study__more .dwell-control__meter,
+.plan-resource-view__back .dwell-control__meter,
+.plan-resource__open .dwell-control__meter { animation: none; }
+
+.plan-study__qr-list { margin-top: 12px; display: grid; gap: 8px; }
+.plan-resource-qr { position: relative; min-width: 0; padding: 8px; display: grid; grid-template-columns: clamp(58px, 4.8vw, 76px) minmax(0, 1fr); align-items: center; gap: 10px; border: 1px solid rgba(167,25,34,.35); border-radius: 6px; background: rgba(167,25,34,.045); color: var(--ink); text-align: left; overflow: hidden; }
+.plan-resource-qr img { width: 100%; aspect-ratio: 1; display: block; border-radius: 3px; background: #fff; }
+.plan-resource-qr span { min-width: 0; display: grid; gap: 5px; }
+.plan-resource-qr b { overflow: hidden; color: var(--ink); font-size: clamp(11px,.85vw,14px); line-height: 1.1; text-overflow: ellipsis; white-space: nowrap; }
+.plan-resource-qr small { color: var(--red); font: 800 9px/1.2 "IBM Plex Mono", monospace; letter-spacing: .05em; text-transform: uppercase; }
+.plan-resource-qr:hover,
+.plan-resource-qr.dwell-control--active { border-color: var(--red); background: rgba(167,25,34,.1); }
+.plan-resource-qr .dwell-control__meter { animation: none; }
+
+@media (max-height: 760px) { .plan-resource-view { gap: 8px; } .plan-resource__preview { padding: 12px; } .plan-resource p { font-size: 10px; } }
+
 /* Electivas: el anillo sigue únicamente el progreso real de dwell. */
 .elective-explorer__more .dwell-control__meter,
 .elective-library__back .dwell-control__meter,
