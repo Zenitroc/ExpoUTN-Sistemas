@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import type { CursorInput } from '../input/types'
 import type { Section } from '../types'
-import experienceConfig from '../data/experience.json'
 import { SectionIcon } from './SectionIcon'
-
-const DWELL_TIME = experienceConfig.dwellDurationSeconds * 1000
+import { useInput } from '../input/InputProvider'
 
 interface MapNodeProps {
   section: Section
@@ -14,6 +12,7 @@ interface MapNodeProps {
 }
 
 export function MapNode({ section, cursor, onOpen, disabled = false }: MapNodeProps) {
+  const { dwellDurationSeconds } = useInput()
   const nodeRef = useRef<HTMLButtonElement>(null)
   const [hovered, setHovered] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -39,7 +38,7 @@ export function MapNode({ section, cursor, onOpen, disabled = false }: MapNodePr
     const started = performance.now()
     let frame = 0
     const tick = (now: number) => {
-      const next = Math.min(1, (now - started) / DWELL_TIME)
+      const next = Math.min(1, (now - started) / (dwellDurationSeconds * 1000))
       setProgress(next)
       if (next === 1 && !openedRef.current) {
         openedRef.current = true
@@ -50,7 +49,7 @@ export function MapNode({ section, cursor, onOpen, disabled = false }: MapNodePr
     }
     frame = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(frame)
-  }, [hovered, onOpen, section])
+  }, [hovered, onOpen, section, dwellDurationSeconds])
 
   const style = {
     '--node-x': `${section.position.x}%`,

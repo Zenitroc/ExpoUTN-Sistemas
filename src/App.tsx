@@ -9,6 +9,7 @@ import { useInput } from './input/InputProvider'
 import { ScreenSaver } from './components/ScreenSaver'
 import type { Section } from './types'
 import { UtnLogo } from './components/UtnLogo'
+import { ConfigScreen } from './components/ConfigScreen'
 
 const sections = sectionsData as Section[]
 
@@ -51,9 +52,10 @@ function Experience() {
 }
 
 export default function App() {
+  const isConfig = window.location.pathname === '/config'
   return (
     <InputProvider>
-      <Experience />
+      {isConfig ? <ConfigScreen /> : <Experience />}
     </InputProvider>
   )
 }

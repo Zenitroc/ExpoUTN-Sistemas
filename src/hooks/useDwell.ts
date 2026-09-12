@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, type RefObject } from 'react'
-import experienceConfig from '../data/experience.json'
 import { useInput } from '../input/InputProvider'
 
 interface DwellState<T extends HTMLElement> {
@@ -13,7 +12,7 @@ export function useDwell<T extends HTMLElement>(
   disabled = false,
   allowDuringOverlay = false,
 ): DwellState<T> {
-  const { cursor } = useInput()
+  const { cursor, dwellDurationSeconds } = useInput()
   const ref = useRef<T>(null)
   const activateRef = useRef(onActivate)
   const [hovered, setHovered] = useState(false)
@@ -49,7 +48,7 @@ export function useDwell<T extends HTMLElement>(
     }
 
     const started = performance.now()
-    const duration = experienceConfig.dwellDurationSeconds * 1000
+    const duration = dwellDurationSeconds * 1000
     let frame = 0
     const tick = (now: number) => {
       const next = Math.min(1, (now - started) / duration)
@@ -63,7 +62,7 @@ export function useDwell<T extends HTMLElement>(
     }
     frame = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(frame)
-  }, [hovered])
+  }, [hovered, dwellDurationSeconds])
 
   return { ref, hovered, progress }
 }

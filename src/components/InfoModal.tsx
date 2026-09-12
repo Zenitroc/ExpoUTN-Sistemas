@@ -12,6 +12,7 @@ import { ResearchExplorer } from './ResearchExplorer'
 import { IncumbencyMap } from './IncumbencyMap'
 import { CareerExplorer } from './CareerExplorer'
 import { UsefulLinks } from './UsefulLinks'
+import { VidaExplorer } from './VidaExplorer'
 
 type LinkItem = Extract<ContentBlock, { type: 'links' }>['items'][number]
 
@@ -135,6 +136,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
   const isIncumbencies = section.id === 'incumbencias'
   const isCareer = section.id === 'salida'
   const isUsefulLinks = section.id === 'links'
+  const isVida = section.id === 'vida'
 
   const requestClose = useCallback(() => {
     if (closingRef.current) return
@@ -172,15 +174,17 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
             </div>
             <DwellButton className="modal__close-icon dwell-control--ring" onActivate={requestClose} ariaLabel="Cerrar">×</DwellButton>
           </header>
-          {!isPlan && !isElectives && !isResearch && !isIncumbencies && !isCareer && !isUsefulLinks && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
+          {!isPlan && !isElectives && !isResearch && !isIncumbencies && !isCareer && !isUsefulLinks && !isVida && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
-            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${section.id === 'materias' && tab.id === 'areas' ? 'modal__content--materias' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''}`}
+            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${section.id === 'materias' && tab.id === 'areas' ? 'modal__content--materias' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''} ${isVida ? 'modal__content--vida' : ''}`}
             id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
             role="tabpanel"
             aria-labelledby={isPlan ? undefined : `tab-${tab.id}`}
           >
             {isPlan
               ? <PlanStudyMap />
+              : isVida
+                ? <VidaExplorer />
               : section.id === 'materias' && tab.id === 'areas'
                 ? <MateriasOverview content={tab.content} />
               : tab.subjectDetail
