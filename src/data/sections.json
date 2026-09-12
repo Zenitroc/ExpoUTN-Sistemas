@@ -40,8 +40,8 @@
         "label": "Áreas",
         "content": [
           { "type": "text", "heading": "Una carrera para entender y transformar", "body": "Ingeniería en Sistemas combina la mirada tecnológica con la comprensión de las organizaciones. El recorrido no se limita a programar: parte de analizar personas, procesos y necesidades, y avanza hacia el diseño, la construcción, la gestión y la evolución de sistemas de información." },
-          { "type": "text", "heading": "Cuatro integradoras, un mismo recorrido", "body": "Desde segundo año, las materias integradoras conectan los conocimientos que se trabajan en paralelo. Cada una propone una mirada más amplia: primero entender el problema, después diseñar la solución, gestionarla dentro de una organización y finalmente integrarlo todo en un proyecto real." },
-          { "type": "highlights", "items": ["Análisis de S.I. · de una necesidad a requisitos", "Diseño de S.I. · de requisitos a arquitectura", "Administración de S.I. · tecnología y estrategia", "Proyecto Final · una solución completa en equipo"] }
+          { "type": "text", "heading": "Cinco integradoras, un mismo recorrido", "body": "Desde primer año, las materias integradoras conectan los conocimientos que se trabajan en paralelo. Cada una propone una mirada más amplia: primero entender la organización y el problema, después diseñar la solución, gestionarla dentro de una organización y finalmente integrarlo todo en un proyecto real." },
+          { "type": "highlights", "items": ["Sistemas y Procesos de Negocio · entender la organización", "Análisis de S.I. · de una necesidad a requisitos", "Diseño de S.I. · de requisitos a arquitectura", "Administración de S.I. · tecnología y estrategia", "Proyecto Final · una solución completa en equipo"] }
         ]
       },
       {
@@ -51,6 +51,7 @@
           "id": "SyPdN",
           "nombre": "Sistemas y Procesos de Negocio",
           "anio": "1.º año",
+          "integradora": "Primera integradora",
           "subtitulo": "El punto de partida: entender la organización",
           "descripcion": "Antes de diseñar o desarrollar un sistema hay que entender el lugar donde va a funcionar. Sistemas y Procesos de Negocio introduce el análisis de organizaciones y sus procesos: cómo trabajan, qué información utilizan, qué problemas aparecen y dónde la tecnología puede aportar valor.\n\nEs el primer acercamiento al enfoque propio de Ingeniería en Sistemas: no mirar solamente el software, sino comprender el sistema completo en el que ese software va a intervenir.",
           "video": {
@@ -71,7 +72,7 @@
           "id": "ADS",
           "nombre": "Análisis de Sistemas de Información",
           "anio": "2.º año",
-          "integradora": "Primera integradora",
+          "integradora": "Segunda integradora",
           "subtitulo": "De una necesidad a un sistema",
           "descripcion": "Es la primera materia integradora de la carrera. Trabaja sobre el análisis de problemas reales, el modelado de sistemas y procesos de negocio, los ciclos de vida y la ingeniería de requerimientos.\n\nEl objetivo es aprender a pasar de una necesidad o problemática de una organización a una definición clara de qué debe hacer un sistema para resolverla.",
           "video": {
@@ -82,7 +83,7 @@
           }
         },
         "content": [
-          { "type": "text", "heading": "Análisis de Sistemas de Información", "body": "Primera integradora. Trabaja modelado conceptual de sistemas y de negocio, ciclos de vida, ingeniería de requerimientos y análisis orientado a objetos: el paso de una necesidad al problema que un sistema debe resolver." }
+          { "type": "text", "heading": "Análisis de Sistemas de Información", "body": "Segunda integradora. Trabaja modelado conceptual de sistemas y de negocio, ciclos de vida, ingeniería de requerimientos y análisis orientado a objetos: el paso de una necesidad al problema que un sistema debe resolver." }
         ]
       },
       {
@@ -92,7 +93,7 @@
           "id": "DDSI",
           "nombre": "Diseño de Sistemas de Información",
           "anio": "3.º año",
-          "integradora": "Segunda integradora",
+          "integradora": "Tercera integradora",
           "subtitulo": "Del análisis a la solución",
           "descripcion": "Una vez entendido qué necesita el sistema, Diseño de Sistemas de Información aborda cómo construir esa solución. Se trabajan arquitecturas, patrones de diseño, persistencia, experiencia de usuario e integración entre distintos componentes y sistemas.\n\nLa materia conecta las decisiones de análisis con decisiones concretas de diseño tecnológico.",
           "video": {
@@ -103,7 +104,7 @@
           }
         },
         "content": [
-          { "type": "text", "heading": "Diseño de Sistemas de Información", "body": "Segunda integradora. Aborda arquitectura, patrones de diseño, persistencia, experiencia de usuario, integración de sistemas y validación: decisiones que transforman el análisis en una solución construible." }
+          { "type": "text", "heading": "Diseño de Sistemas de Información", "body": "Tercera integradora. Aborda arquitectura, patrones de diseño, persistencia, experiencia de usuario, integración de sistemas y validación: decisiones que transforman el análisis en una solución construible." }
         ]
       },
       {
@@ -113,12 +114,12 @@
           "id": "ASI",
           "nombre": "Administración de Sistemas de Información",
           "anio": "4.º año",
-          "integradora": "Tercera integradora",
+          "integradora": "Cuarta integradora",
           "subtitulo": "Gestionar tecnología dentro de una organización",
           "descripcion": "La tercera integradora amplía la mirada hacia la gestión. Se trabajan proyectos de sistemas, planificación estratégica, presupuestos, administración de recursos y gobierno de tecnologías de la información.\n\nEl sistema deja de verse únicamente como un producto tecnológico y pasa a analizarse como parte de las decisiones estratégicas de una organización."
         },
         "content": [
-          { "type": "text", "heading": "Administración de Sistemas de Información", "body": "Tercera integradora. Se enfoca en gestión de proyectos, planificación estratégica de sistemas, presupuesto y gobierno de TI, para vincular las decisiones tecnológicas con la estrategia de una organización." }
+          { "type": "text", "heading": "Administración de Sistemas de Información", "body": "Cuarta integradora. Se enfoca en gestión de proyectos, planificación estratégica de sistemas, presupuesto y gobierno de TI, para vincular las decisiones tecnológicas con la estrategia de una organización." }
         ]
       },
       {
@@ -128,7 +129,7 @@
           "id": "PF",
           "nombre": "Proyecto Final",
           "anio": "5.º año",
-          "integradora": "Cuarta integradora",
+          "integradora": "Quinta integradora",
           "subtitulo": "Integrar todo lo aprendido",
           "descripcion": "Proyecto Final representa el cierre del recorrido. Los estudiantes trabajan en equipo sobre un sistema completo, integrando análisis, diseño, desarrollo, gestión y conocimientos adquiridos durante toda la carrera.\n\nLa propuesta se desarrolla de punta a punta y busca acercar el trabajo académico a una experiencia profesional con una problemática y un cliente reales.",
           "video": {
@@ -139,7 +140,7 @@
           }
         },
         "content": [
-          { "type": "text", "heading": "Proyecto Final", "body": "Cuarta integradora y cierre de la carrera. Los equipos desarrollan un sistema completo, de punta a punta, para una necesidad concreta y con un cliente real, aplicando los conocimientos del recorrido." }
+          { "type": "text", "heading": "Proyecto Final", "body": "Quinta integradora y cierre de la carrera. Los equipos desarrollan un sistema completo, de punta a punta, para una necesidad concreta y con un cliente real, aplicando los conocimientos del recorrido." }
         ]
       }
     ]

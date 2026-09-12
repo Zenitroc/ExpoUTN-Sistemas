@@ -86,6 +86,43 @@ function Content({ block }: { block: ContentBlock }) {
   )
 }
 
+function MateriasOverview({ content }: { content: ContentBlock[] }) {
+  const texts = content.filter((block): block is Extract<ContentBlock, { type: 'text' }> => block.type === 'text')
+  const highlights = content.find((block): block is Extract<ContentBlock, { type: 'highlights' }> => block.type === 'highlights')?.items ?? []
+  const [intro, integradoras] = texts
+  const introSummary = intro?.body.match(/^[^.]+\./)?.[0] ?? intro?.body
+
+  return (
+    <article className="materias-overview">
+      <header className="materias-overview__hero">
+        <div>
+          <span>Una formación conectada</span>
+          <h3>{intro?.heading}</h3>
+          <p>{introSummary}</p>
+        </div>
+        <div className="materias-overview__diagram" aria-hidden="true">
+          <i /><i /><i /><i />
+          <b>S.I.</b>
+        </div>
+      </header>
+
+      <div className="materias-overview__lower">
+        <section className="materias-overview__story">
+          <span>El recorrido</span>
+          <h4>{integradoras?.heading}</h4>
+          <p>{integradoras?.body}</p>
+        </section>
+        <ol className="materias-overview__steps">
+          {highlights.map((item, index) => {
+            const [title, description] = item.split(' · ')
+            return <li key={item}><b>0{index + 1}</b><strong>{title}</strong><span>{description}</span></li>
+          })}
+        </ol>
+      </div>
+    </article>
+  )
+}
+
 export function InfoModal({ section, onClose }: { section: Section; onClose: () => void }) {
   const [activeTab, setActiveTab] = useState(section.tabs[0].id)
   const [isClosing, setIsClosing] = useState(false)
@@ -137,13 +174,15 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
           </header>
           {!isPlan && !isElectives && !isResearch && !isIncumbencies && !isCareer && !isUsefulLinks && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
-            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''}`}
+            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${section.id === 'materias' && tab.id === 'areas' ? 'modal__content--materias' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''}`}
             id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
             role="tabpanel"
             aria-labelledby={isPlan ? undefined : `tab-${tab.id}`}
           >
             {isPlan
               ? <PlanStudyMap />
+              : section.id === 'materias' && tab.id === 'areas'
+                ? <MateriasOverview content={tab.content} />
               : tab.subjectDetail
                 ? <SubjectDetail subject={tab.subjectDetail} />
                 : tab.projectGallery
