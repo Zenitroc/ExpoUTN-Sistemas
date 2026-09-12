@@ -5,3 +5,4 @@ dist
 node_modules/.tmp
 .expo-runtime/
 .expo-config/
+release/

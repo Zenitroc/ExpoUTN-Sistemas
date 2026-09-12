@@ -1,0 +1,9 @@
+services:
+  expo:
+    image: expoutn-sistemas-web:latest
+    build: .
+    ports:
+      - "127.0.0.1:4173:4173"
+    volumes:
+      - ./.expo-config:/config
+    restart: unless-stopped

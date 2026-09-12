@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.expo-runtime
+.expo-config
+ExpoUTN-HandTracking/.venv
+ExpoUTN-HandTracking/__pycache__
+ExpoUTN-HandTracking/dist
+release
