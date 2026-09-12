@@ -5,6 +5,14 @@ export interface ElectiveCategory {
   materias: string[]
 }
 
+export interface ElectiveVideo {
+  id: string
+  materia: string
+  categoria: string
+  video?: string
+  poster?: string
+}
+
 export const electiveCategories: ElectiveCategory[] = [
   {
     id: 'software',
@@ -51,3 +59,19 @@ export const electiveCategories: ElectiveCategory[] = [
 ]
 
 export const electiveCount = electiveCategories.reduce((total, category) => total + category.materias.length, 0)
+
+// Solo se publican en el catálogo las electivas que cuentan con video disponible.
+export const electiveVideos: ElectiveVideo[] = [
+  {
+    id: 'direccion-estrategica',
+    materia: 'Dirección Estratégica',
+    categoria: 'Gestión y organizaciones',
+    video: '/media/recursos/videos-materias/Electivas%20Videos/DireccionEstrategicaProfe.mp4',
+  },
+  {
+    id: 'ia-generativa',
+    materia: 'IA Generativa',
+    categoria: 'Datos, IA y cómputo',
+    video: '/media/recursos/videos-materias/Electivas%20Videos/IA%20Generativa.mp4',
+  },
+]

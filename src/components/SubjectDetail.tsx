@@ -13,7 +13,7 @@ function SubjectVideoPlayer({ video }: { video: SubjectVideo }) {
   }
 
   return (
-    <figure className="subject-detail__video">
+    <figure className={`subject-detail__video ${isPlaying ? 'subject-detail__video--playing' : ''}`}>
       <video ref={videoRef} src={video.src} poster={video.poster} controls preload="metadata" playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}>
         {video.subtitulos && (
           <track
