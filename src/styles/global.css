@@ -1933,13 +1933,15 @@ button {
   height: 100%;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: clamp(16px, 2.4vh, 28px);
+  gap: clamp(12px, 1.8vh, 20px);
 }
+
+.research-explorer > .tabs { margin: calc(-1 * clamp(18px, 2.5vh, 30px)) calc(-1 * clamp(20px, 3vw, 44px)) 0; padding: 0 clamp(20px, 3vw, 44px); background: #fff; }
+.research-explorer__research { min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: clamp(16px, 2.4vh, 28px); }
 
 .research-explorer__intro {
   display: flex;
   align-items: end;
-  justify-content: space-between;
   gap: 24px;
 }
 
@@ -1953,20 +1955,6 @@ button {
 }
 
 .research-explorer__intro p { max-width: 69ch; margin: 0; color: #5d5d62; font-size: clamp(12px, .95vw, 15px); }
-
-.research-explorer__signal {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #65656b;
-  font: 800 9px/1 "IBM Plex Mono", monospace;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.research-explorer__signal i { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 0 rgba(167, 25, 34, .5); animation: research-signal 1.8s ease-out infinite; }
-@keyframes research-signal { 70% { box-shadow: 0 0 0 8px rgba(167, 25, 34, 0); } 100% { box-shadow: 0 0 0 0 rgba(167, 25, 34, 0); } }
 
 .research-explorer__stage {
   min-height: 0;
@@ -2011,6 +1999,8 @@ button {
 }
 
 .research-panel--publicaciones { grid-template-rows: auto auto minmax(0, 1fr); }
+.research-panel--gemis { --panel-accent: #50b6e8; grid-template-rows: auto minmax(0, 1fr) auto; gap: clamp(10px, 1.5vh, 18px); border-color: rgba(80, 182, 232, .46); background: linear-gradient(135deg, #101c26, #121416 52%, #102331); }
+.research-panel--gemis .eyebrow { color: #7ed7ff; }
 
 @keyframes research-panel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .research-panel h4 { max-width: 28ch; margin: 9px 0 0; font-size: clamp(21px, 2vw, 33px); line-height: 1.05; letter-spacing: -.05em; }
@@ -2040,6 +2030,92 @@ button {
 .research-entry strong { margin-top: 13px; color: #fff; font-size: clamp(16px, 1.32vw, 22px); line-height: 1.06; letter-spacing: -.04em; }
 .research-entry small { margin-top: 12px; color: #cbcbcf; font-size: clamp(11px, .84vw, 13px); line-height: 1.35; }
 
+/* Grupo GEMIS: cinco vistas contenidas, con acentos propios dentro del modal. */
+.gemis-stage { min-height: 0; overflow: hidden; animation: gemis-slide-in 320ms ease both; }
+@keyframes gemis-slide-in { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: translateX(0); } }
+.gemis-intro { height: 100%; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(210px, .38fr); gap: clamp(18px, 3vw, 48px); align-items: center; }
+.gemis-intro__copy { min-width: 0; }.gemis-intro__copy > img { width: min(135px, 28%); max-height: 52px; margin: 10px 0; object-fit: contain; object-position: left center; filter: brightness(0) invert(1); }.gemis-intro h4, .gemis-team h4, .gemis-publications h4 { max-width: 19ch; margin: 5px 0 12px; font-size: clamp(25px, 2.7vw, 42px); line-height: .98; letter-spacing: -.06em; }.gemis-intro p, .gemis-team__summary p, .gemis-publications header p { max-width: 55ch; margin: 0; color: #c7d4da; font-size: clamp(12px, .95vw, 15px); line-height: 1.4; }
+.gemis-qr { align-self: stretch; display: grid; place-items: center; align-content: center; gap: 9px; padding: 18px; border: 1px solid rgba(126, 215, 255, .45); border-radius: 8px; background: rgba(255,255,255,.96); color: #17232b; text-align: center; }.gemis-qr img { width: min(19vw, 230px); min-width: 175px; aspect-ratio: 1; image-rendering: pixelated; }.gemis-qr strong { font-size: clamp(12px, 1vw, 15px); }.gemis-qr small { max-width: 23ch; color: #4b5b63; font-size: 10px; line-height: 1.25; }
+.gemis-areas { height: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); }.gemis-areas article { position: relative; min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: end; padding: clamp(15px, 1.7vw, 24px); overflow: hidden; border: 1px solid rgba(126,215,255,.32); border-radius: 7px; background: linear-gradient(0deg, rgba(5,15,23,.96), rgba(5,15,23,.18)), var(--gemis-image) center / cover; }.gemis-areas span { color: #fff; font-size: clamp(16px, 1.5vw, 24px); font-weight: 700; line-height: 1.02; letter-spacing: -.04em; }.gemis-areas p { display: -webkit-box; margin: 8px 0 0; overflow: hidden; color: #d4e4ea; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(10px, .82vw, 13px); line-height: 1.3; }
+.gemis-transfer-view { height: 100%; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; }.gemis-transfers { min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); }.gemis-transfers article { min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(72px, .72fr) minmax(0, 1fr); overflow: hidden; border: 1px solid rgba(126,215,255,.28); border-radius: 7px; background: rgba(255,255,255,.06); }.gemis-transfers img { width: 100%; height: 100%; object-fit: cover; }.gemis-transfers article > div { min-height: 0; padding: clamp(9px, 1vw, 14px); }.gemis-transfers span, .gemis-publications article span { display: block; overflow: hidden; color: #7ed7ff; font: 800 9px/1.2 "IBM Plex Mono", monospace; letter-spacing: .06em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }.gemis-transfers strong { display: -webkit-box; margin-top: 7px; overflow: hidden; color: #fff; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(13px, 1.1vw, 18px); line-height: 1.05; letter-spacing: -.035em; }.gemis-transfers p { display: -webkit-box; margin: 7px 0 0; overflow: hidden; color: #c7d4da; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(10px, .78vw, 12px); line-height: 1.3; }
+.gemis-transfer-view { height: 100%; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; }.gemis-transfers { min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); }.gemis-transfers article { min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(72px, .72fr) minmax(0, 1fr); overflow: hidden; border: 1px solid rgba(126,215,255,.28); border-radius: 7px; background: rgba(255,255,255,.06); }.gemis-transfers img { width: 100%; height: 100%; object-fit: cover; }.gemis-transfers article > div { min-height: 0; padding: clamp(9px, 1vw, 14px); }.gemis-transfers span, .gemis-publications article span { display: block; overflow: hidden; color: #7ed7ff; font: 800 9px/1.2 "IBM Plex Mono", monospace; letter-spacing: .06em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }.gemis-transfers strong { display: -webkit-box; margin-top: 7px; overflow: hidden; color: #fff; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(13px, 1.1vw, 18px); line-height: 1.05; letter-spacing: -.035em; }.gemis-transfers p { display: -webkit-box; margin: 7px 0 0; overflow: hidden; color: #c7d4da; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(10px, .78vw, 12px); line-height: 1.3; }.gemis-transfer-controls, .gemis-navigation { display: flex; align-items: center; justify-content: center; gap: 12px; }.gemis-transfer-controls span { color: #aabec8; font: 800 10px/1 "IBM Plex Mono", monospace; }.gemis-transfer-controls__arrow, .gemis-navigation__arrow { width: 32px; height: 32px; border: 1px solid rgba(126,215,255,.55); border-radius: 50%; background: transparent; color: #dff5ff; font-size: 22px; line-height: 1; }.gemis-transfer-controls__arrow:hover, .gemis-transfer-controls__arrow.dwell-control--active, .gemis-navigation__arrow:hover, .gemis-navigation__arrow.dwell-control--active { background: #7ed7ff; color: #0b1b25; }
+.gemis-projects { height: 100%; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 18px); }.gemis-projects article { min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(80px, .8fr) minmax(0, 1fr); overflow: hidden; border: 1px solid rgba(126,215,255,.3); border-radius: 7px; background: rgba(255,255,255,.06); }.gemis-projects img { width: 100%; height: 100%; object-fit: cover; }.gemis-projects article > div { padding: clamp(10px, 1.1vw, 15px); }.gemis-projects span { color: #7ed7ff; font: 800 9px/1.2 "IBM Plex Mono", monospace; letter-spacing: .06em; }.gemis-projects strong { display: -webkit-box; margin-top: 7px; overflow: hidden; color: #fff; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(13px, 1.12vw, 18px); line-height: 1.05; }.gemis-projects p { display: -webkit-box; margin: 7px 0 0; overflow: hidden; color: #c7d4da; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: clamp(10px, .78vw, 12px); line-height: 1.3; }
+.gemis-transfer-controls, .gemis-navigation { display: flex; align-items: center; justify-content: center; gap: 12px; }.gemis-transfer-controls span { color: #aabec8; font: 800 10px/1 "IBM Plex Mono", monospace; }.gemis-transfer-controls__arrow, .gemis-navigation__arrow { width: 38px; height: 38px; border: 1px solid rgba(126,215,255,.55); border-radius: 50%; background: transparent; color: #dff5ff; font-size: 23px; line-height: 1; overflow: hidden; }.gemis-transfer-controls__arrow .dwell-control__meter, .gemis-navigation__arrow .dwell-control__meter { border-radius: 50%; }.gemis-transfer-controls__arrow:hover, .gemis-transfer-controls__arrow.dwell-control--active, .gemis-navigation__arrow:hover, .gemis-navigation__arrow.dwell-control--active { background: #7ed7ff; color: #0b1b25; }
+.gemis-team { height: 100%; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 12px; }.gemis-team__leaders > div { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 7px; }.gemis-team__leaders article { min-width: 0; display: grid; grid-template-columns: 32px minmax(0, 1fr); column-gap: 7px; align-items: center; }.gemis-team__leaders img { grid-row: span 2; width: 32px; height: 32px; object-fit: cover; border: 1px solid rgba(126,215,255,.4); border-radius: 50%; }.gemis-team__leaders strong, .gemis-team__leaders small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.gemis-team__leaders strong { color: #fff; font-size: clamp(9px, .76vw, 12px); line-height: 1.05; }.gemis-team__leaders small { color: #9ec6d7; font-size: clamp(7px, .58vw, 9px); }.gemis-team__members { min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 8px; }.gemis-team__members header { display: flex; align-items: end; justify-content: space-between; gap: 12px; }.gemis-team__members h4 { margin: 3px 0 0; font-size: clamp(17px, 1.55vw, 24px); }.gemis-team__members > div:last-child { min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(0, 1fr); gap: 6px 10px; }.gemis-team__members article { min-width: 0; display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 7px; padding: 4px; border: 1px solid rgba(126,215,255,.17); border-radius: 4px; background: rgba(255,255,255,.035); }.gemis-team__members img, .gemis-team__members i { width: 30px; height: 30px; display: grid; place-items: center; object-fit: cover; border-radius: 50%; background: #24536b; color: #dff5ff; font: 800 9px/1 "IBM Plex Mono", monospace; font-style: normal; }.gemis-team__members span { min-width: 0; }.gemis-team__members strong, .gemis-team__members small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.gemis-team__members strong { color: #fff; font-size: clamp(9px, .72vw, 11px); line-height: 1.05; }.gemis-team__members small { margin-top: 2px; color: #9ec6d7; font-size: clamp(7px, .58vw, 9px); }
+.gemis-publications { height: 100%; min-height: 0; display: grid; grid-template-columns: minmax(185px, .66fr) minmax(0, 1.34fr); gap: clamp(18px, 2.5vw, 36px); align-items: center; }.gemis-publications header p strong { color: #7ed7ff; }.gemis-publications > div { min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }.gemis-publications article { min-width: 0; padding: clamp(11px, 1.1vw, 16px); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(126,215,255,.26); border-radius: 6px; background: rgba(255,255,255,.055); }.gemis-publications article strong { display: -webkit-box; margin: 8px 0; overflow: hidden; color: #fff; -webkit-box-orient: vertical; -webkit-line-clamp: 3; font-size: clamp(12px, 1vw, 16px); line-height: 1.08; letter-spacing: -.03em; }.gemis-publications article small { color: #c7d4da; font: 800 9px/1 "IBM Plex Mono", monospace; }
+.gemis-navigation { padding-top: 2px; }.gemis-navigation > div { display: flex; gap: 8px; }.gemis-navigation__dot { width: 26px; height: 28px; padding: 0; border: 0; background: transparent; }.gemis-navigation__dot span { display: block; width: 8px; height: 8px; margin: auto; border: 1px solid #7ed7ff; border-radius: 50%; }.gemis-navigation__dot--active span { width: 20px; border-radius: 99px; background: #7ed7ff; }.gemis-navigation__dot:hover span, .gemis-navigation__dot.dwell-control--active span { background: rgba(126,215,255,.5); }
+
+/* Ajustes de densidad para la experiencia GEMIS en pantalla de Expo. */
+.modal--research .modal__header { padding-top: clamp(10px, 1.4vh, 16px); padding-bottom: clamp(5px, .8vh, 9px); }
+.modal--research .modal__header p { margin-top: 5px; line-height: 1.3; }
+.modal__content--research { padding-top: clamp(8px, 1.1vh, 14px); padding-bottom: clamp(8px, 1.1vh, 14px); }
+.modal--research .modal__footer { min-height: 34px; padding-top: 3px; padding-bottom: 3px; }
+.modal--research .back-button { padding-block: 6px; }
+.gemis-qr { align-self: center; aspect-ratio: 1; padding: 16px; overflow: hidden; gap: 7px; }.gemis-qr img { width: min(18vw, 245px); min-width: 190px; }.gemis-qr small { max-width: 28ch; }
+.gemis-transfer-controls__arrow, .gemis-navigation__arrow { overflow: visible; }.gemis-transfer-controls__arrow.dwell-control--ring .dwell-control__meter, .gemis-navigation__arrow.dwell-control--ring .dwell-control__meter { z-index: 4; background: conic-gradient(#7ed7ff calc(var(--control-dwell, 0) * 1turn), transparent 0); }
+.gemis-team__leaders > div { gap: 10px; margin-top: 8px; }.gemis-team__leaders article { grid-template-columns: 48px minmax(0, 1fr); column-gap: 8px; }.gemis-team__leaders img { width: 48px; height: 48px; border-color: rgba(126,215,255,.5); }.gemis-team__leaders strong { font-size: clamp(10px, .86vw, 13px); }.gemis-team__leaders small { font-size: clamp(8px, .66vw, 10px); }.gemis-team__members > div:last-child { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }.gemis-team__members article { grid-template-columns: 24px minmax(0, 1fr); gap: 5px; padding: 3px; }.gemis-team__members img, .gemis-team__members i { width: 24px; height: 24px; font-size: 8px; }.gemis-team__members strong { font-size: clamp(8px, .62vw, 10px); }.gemis-team__members small { font-size: clamp(7px, .52vw, 8px); }
+
+/* Todas las vistas de GEMIS comparten el mismo lienzo que la introducción. */
+.research-panel--gemis { height: 100%; max-height: 100%; }
+.research-panel--gemis .gemis-stage { height: 100%; }
+.research-panel--gemis .gemis-stage > * { width: 100%; height: 100%; min-height: 0; }
+.research-panel--gemis .gemis-areas,
+.research-panel--gemis .gemis-projects,
+.research-panel--gemis .gemis-transfers,
+.research-panel--gemis .gemis-publications > div,
+.research-panel--gemis .gemis-team__members > div:last-child { grid-auto-rows: minmax(0, 1fr); }
+.research-panel--gemis .gemis-projects article,
+.research-panel--gemis .gemis-transfers article,
+.research-panel--gemis .gemis-publications article,
+.research-panel--gemis .gemis-team__leaders,
+.research-panel--gemis .gemis-team__members { min-height: 0; overflow: hidden; }
+.research-panel--gemis .gemis-team { grid-template-rows: auto minmax(0, 1fr); }
+.research-panel--gemis .gemis-team__leaders > div { grid-auto-rows: minmax(0, 1fr); }
+.research-panel--gemis .gemis-team__leaders article { min-height: 0; }
+
+/* El alto del explorador no depende del contenido de la vista activa. */
+.modal__content--research { align-content: stretch; grid-template-rows: minmax(0, 1fr); }
+
+/* Slide 1: el logo libera el bloque de lectura y acompaña el encabezado. */
+.gemis-intro__copy { position: relative; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+.gemis-intro__copy > img { position: absolute; top: 0; right: 0; width: min(150px, 30%); margin: 0; }
+.gemis-intro__copy h4 { margin-top: 14px; }
+
+/* Slide 2: tarjetas más legibles dentro del lienzo fijo. */
+.gemis-areas { gap: clamp(14px, 1.7vw, 24px); }
+.gemis-areas article { padding: clamp(20px, 2.1vw, 30px); }
+.gemis-areas span { font-size: clamp(19px, 1.8vw, 29px); }
+.gemis-areas p { -webkit-line-clamp: 3; font-size: clamp(11px, .92vw, 15px); line-height: 1.35; }
+
+/* Slides 3 y 4: metadatos y descripciones más presentes sin extender el panel. */
+.gemis-projects span, .gemis-transfers span { font-size: clamp(10px, .78vw, 12px); }
+.gemis-projects p, .gemis-transfers p { -webkit-line-clamp: 3; font-size: clamp(11px, .86vw, 14px); line-height: 1.35; }
+.gemis-projects article > div, .gemis-transfers article > div { padding: clamp(12px, 1.25vw, 18px); }
+
+/* Slide 5: más integrantes visibles, con una separación clara entre ambos equipos. */
+.gemis-team { gap: 16px; }
+.gemis-team__members { padding-top: 14px; border-top: 1px solid rgba(126, 215, 255, .3); }
+.gemis-team__members h4 { display: none; }
+.gemis-team__members > div:last-child { grid-template-rows: repeat(3, minmax(0, 1fr)); }
+.gemis-team__members article { grid-template-columns: 32px minmax(0, 1fr); gap: 7px; padding: 6px; }
+.gemis-team__members img, .gemis-team__members i { width: 32px; height: 32px; font-size: 9px; }
+.gemis-team__members strong { font-size: clamp(9px, .72vw, 11px); }
+.gemis-team__members small { font-size: clamp(8px, .6vw, 9px); }
+
+/* Slide 6: la grilla ocupa todo el alto disponible, igual que la introducción. */
+.gemis-publications { align-items: stretch; }
+.gemis-publications header { display: grid; align-content: center; }
+.gemis-publications > div { grid-template-rows: repeat(2, minmax(0, 1fr)); }
+
+/* Referencia de composición: el alto de la primera vista se conserva en todo GEMIS. */
+.research-panel--gemis {
+  height: min(524px, calc(100dvh - 230px));
+  max-height: min(524px, calc(100dvh - 230px));
+}
+
+/* La sección de integrantes aprovecha el alto recuperado con una fila adicional. */
+.gemis-team__members > div:last-child { grid-template-rows: repeat(4, minmax(0, 1fr)); }
+
 .research-panel__path { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .research-panel__path span { padding: 9px 10px; border: 1px solid rgba(255, 255, 255, .22); border-radius: 4px; color: #fff; font: 800 10px/1 "IBM Plex Mono", monospace; }
 .research-panel__path span + span::before { content: '→'; margin-left: -19px; margin-right: 10px; color: #ff8087; }
@@ -2061,7 +2137,6 @@ button {
 
 @media (max-width: 700px) {
   .research-explorer__intro { align-items: start; }
-  .research-explorer__signal { display: none; }
   .research-explorer__stage { grid-template-columns: 1fr; }
   .research-explorer__nav { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: 52px; gap: 6px; }
   .research-category { padding: 7px; grid-template-columns: 1fr; text-align: center; }
@@ -2070,6 +2145,7 @@ button {
   .research-category:hover, .research-category.dwell-control--active, .research-category--selected { transform: translateY(-2px); }
   .research-panel__entries--investigacion, .research-panel__entries--congresos, .research-panel__entries--publicaciones, .research-panel__entries--extension { grid-template-columns: 1fr; }
   .research-panel__network { min-height: 210px; }
+  .gemis-intro, .gemis-publications { grid-template-columns: 1fr; }.gemis-intro__copy > img { width: 100px; }.gemis-qr { display: none; }.gemis-areas, .gemis-publications > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }.gemis-projects, .gemis-transfers { grid-template-columns: repeat(2, minmax(0, 1fr)); }.gemis-transfers article:last-child { display: none; }.gemis-team__leaders > div { grid-template-columns: repeat(3, minmax(0, 1fr)); }.gemis-team__members > div:last-child { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Carrusel de proyectos finales */
