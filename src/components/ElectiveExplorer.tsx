@@ -80,8 +80,8 @@ export function ElectiveExplorer() {
         <header className="elective-explorer__intro">
           <div>
             <span className="eyebrow">Electivas</span>
-            <h3>Armá tu propio recorrido</h3>
-            <p>Elegí qué áreas de Sistemas querés profundizar.</p>
+            <h3>Definí tu orientación académica</h3>
+            <p>Seleccione las áreas de Ingeniería en Sistemas que desea profundizar.</p>
           </div>
           <div className="elective-explorer__facts" aria-label="Datos de las electivas">
             <strong><b>{electiveCount}</b> electivas</strong>
@@ -102,13 +102,13 @@ export function ElectiveExplorer() {
           </div>
 
           <aside className={`elective-explorer__detail ${selected ? 'elective-explorer__detail--open' : ''}`} aria-live="polite">
-            {selected ? <><span className="eyebrow">{selected.nombre}</span><h4>{selected.subtitulo}</h4><div className="elective-explorer__chips">{selected.materias.map((materia) => <span key={materia}>{materia}</span>)}</div></> : <div className="elective-explorer__empty"><span>Elegí un área</span><p>Una misma carrera, recorridos distintos.</p></div>}
+            {selected ? <><span className="eyebrow">{selected.nombre}</span><h4>{selected.subtitulo}</h4><div className="elective-explorer__chips">{selected.materias.map((materia) => <span key={materia}>{materia}</span>)}</div></> : <div className="elective-explorer__empty"><span>Seleccione un área</span><p>Las electivas permiten configurar distintas orientaciones de formación.</p></div>}
           </aside>
         </div>
       </>}
 
       {view === 'videos' && <section className="elective-library" aria-label="Videos de materias electivas">
-        <header className="elective-library__header"><div><span className="eyebrow">Electivas · videos</span><h3>Conocé las materias</h3></div><DwellButton className="elective-library__back dwell-control--ring" onActivate={() => setView('areas')} ariaLabel="Volver a Electivas">‹ Electivas</DwellButton></header>
+        <header className="elective-library__header"><div><span className="eyebrow">Electivas · videos</span><h3>Presentaciones de asignaturas</h3></div><DwellButton className="elective-library__back dwell-control--ring" onActivate={() => setView('areas')} ariaLabel="Volver a Electivas">‹ Electivas</DwellButton></header>
         <div className="elective-library__grid">{visibleVideos.map((item) => <VideoCard item={item} onActivate={() => playVideo(item)} key={item.id} />)}</div>
         <footer className="elective-library__pagination" aria-label={`Página ${page + 1} de ${totalPages}`}>
           <DwellButton className="elective-library__arrow" onActivate={() => setPage((current) => current - 1)} ariaLabel="Página anterior" disabled={page === 0}>‹</DwellButton>

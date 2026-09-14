@@ -168,7 +168,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
         <div className="modal__main">
           <header className="modal__header">
             <div>
-              <span className="eyebrow">Explorá la carrera</span>
+              <span className="eyebrow">Información académica</span>
               <h2 id="modal-title">{section.title}</h2>
               <p>{section.description}</p>
             </div>

@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { DwellButton } from './DwellButton'
 
 const journey = [
-  { year: '01', label: 'Empezar', title: 'Inicio y clases', summary: 'Conocés la Facultad, armás tu grupo y empezás a construir las bases para pensar sistemas.', tags: ['Primeras materias', 'Comunidad', 'Herramientas'], image: '/media/recursos/vida/cursada.jpg' },
+  { year: '01', label: 'Inicio', title: 'Inicio de la trayectoria académica', summary: 'La incorporación a la Facultad comprende la formación de grupos de estudio y la construcción de fundamentos para el abordaje de sistemas.', tags: ['Asignaturas iniciales', 'Comunidad', 'Herramientas'], image: '/media/recursos/vida/cursada.jpg' },
   { year: '02', label: 'Avanzar', title: 'Rendir y crecer', summary: 'Parciales, finales, integradoras y proyectos: cada instancia conecta lo que venís aprendiendo.', tags: ['Parciales', 'Finales', 'Integradoras'], image: '/media/recursos/vida/parcial.jpg' },
-  { year: '03', label: 'Llegar', title: 'Proyecto final y recibirse', summary: 'Aplicás todo lo aprendido en una solución propia y das el paso hacia tu vida profesional.', tags: ['Proyecto final', 'Práctica', 'Graduación'], image: '/media/recursos/vida/egresodromo.jpg' },
+  { year: '03', label: 'Egreso', title: 'Proyecto Final y graduación', summary: 'La formación culmina con la aplicación integrada de conocimientos en una solución de sistemas y con la inserción en el ámbito profesional.', tags: ['Proyecto Final', 'Práctica', 'Graduación'], image: '/media/recursos/vida/egresodromo.jpg' },
 ]
 
 export function VidaExplorer() {
@@ -20,7 +20,7 @@ export function VidaExplorer() {
   return (
     <section className="journey-explorer" aria-label="Recorrido por la carrera">
       <header className="journey-explorer__intro">
-        <div><span className="eyebrow">Vida en Sistemas</span><h3>Tu recorrido por la carrera.</h3><p>Empezar, avanzar y transformar lo aprendido en un proyecto propio.</p></div>
+        <div><span className="eyebrow">Vida universitaria</span><h3>Trayectoria académica en Ingeniería en Sistemas.</h3><p>Instancias de formación, participación institucional e integración de conocimientos.</p></div>
         <span className="journey-explorer__counter">{String(activeIndex + 1).padStart(2, '0')} / 03</span>
       </header>
 

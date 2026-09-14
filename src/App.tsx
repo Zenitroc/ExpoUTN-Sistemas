@@ -30,8 +30,8 @@ function Experience() {
         <UtnLogo />
         <div className="topbar__intro">
           <span className="eyebrow">ExpoUTN · experiencia interactiva</span>
-          <h1>Explorá <em>Sistemas</em></h1>
-          <p>Acercá el cursor a un punto y mantenelo para descubrir.</p>
+          <h1>Ingeniería en <em>Sistemas</em></h1>
+          <p>Seleccione un área para consultar la información académica correspondiente.</p>
         </div>
         <DemoOverlay />
       </header>

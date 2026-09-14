@@ -3,8 +3,8 @@
     "id": "plan",
     "index": "01",
     "title": "Plan de estudios",
-    "shortDescription": "Cinco años, 36 materias y una lógica de recorrido",
-    "description": "El plan K23 reúne 36 materias obligatorias. Las correlatividades muestran qué hay que tener cursado o aprobado antes de seguir avanzando.",
+    "shortDescription": "Estructura curricular de cinco años y 36 asignaturas",
+    "description": "El plan K23 comprende 36 asignaturas obligatorias. El régimen de correlatividades establece los requisitos de cursada y aprobación para la progresión académica.",
     "position": { "x": 18, "y": 24 },
     "accent": "#ef3340",
     "tabs": [
@@ -12,7 +12,7 @@
         "id": "recorrido",
         "label": "Recorrido",
         "content": [
-          { "type": "text", "heading": "Un recorrido con lógica", "body": "El plan no es una lista suelta: cada asignatura habilita otras. La formación empieza con ciencias básicas, lógica, programación y procesos de negocio; luego suma análisis, diseño, desarrollo, datos, infraestructura y gestión hasta llegar al Proyecto Final." },
+          { "type": "text", "heading": "Estructura y progresión curricular", "body": "La organización curricular establece relaciones de precedencia entre asignaturas. La formación inicia con ciencias básicas, lógica, programación y procesos de negocio, e incorpora progresivamente análisis, diseño, desarrollo, datos, infraestructura y gestión hasta el Proyecto Final." },
           { "type": "highlights", "items": ["1.º año · 8 materias de base", "2.º año · 8 materias y Análisis de S.I.", "3.º año · 7 materias y Diseño de S.I.", "4.º y 5.º año · gestión, especialización y Proyecto Final"] }
         ]
       },
@@ -39,8 +39,8 @@
         "id": "areas",
         "label": "Áreas",
         "content": [
-          { "type": "text", "heading": "Una carrera para entender y transformar", "body": "Ingeniería en Sistemas combina la mirada tecnológica con la comprensión de las organizaciones. El recorrido no se limita a programar: parte de analizar personas, procesos y necesidades, y avanza hacia el diseño, la construcción, la gestión y la evolución de sistemas de información." },
-          { "type": "text", "heading": "Cinco integradoras, un mismo recorrido", "body": "Desde primer año, las materias integradoras conectan los conocimientos que se trabajan en paralelo. Cada una propone una mirada más amplia: primero entender la organización y el problema, después diseñar la solución, gestionarla dentro de una organización y finalmente integrarlo todo en un proyecto real." },
+          { "type": "text", "heading": "Formación en sistemas de información", "body": "Ingeniería en Sistemas articula fundamentos tecnológicos con el estudio de las organizaciones. La formación aborda el análisis de personas, procesos y necesidades, y progresa hacia el diseño, la construcción, la gestión y la evolución de sistemas de información." },
+          { "type": "text", "heading": "Asignaturas integradoras", "body": "Desde el primer año, las asignaturas integradoras articulan los conocimientos desarrollados en cada nivel. El trayecto comprende el análisis organizacional y de problemas, el diseño de soluciones, su gestión en contextos organizacionales y la integración de saberes en el Proyecto Final." },
           { "type": "highlights", "items": ["Sistemas y Procesos de Negocio · entender la organización", "Análisis de S.I. · de una necesidad a requisitos", "Diseño de S.I. · de requisitos a arquitectura", "Administración de S.I. · tecnología y estrategia", "Proyecto Final · una solución completa en equipo"] }
         ]
       },
@@ -115,6 +115,12 @@
           "nombre": "Administración de Sistemas de Información",
           "anio": "4.º año",
           "integradora": "Cuarta integradora",
+          "video": {
+            "src": "/media/recursos/videos-materias/AdSI-ExpoISI.mp4",
+            "titulo": "Administración de Sistemas de Información",
+            "pie": "Presentación de la materia",
+            "subtitulos": { "src": "/media/recursos/videos-materias/AdSI-ExpoISI.es.vtt", "idioma": "es", "etiqueta": "Español" }
+          },
           "subtitulo": "Gestionar tecnología dentro de una organización",
           "descripcion": "La tercera integradora amplía la mirada hacia la gestión. Se trabajan proyectos de sistemas, planificación estratégica, presupuestos, administración de recursos y gobierno de tecnologías de la información.\n\nEl sistema deja de verse únicamente como un producto tecnológico y pasa a analizarse como parte de las decisiones estratégicas de una organización."
         },
@@ -130,8 +136,8 @@
           "nombre": "Proyecto Final",
           "anio": "5.º año",
           "integradora": "Quinta integradora",
-          "subtitulo": "Integrar todo lo aprendido",
-          "descripcion": "Proyecto Final representa el cierre del recorrido. Los estudiantes trabajan en equipo sobre un sistema completo, integrando análisis, diseño, desarrollo, gestión y conocimientos adquiridos durante toda la carrera.\n\nLa propuesta se desarrolla de punta a punta y busca acercar el trabajo académico a una experiencia profesional con una problemática y un cliente reales.",
+          "subtitulo": "Integración de competencias profesionales",
+          "descripcion": "Proyecto Final constituye la instancia de integración curricular. Los estudiantes desarrollan, en equipos, una solución de sistemas que articula análisis, diseño, desarrollo y gestión.\n\nLa asignatura vincula el trabajo académico con la resolución de una problemática organizacional concreta, en articulación con una contraparte institucional.",
           "video": {
             "src": "/media/recursos/videos-materias/ProyectoFinal-ExpoISI.mp4",
             "titulo": "Proyecto Final",
@@ -140,7 +146,7 @@
           }
         },
         "content": [
-          { "type": "text", "heading": "Proyecto Final", "body": "Quinta integradora y cierre de la carrera. Los equipos desarrollan un sistema completo, de punta a punta, para una necesidad concreta y con un cliente real, aplicando los conocimientos del recorrido." }
+          { "type": "text", "heading": "Proyecto Final", "body": "Quinta asignatura integradora y cierre del plan. Los equipos desarrollan una solución de sistemas para una necesidad organizacional concreta, aplicando los conocimientos y competencias adquiridos durante la carrera." }
         ]
       }
     ]
@@ -149,8 +155,8 @@
     "id": "salida",
     "index": "03",
     "title": "Salida laboral",
-    "shortDescription": "Mucho más que programar",
-    "description": "Diez perfiles profesionales para descubrir cómo se puede trabajar con Sistemas.",
+    "shortDescription": "Ámbitos y perfiles de desempeño profesional",
+    "description": "Perfiles profesionales que describen ámbitos de desempeño vinculados con la Ingeniería en Sistemas.",
     "position": { "x": 79, "y": 24 },
     "accent": "#ef3340",
     "tabs": [
@@ -159,7 +165,7 @@
         "label": "Perfiles",
         "careerExplorer": true,
         "content": [
-          { "type": "text", "heading": "Perfiles profesionales", "body": "Explorá los caminos que abre la carrera." }
+          { "type": "text", "heading": "Perfiles profesionales", "body": "Consulte los ámbitos de desempeño asociados a la formación." }
         ]
       }
     ]
@@ -168,8 +174,8 @@
     "id": "incumbencias",
     "index": "04",
     "title": "Incumbencias y áreas",
-    "shortDescription": "Un título, muchos caminos",
-    "description": "Explorá las áreas profesionales y puestos que podés recorrer con Ingeniería en Sistemas.",
+    "shortDescription": "Alcances del título y áreas de desempeño",
+    "description": "Áreas de desempeño y puestos profesionales vinculados con la titulación en Ingeniería en Sistemas.",
     "position": { "x": 87, "y": 54 },
     "accent": "#d92531",
     "tabs": [
@@ -187,8 +193,8 @@
     "id": "proyectos",
     "index": "05",
     "title": "Proyectos",
-    "shortDescription": "Construir para aprender",
-    "description": "Experiencias de creación colectiva que conectan conocimientos, usuarios y problemas reales.",
+    "shortDescription": "Desarrollo de proyectos integradores",
+    "description": "Experiencias de trabajo colaborativo que articulan conocimientos, personas usuarias y problemáticas organizacionales.",
     "position": { "x": 47, "y": 54 },
     "accent": "#ff4451",
     "tabs": [
@@ -260,7 +266,7 @@
     "index": "08",
     "title": "Electivas",
     "shortDescription": "Un mismo título, distintos perfiles",
-    "description": "Las electivas te permiten profundizar las áreas de Sistemas que más te interesan.",
+    "description": "Las asignaturas electivas permiten profundizar áreas específicas de la Ingeniería en Sistemas.",
     "position": { "x": 15, "y": 75 },
     "accent": "#ef3340",
     "tabs": [
@@ -269,7 +275,7 @@
         "label": "Tu recorrido",
         "electiveExplorer": true,
         "content": [
-          { "type": "text", "heading": "Armá tu propio recorrido", "body": "Elegí qué áreas de Sistemas querés profundizar." }
+          { "type": "text", "heading": "Orientación académica", "body": "Seleccione las áreas de Ingeniería en Sistemas que desea profundizar mediante asignaturas electivas." }
         ]
       }
     ]

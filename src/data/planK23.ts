@@ -16,15 +16,16 @@ export interface PlanResource {
   url?: string
   embedUrl?: string
   thumbnail?: string
+  subtitles?: string
 }
 
 export const planK23: PlanMateria[] = [
-  { id: 1, nombre: 'Análisis Matemático I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Funciones, límites, derivadas e integrales de una variable. La base matemática de todo lo que viene después.' },
+  { id: 1, nombre: 'Análisis Matemático I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Funciones, límites, derivadas e integrales de una variable. Constituye una base matemática para las asignaturas posteriores.' },
   { id: 2, nombre: 'Álgebra y Geometría Analítica', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Vectores, matrices, sistemas de ecuaciones y geometría en el espacio. Aparece después en gráficos, simulación y machine learning.' },
   { id: 3, nombre: 'Física I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Mecánica: cinemática, dinámica y energía. Modelar el mundo físico con matemática.' },
-  { id: 4, nombre: 'Inglés I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Lectura técnica en inglés. Casi toda la documentación que vas a usar en tu vida profesional está en este idioma.' },
+  { id: 4, nombre: 'Inglés I', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Lectura técnica en inglés orientada a la consulta de bibliografía y documentación especializada.' },
   { id: 5, nombre: 'Lógica y Estructuras Discretas', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Lógica proposicional, conjuntos, relaciones, grafos y recursión. Cómo piensa una computadora.', resources: [{ type: 'youtube', title: 'Conocé Lógica y Estructuras Discretas', description: 'Material audiovisual de la materia.', url: 'https://www.youtube.com/watch?v=BQldcvcYIfY', embedUrl: 'https://www.youtube.com/embed/BQldcvcYIfY' }] },
-  { id: 6, nombre: 'Algoritmos y Estructuras de Datos', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Tu primera materia de programación: listas, árboles, ordenamiento, búsqueda y costo de los algoritmos.' },
+  { id: 6, nombre: 'Algoritmos y Estructuras de Datos', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Introducción a la programación mediante listas, árboles, algoritmos de ordenamiento y búsqueda, y análisis de complejidad.' },
   { id: 7, nombre: 'Arquitectura de Computadoras', nivel: 1, integradora: false, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Procesador, memoria, buses y lenguaje ensamblador: qué hay dentro de la máquina.' },
   { id: 8, nombre: 'Sistemas y Procesos de Negocio', nivel: 1, integradora: true, correlativasCursadas: [], correlativasAprobadas: [], descripcion: 'Cómo funciona una organización por dentro y cómo se modelan sus procesos.' },
   { id: 9, nombre: 'Análisis Matemático II', nivel: 2, integradora: false, correlativasCursadas: [1, 2], correlativasAprobadas: [], descripcion: 'Cálculo en varias variables, series y ecuaciones diferenciales.' },
@@ -40,12 +41,12 @@ export const planK23: PlanMateria[] = [
   { id: 19, nombre: 'Bases de Datos', nivel: 3, integradora: false, correlativasCursadas: [13, 16], correlativasAprobadas: [5, 6], descripcion: 'Modelo relacional, SQL, normalización, transacciones e índices.' },
   { id: 20, nombre: 'Desarrollo de Software', nivel: 3, integradora: false, correlativasCursadas: [14, 16], correlativasAprobadas: [5, 6], descripcion: 'Arquitectura por capas, frameworks, control de versiones y trabajo en equipo.' },
   { id: 21, nombre: 'Comunicación de Datos', nivel: 3, integradora: false, correlativasCursadas: [], correlativasAprobadas: [3, 7], descripcion: 'Señales, modulación, medios de transmisión y protocolos de bajo nivel.' },
-  { id: 22, nombre: 'Análisis Numérico', nivel: 3, integradora: false, correlativasCursadas: [9], correlativasAprobadas: [1, 2], descripcion: 'Aproximación, error e iteración para resolver problemas con computadora.' },
+  { id: 22, nombre: 'Análisis Numérico', nivel: 3, integradora: false, correlativasCursadas: [9], correlativasAprobadas: [1, 2], descripcion: 'Aproximación, error e iteración para resolver problemas con computadora.', resources: [{ type: 'videoLocal', title: 'Conocé Análisis Numérico', description: 'Presentación breve de la materia.', url: '/media/recursos/videos-materias/Extras/AnalisisNumerico.mp4' }] },
   { id: 23, nombre: 'Diseño de Sistemas de Información', nivel: 3, integradora: true, correlativasCursadas: [14, 16], correlativasAprobadas: [4, 6, 8], descripcion: 'Arquitectura, patrones de diseño, persistencia, experiencia de usuario e integración de sistemas.' },
   { id: 24, nombre: 'Legislación', nivel: 4, integradora: false, correlativasCursadas: [11], correlativasAprobadas: [], descripcion: 'Contratos, propiedad intelectual y protección de datos personales.' },
   { id: 25, nombre: 'Ingeniería y Calidad de Software', nivel: 4, integradora: false, correlativasCursadas: [19, 20, 23], correlativasAprobadas: [13, 14], descripcion: 'Procesos de desarrollo, testing, métricas, normas de calidad y configuración.' },
   { id: 26, nombre: 'Redes de Datos', nivel: 4, integradora: false, correlativasCursadas: [15, 21], correlativasAprobadas: [], descripcion: 'TCP/IP, ruteo, conmutación, diseño de redes y servicios de infraestructura.' },
-  { id: 27, nombre: 'Investigación Operativa', nivel: 4, integradora: false, correlativasCursadas: [17, 22], correlativasAprobadas: [], descripcion: 'Optimización, programación lineal, colas y grafos para decisiones reales.' },
+  { id: 27, nombre: 'Investigación Operativa', nivel: 4, integradora: false, correlativasCursadas: [17, 22], correlativasAprobadas: [], descripcion: 'Optimización, programación lineal, teoría de colas y grafos aplicados a la toma de decisiones.' },
   { id: 28, nombre: 'Simulación', nivel: 4, integradora: false, correlativasCursadas: [17], correlativasAprobadas: [9], descripcion: 'Modelar sistemas complejos y experimentar con ellos mediante computadora.' },
   { id: 29, nombre: 'Tecnologías para la Automatización', nivel: 4, integradora: false, correlativasCursadas: [10, 22], correlativasAprobadas: [9], descripcion: 'Control, sensores, actuadores y sistemas embebidos.' },
   { id: 30, nombre: 'Administración de Sistemas de Información', nivel: 4, integradora: true, correlativasCursadas: [18, 23], correlativasAprobadas: [16], descripcion: 'Gestión de proyectos, planificación estratégica, presupuesto y gobierno de TI.' },
@@ -54,5 +55,5 @@ export const planK23: PlanMateria[] = [
   { id: 33, nombre: 'Sistemas de Gestión', nivel: 5, integradora: false, correlativasCursadas: [18, 27], correlativasAprobadas: [23], descripcion: 'ERP, CRM y sistemas de gestión empresarial: implementación e integración.' },
   { id: 34, nombre: 'Gestión Gerencial', nivel: 5, integradora: false, correlativasCursadas: [24, 30], correlativasAprobadas: [18], descripcion: 'Estrategia, finanzas, liderazgo y gestión de personas en organizaciones tecnológicas.' },
   { id: 35, nombre: 'Seguridad en los Sistemas de Información', nivel: 5, integradora: false, correlativasCursadas: [26, 30], correlativasAprobadas: [20, 21], descripcion: 'Criptografía, gestión de riesgos, hardening, incidentes y normativa de seguridad.' },
-  { id: 36, nombre: 'Proyecto Final', nivel: 5, integradora: true, correlativasCursadas: [25, 26, 30], correlativasAprobadas: [12, 20, 23], descripcion: 'Un sistema completo, de punta a punta, en equipo y con un cliente real.' },
+  { id: 36, nombre: 'Proyecto Final', nivel: 5, integradora: true, correlativasCursadas: [25, 26, 30], correlativasAprobadas: [12, 20, 23], descripcion: 'Desarrollo integral de una solución de sistemas en equipo, en articulación con una necesidad organizacional concreta.' },
 ]

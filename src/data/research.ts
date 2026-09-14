@@ -15,7 +15,7 @@ export const researchCategories: ResearchCategory[] = [
   {
     id: 'investigacion',
     titulo: 'Investigación',
-    subtitulo: 'Preguntas reales que se convierten en conocimiento.',
+    subtitulo: 'Problemas de estudio que se abordan mediante producción de conocimiento.',
     entries: [
       { titulo: 'Pobreza del tiempo en estudiantes universitarios de ingeniería', meta: 'CICE 2026 · Póster', descripcion: 'Un estudio sobre trayectorias, deserción y posibilidades pedagógicas en la formación de ingeniería.' },
       { titulo: 'Neurodiversidad y accesibilidad en la educación híbrida', meta: 'CICE 2026 · Póster', descripcion: 'Una propuesta de estrategias inclusivas para contextos de aprendizaje híbrido.' },
@@ -24,7 +24,7 @@ export const researchCategories: ResearchCategory[] = [
   {
     id: 'congresos',
     titulo: 'Congresos',
-    subtitulo: 'Espacios para compartir, aprender y presentar lo que hacemos.',
+    subtitulo: 'Ámbitos de intercambio, formación y divulgación académica.',
     entries: [
       { titulo: 'CICE', meta: 'Innovación y creatividad educativa', descripcion: 'Docentes, estudiantes e investigadores comparten experiencias de enseñanza tecnológica.' },
       { titulo: 'CoNaIISI', meta: 'Ingeniería informática y sistemas', descripcion: 'Investigación y tecnología aplicada, con espacio de presentación para estudiantes.' },
@@ -34,7 +34,7 @@ export const researchCategories: ResearchCategory[] = [
   {
     id: 'publicaciones',
     titulo: 'Publicaciones',
-    subtitulo: 'De una idea en el aula a un trabajo publicado.',
+    subtitulo: 'De la elaboración académica a la publicación científica.',
     entries: [
       { titulo: 'Propuesta de proceso para el Diseño de Sistemas basado en Design Thinking', meta: 'CoNaIISI 2017', descripcion: 'Un trabajo de la cátedra de Diseño de Sistemas presentado en el congreso nacional.' },
       { titulo: 'Actas académicas UTN', meta: 'ISSN y DOI', descripcion: 'Las ponencias pueden quedar publicadas en actas académicas del repositorio AJEA de UTN.' },
@@ -53,7 +53,7 @@ export const researchCategories: ResearchCategory[] = [
   {
     id: 'global',
     titulo: 'Conexión global',
-    subtitulo: 'Aprender y colaborar más allá de las fronteras.',
+    subtitulo: 'Cooperación académica e internacionalización de la formación.',
     entries: [
       { titulo: 'Clases espejo', descripcion: 'Cursadas en simultáneo con estudiantes de universidades del exterior.' },
       { titulo: 'Proyectos COIL', descripcion: 'Aprendizaje colaborativo internacional en línea dentro de las materias.' },

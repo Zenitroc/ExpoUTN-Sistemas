@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { planK23, type PlanMateria, type PlanResource } from '../data/planK23'
 import { DwellButton } from './DwellButton'
 
@@ -77,13 +77,13 @@ export function PlanStudyMap() {
               <Requirement title="Aprobadas" items={names(selected.correlativasAprobadas, byId)} tone="aprobada" />
               <Requirement title="Habilita" items={names(habilitadas, byId)} tone="habilita" />
             </div>
-            {selected.resources?.length ? <div className="plan-study__qr-list">{selected.resources.map((resource) => <PlanResourceQr resource={resource} key={resource.title} />)}</div> : null}
+            {selected.resources?.length ? <div className="plan-study__qr-list">{selected.resources.map((resource) => resource.type === 'videoLocal' ? <PlanLocalVideo resource={resource} key={resource.title} /> : <PlanResourceQr resource={resource} key={resource.title} />)}</div> : null}
           </>
         ) : (
           <div className="plan-study__empty">
             <span>Plan K23 · 36 materias</span>
-            <h3>Explorá las correlatividades</h3>
-            <p>Seleccioná una materia —con clic o manteniendo el cursor— para ver qué requiere y qué habilita.</p>
+            <h3>Consulte las correlatividades</h3>
+            <p>Seleccione una asignatura para identificar sus requisitos de cursada, aprobación y las asignaturas que habilita.</p>
           </div>
         )}
       </aside>
@@ -100,6 +100,38 @@ function PlanResourceQr({ resource }: { resource: PlanResource }) {
       <img src={`https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(url)}`} alt={`Código QR para ${resource.title}`} />
       <span><b>{resource.title}</b><small>Escaneá o mantené para abrir ↗</small></span>
     </DwellButton>
+  )
+}
+
+function PlanLocalVideo({ resource }: { resource: PlanResource }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  if (!resource.url) return null
+
+  const togglePlayback = async () => {
+    const video = videoRef.current
+    if (!video) return
+    if (!video.paused) {
+      video.pause()
+      return
+    }
+    try {
+      await video.play()
+    } catch {
+      video.muted = true
+      await video.play().catch(() => undefined)
+    }
+  }
+
+  return (
+    <figure className={`plan-local-video subject-detail__video ${isPlaying ? 'subject-detail__video--playing' : ''}`}>
+      <video ref={videoRef} controls preload="metadata" playsInline onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} onEnded={() => setIsPlaying(false)}>
+        <source src={resource.url} type="video/mp4" />
+        {resource.subtitles ? <track kind="subtitles" src={resource.subtitles} srcLang="es" label="Español" default /> : null}
+      </video>
+      <DwellButton className="subject-detail__video-action dwell-control--ring" onActivate={togglePlayback} ariaLabel={isPlaying ? 'Pausar video' : 'Reproducir video'}>{isPlaying ? 'Ⅱ' : '▶'}</DwellButton>
+      <figcaption><b>{resource.title}</b><small>{resource.description}</small></figcaption>
+    </figure>
   )
 }
 

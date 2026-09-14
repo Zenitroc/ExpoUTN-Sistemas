@@ -78,7 +78,7 @@ function IncumbencyDetail({ area, job }: { area: IncumbencyArea; job: Incumbency
           <small>Alcance profesional</small>
           <blockquote>{area.alcance}</blockquote>
           <strong>{area.puestos.length} puestos relacionados</strong>
-          <em>Elegí un puesto para conocerlo.</em>
+          <em>Seleccione un puesto para consultar su descripción.</em>
         </>
       )}
     </aside>

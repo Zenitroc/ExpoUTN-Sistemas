@@ -13,7 +13,7 @@ export interface IncumbencyArea {
 }
 
 export const incumbencyAreas: IncumbencyArea[] = [
-  { id: 'desarrollo', nombre: 'Desarrollo de software', resumen: 'Construir el sistema: que funcione, se pueda mantener y no se caiga.', alcance: 'Diseñar, desarrollar, implementar y mantener sistemas de información y software de aplicación.', puestos: [
+  { id: 'desarrollo', nombre: 'Desarrollo de software', resumen: 'Diseño, implementación y mantenimiento de soluciones de software.', alcance: 'Diseñar, desarrollar, implementar y mantener sistemas de información y software de aplicación.', puestos: [
     { nombre: 'Desarrollador backend', queHace: 'Escribe la lógica y los servicios: reglas de negocio, APIs e integraciones.', materias: [6, 14, 19, 20, 23] },
     { nombre: 'Desarrollador frontend', queHace: 'Construye la parte con la que la persona interactúa, considerando accesibilidad y rendimiento.', materias: [6, 14, 20, 23] },
     { nombre: 'Desarrollador mobile', queHace: 'Desarrolla aplicaciones para celular considerando batería, red, permisos y tiendas de apps.', materias: [14, 20, 23] },
@@ -59,7 +59,7 @@ export const incumbencyAreas: IncumbencyArea[] = [
     { nombre: 'Administrador de redes', queHace: 'Mantiene redes seguras y disponibles: enrutamiento, segmentación y diagnóstico.', materias: [21, 26] },
     { nombre: 'SRE (Site Reliability Engineer)', queHace: 'Monitorea, atiende incidentes y evita que vuelvan a repetirse.', materias: [15, 26] },
   ] },
-  { id: 'diseno', nombre: 'Diseño de experiencia', resumen: 'Que el sistema se entienda sin manual y sirva a quien lo usa.', alcance: 'Participar en el diseño de la interacción entre las personas y los sistemas.', puestos: [
+  { id: 'diseno', nombre: 'Diseño de experiencia', resumen: 'Diseño de interacciones comprensibles, accesibles y adecuadas al contexto de uso.', alcance: 'Participar en el diseño de la interacción entre las personas y los sistemas.', puestos: [
     { nombre: 'Diseñador UX', queHace: 'Investiga usuarios, prueba prototipos y corrige antes de desarrollar.', materias: [8, 16, 23] },
     { nombre: 'Diseñador de interacción / UI', queHace: 'Define comportamiento y forma de una interfaz, incluso frente a errores.', materias: [16, 23] },
     { nombre: 'Especialista en accesibilidad', queHace: 'Hace que los sistemas funcionen también para personas con distintas capacidades.', materias: [16, 23, 24] },

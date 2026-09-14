@@ -4,8 +4,8 @@ export function UsefulLinks() {
   return (
     <section className="useful-links" aria-label="Links útiles">
       <header className="useful-links__intro">
-        <div><span className="eyebrow">Links útiles</span><h3>Todo lo importante, a un escaneo.</h3></div>
-        <p>Elegí un QR para abrir información oficial desde tu celular.</p>
+        <div><span className="eyebrow">Enlaces institucionales</span><h3>Accesos mediante código QR.</h3></div>
+        <p>Seleccione un código QR para consultar información institucional desde un dispositivo móvil.</p>
       </header>
       <div className="useful-links__grid">
         {usefulLinks.map((link) => (
