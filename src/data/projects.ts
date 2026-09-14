@@ -76,5 +76,5 @@ export const finalProjects: FinalProject[] = [
   anio: anio as number | undefined,
   comision: comision as string | undefined,
   descripcion: descripcionBase,
-  poster: `${postersPath}${filename as string}`,
+  poster: `${postersPath}${encodeURIComponent(filename as string)}`,
 }))
