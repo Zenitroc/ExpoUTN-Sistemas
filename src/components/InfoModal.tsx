@@ -159,7 +159,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
 
   return (
     <div className={`modal-backdrop ${isClosing ? 'modal-backdrop--closing' : ''}`} role="presentation">
-      <section className={`modal ${isClosing ? 'modal--closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <section className={`modal ${isResearch ? 'modal--research' : ''} ${isClosing ? 'modal--closing' : ''}`} role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div className="modal__rail" style={{ '--accent': section.accent } as CSSProperties}>
           <span>{section.index}</span>
           <i />
@@ -176,7 +176,7 @@ export function InfoModal({ section, onClose }: { section: Section; onClose: () 
           </header>
           {!isPlan && !isElectives && !isResearch && !isIncumbencies && !isCareer && !isUsefulLinks && !isVida && <Tabs tabs={section.tabs} activeId={activeTab} onChange={setActiveTab} />}
           <div
-            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${section.id === 'materias' && tab.id === 'areas' ? 'modal__content--materias' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''} ${isVida ? 'modal__content--vida' : ''}`}
+            className={`modal__content ${isPlan ? 'modal__content--plan' : ''} ${isResearch ? 'modal__content--research' : ''} ${section.id === 'materias' && tab.id === 'areas' ? 'modal__content--materias' : ''} ${isCareer ? 'modal__content--career' : ''} ${isUsefulLinks ? 'modal__content--useful-links' : ''} ${isVida ? 'modal__content--vida' : ''}`}
             id={`panel-${isPlan ? 'plan-k23' : tab.id}`}
             role="tabpanel"
             aria-labelledby={isPlan ? undefined : `tab-${tab.id}`}
