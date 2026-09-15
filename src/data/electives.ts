@@ -86,4 +86,10 @@ export const electiveVideos: ElectiveVideo[] = [
     categoria: 'Construcción de software',
     video: '/media/recursos/videos-materias/Electivas%20Videos/DDAPDM.mp4',
   },
+  {
+    id: 'dmaml',
+    materia: 'Desarrollo de Modelos Analíticos Machine Learning',
+    categoria: 'Datos, IA y cómputo',
+    video: '/media/recursos/videos-materias/Electivas%20Videos/DMAML.mp4',
+  },
 ]
