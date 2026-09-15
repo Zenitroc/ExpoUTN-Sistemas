@@ -2,7 +2,7 @@ export const gemis = {
   intro: {
     title: 'Investigación que transforma conocimiento en soluciones.',
     description: 'Grupo de investigación que desarrolla proyectos científico-tecnológicos en inteligencia artificial, ingeniería de software, gestión del conocimiento y educación.',
-    site: 'http://expoisi.com.ar/Gemis/index',
+    site: 'https://expoisi.com.ar/gemis/index.html',
   },
   areas: [
     { title: 'Inteligencia Artificial', description: 'Sistemas explicables, apoyo a decisiones y aplicaciones reales.', image: '/media/gemis/research-topic-ai.webp' },
