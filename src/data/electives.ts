@@ -74,4 +74,16 @@ export const electiveVideos: ElectiveVideo[] = [
     categoria: 'Datos, IA y cómputo',
     video: '/media/recursos/videos-materias/Electivas%20Videos/IA%20Generativa.mp4',
   },
+  {
+    id: 'tasd',
+    materia: 'Tecnologías Aplicadas a las Soluciones de Datos',
+    categoria: 'Datos, IA y cómputo',
+    video: '/media/recursos/videos-materias/Electivas%20Videos/TASD.mp4',
+  },
+  {
+    id: 'ddapdm',
+    materia: 'Desarrollo de Aplicaciones para Dispositivos Móviles',
+    categoria: 'Construcción de software',
+    video: '/media/recursos/videos-materias/Electivas%20Videos/DDAPDM.mp4',
+  },
 ]
