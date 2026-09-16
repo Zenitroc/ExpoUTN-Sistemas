@@ -13,7 +13,6 @@ const nodes = [
 ]
 
 const sequences = [
-  { id: 'all', label: 'Todo está conectado', facts: ['36 materias', '5 años', 'Proyecto Final'] },
   { id: 'build', label: 'Ideas que se convierten en sistemas', facts: ['Desarrollo de software', 'Diseño de Sistemas', 'Proyectos reales'] },
   { id: 'data', label: 'Datos que se convierten en decisiones', facts: ['Ciencia de Datos', 'Inteligencia Artificial', 'Machine Learning'] },
   { id: 'safe', label: 'Tecnología que escala y se protege', facts: ['Ciberseguridad', 'Redes', 'Arquitectura'] },
@@ -56,7 +55,7 @@ export function ScreenSaver() {
         </div>
       </main>
 
-      <footer className="screensaver__footer"><i aria-hidden="true" /><strong>Mové el cursor o tocá la pantalla para explorar</strong><span>Todo está conectado</span></footer>
+      <footer className="screensaver__footer"><i aria-hidden="true" /><strong>Mové el cursor o tocá la pantalla para explorar</strong></footer>
     </div>
   )
 }

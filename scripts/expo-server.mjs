@@ -11,7 +11,7 @@ const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
 
 async function readSettings() { try { return JSON.parse(await readFile(configFile, 'utf8')) } catch { return {} } }
 async function sendFile(response, requested) {
-  const safePath = resolve(root, `.${requested}`)
+  const safePath = resolve(root, `.${decodeURIComponent(requested)}`)
   const file = safePath.startsWith(root) ? safePath : join(root, 'index.html')
   try { const info = await stat(file); if (!info.isFile()) throw new Error(); response.writeHead(200, { 'Content-Type': types[extname(file)] ?? 'application/octet-stream' }); response.end(await readFile(file)) }
   catch { const index = join(root, 'index.html'); response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); response.end(await readFile(index)) }
